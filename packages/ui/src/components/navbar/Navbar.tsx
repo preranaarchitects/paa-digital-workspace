@@ -1,7 +1,7 @@
 import "./navbar.css";
 
 import { Lock, Menu, X } from "lucide-react";
-import { useState, type ReactNode } from "react";
+import { useState, useEffect, type ReactNode } from "react";
 
 import type { NavbarConfig } from "../../types/navigation";
 import { Button } from "../button";
@@ -13,9 +13,37 @@ export interface NavbarProps {
 
 export function Navbar({ logo, navigation }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    function handleScroll() {
+      const currentScrollY = window.scrollY;
+
+      // 1. Always keep navbar visible at the very top of the page
+      if (currentScrollY < 10) {
+        setIsVisible(true);
+        setLastScrollY(currentScrollY);
+        return;
+      }
+
+      // 2. Hide on scroll down, show on scroll up
+      if (currentScrollY > lastScrollY) {
+        setIsVisible(false); // Scrolling down
+      } else {
+        setIsVisible(true);  // Scrolling up
+      }
+
+      setLastScrollY(currentScrollY);
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
 
   return (
-    <header className="paa-navbar">
+    /* Dynamic class toggles the hidden slide animation state */
+    <header className={`paa-navbar ${!isVisible ? "paa-navbar--hidden" : ""}`}>
       <div className="paa-navbar__inner">
         <div className="paa-navbar__logo">{logo}</div>
 

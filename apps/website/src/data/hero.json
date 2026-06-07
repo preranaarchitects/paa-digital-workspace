@@ -1,0 +1,48 @@
+{
+  "slides": [
+    {
+      "id": 1,
+      "mediaSrc": "/hero/video-build.mp4",
+      "mediaAlt": "Luxury residential architecture",
+      "subtitle": "Premium Design-Build Partner",
+      "title": "From Vision to Handover",
+      "description": "Architecture, interiors, construction, and turnkey execution managed with transparency and precision.",
+      "cta": {
+        "label": "Get a Quote",
+        "path": "/getquote"
+      }
+    },
+    {
+      "id": 2,
+      "mediaSrc": "/hero/og-image.png",
+      "mediaAlt": "Modern villa architecture",
+      "subtitle": "Architecture • Interiors • Construction",
+      "title": "Designed Beautifully. Built Strongly.",
+      "description": "From concept development to final execution, every detail is planned, visualized, and delivered with care.",
+      "cta": {
+        "label": "Explore Projects",
+        "path": "/projects"
+      }
+    },
+    {
+      "id": 3,
+      "mediaSrc": "/hero/video-living-area.mp4",
+      "mediaAlt": "Construction progress showcase",
+      "subtitle": "Transparent Project Experience",
+      "title": "Track Every Stage Of Your Project",
+      "description": "Technology-driven project execution with progress tracking, documentation, and client-first communication.",
+      "cta": {
+        "label": "Our Process",
+        "path": "/process"
+      }
+    }
+  ],
+  "settings": {
+    "autoPlay": true,
+    "autoPlayInterval": 6000,
+    "pauseOnHover": true,
+    "showIndicators": true,
+    "showNavigationArrows": true,
+    "loop": true
+  }
+}

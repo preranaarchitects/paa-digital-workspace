@@ -1,6 +1,4 @@
-import type { Variants, Transition } from "framer-motion";
-
-export const fadeUp: Variants = {
+export const fadeUp = {
   hidden: {
     opacity: 0,
     y: 24,
@@ -11,7 +9,7 @@ export const fadeUp: Variants = {
   },
 };
 
-export const fadeIn: Variants = {
+export const fadeIn = {
   hidden: {
     opacity: 0,
   },
@@ -20,7 +18,7 @@ export const fadeIn: Variants = {
   },
 };
 
-export const defaultTransition: Transition = {
+export const defaultTransition = {
   duration: 0.45,
   ease: "easeOut",
 };

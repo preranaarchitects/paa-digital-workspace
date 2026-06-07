@@ -1,0 +1,184 @@
+.paa-hero {
+  position: relative;
+  width: 100%;
+  /* 3. Hero starts from very top, covering full visible screen height */
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.paa-hero__media {
+  position: absolute;
+  inset: 0;
+}
+
+.paa-hero__asset {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.paa-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    115deg,
+    rgb(0 0 0 / 75%) 0%,
+    rgb(0 0 0 / 58%) 35%,
+    rgb(0 0 0 / 38%) 65%,
+    rgb(0 0 0 / 20%) 100
+  );
+}
+
+/* 2. Reduced Card Size & Adjusted Interior Typography Proportions */
+.paa-hero__content-card {
+  position: relative;
+  z-index: 3;
+  /* Reduced max-width down from 42rem to a tight, sophisticated 32rem */
+  width: min(32rem, 90vw);
+  margin-left: clamp(1.5rem, 6vw, 6rem);
+  padding: clamp(1.25rem, 2.5vw, 1.75rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem; /* Tighter padding density layout */
+  border: 0.0625rem solid rgb(255 255 255 / 12%);
+  border-radius: 1.25rem;
+  background: rgb(255 255 255 / 6%);
+  backdrop-filter: blur(1.5rem);
+  box-shadow: 0 1rem 3rem rgb(0 0 0 / 30%);
+}
+
+.paa-hero__subtitle {
+  margin: 0;
+  color: var(--paa-accent, #FFC107);
+  font-size: clamp(0.75rem, 0.9vw, 0.85rem); /* Proportional scaling reduction */
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.paa-hero__title {
+  margin: 0;
+  color: white;
+  /* Scaled down max-size from 5rem to a crisp 3.4rem for visual balance */
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-weight: 700;
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+.paa-hero__description {
+  margin: 0;
+  color: rgb(255 255 255 / 85%);
+  font-size: clamp(0.9rem, 1.1vw, 1rem); /* Downscaled body text */
+  line-height: 1.6;
+}
+
+.paa-hero__cta {
+  margin-top: 0.5rem;
+  width: fit-content;
+}
+
+/* 1. Control Buttons Customization */
+.paa-hero__controls {
+  position: absolute;
+  right: clamp(1.5rem, 4vw, 4rem);
+  bottom: clamp(4rem, 6vw, 6rem);
+  z-index: 4;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.paa-hero__controls button {
+  /* Fluid scaling system parameters for the outer button box */
+  width: clamp(2.2rem, 4.5vw, 3.2rem);
+  height: clamp(2.2rem, 4.5vw, 3.2rem);
+  
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  
+  /* Amber border application and clear styles */
+  border: 0.1rem solid var(--paa-accent, #FFC107);
+  border-radius: 50%;
+  background: rgb(255 255 255 / 8%);
+  color: white;
+  backdrop-filter: blur(1rem);
+  cursor: pointer;
+  transition: all 220ms ease;
+}
+
+/* Fluid inner SVG icon scaling based on device viewport */
+.paa-hero__controls button svg {
+  width: clamp(1rem, 2vw, 1.4rem);
+  height: clamp(1rem, 2vw, 1.4rem);
+  flex-shrink: 0;
+}
+
+.paa-hero__controls button:hover {
+  background: var(--paa-accent, #FFC107);
+  color: #000000; /* Crisp dark contrast for access indicators */
+  transform: translateY(-0.125rem);
+}
+
+.paa-hero__indicators {
+  position: absolute;
+  left: 50%;
+  bottom: 2rem;
+  transform: translateX(-50%);
+  z-index: 4;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.paa-hero__indicators button {
+  width: 0.75rem;
+  height: 0.75rem;
+  border: 0;
+  border-radius: 999rem;
+  background: rgb(255 255 255 / 40%);
+  cursor: pointer;
+  transition: width 220ms ease, background-color 220ms ease;
+}
+
+.paa-hero__indicators button.is-active {
+  width: 2.5rem;
+  background: var(--paa-accent, #FFC107);
+}
+
+@media (max-width: 64rem) {
+  .paa-hero__content-card {
+    width: min(28rem, 88vw);
+    margin-left: 2rem;
+  }
+}
+
+@media (max-width: 48rem) {
+  .paa-hero {
+    align-items: flex-end;
+    padding-bottom: 6rem;
+  }
+
+  .paa-hero__content-card {
+    width: calc(100% - 2.5rem);
+    margin-inline: 1.25rem;
+    padding: 1.25rem;
+  }
+
+  .paa-hero__controls {
+    right: 1.25rem;
+    bottom: 1.5rem;
+  }
+
+  .paa-hero__indicators {
+    left: 1.25rem;
+    right: auto;
+    bottom: 2rem;
+    transform: none;
+  }
+}

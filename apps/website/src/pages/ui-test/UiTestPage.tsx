@@ -1,16 +1,35 @@
-import { Button, Logo, Navbar } from "@paa/ui";
+import { Hero, Logo, Navbar, type HeroConfig } from "@paa/ui";
 
 import branding from "../../../../../packages/ui/src/data/branding.json";
+
+import heroData from "../../data/hero.json";
 import navbar from "../../data/navbar.json";
+
+const hero = heroData as HeroConfig;
 
 export function UiTestPage() {
   return (
-    <div className="min-h-screen">
-      <Navbar logo={<Logo logo={branding.logo} />} navigation={navbar} />
+    <>
+      <Navbar
+        logo={<Logo logo={branding.logo} />}
+        navigation={navbar}
+      />
 
-      <main className="p-8">
-        <Button variant="primary">Get a Quote</Button>
-      </main>
-    </div>
+      <Hero hero={hero} />
+
+      <section
+        style={{
+          minHeight: "100vh",
+          padding: "6rem 2rem",
+          background: "var(--paa-bg)",
+        }}
+      >
+        <h2>Next Section</h2>
+        <p>
+          This section exists only to verify hero height,
+          scrolling behavior, and future scroll animations.
+        </p>
+      </section>
+    </>
   );
 }
