@@ -1,0 +1,21 @@
+{
+  "menuItems": [
+    { "label": "Home", "path": "/" },
+    { "label": "Services", "path": "/services" },
+    { "label": "Projects", "path": "/projects" },
+    { "label": "3D Studio", "path": "/3d-studio" },
+    { "label": "Our Process", "path": "/process" },
+    { "label": "About Us", "path": "/about" }
+  ],
+  "cta": {
+    "quote": {
+      "label": "Get a Quote",
+      "path": "/getquote"
+    },
+    "login": {
+      "label": "Client Login",
+      "subtext": "track your project",
+      "path": "/login"
+    }
+  }
+}

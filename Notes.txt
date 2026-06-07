@@ -1,0 +1,2 @@
+pnpm --filter website dev                             run live
+pnpm --filter @paa/ui typecheck                       check error

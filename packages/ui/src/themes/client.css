@@ -1,0 +1,10 @@
+:root {
+  --paa-bg: #faf9f6;
+  --paa-surface: #ffffff;
+  --paa-text: #1f1f1f;
+  --paa-muted: #6f6f6f;
+  --paa-border: #e6e2dc;
+
+  --paa-primary: #1f1f1f;
+  --paa-primary-hover: #3a3a3a;
+}

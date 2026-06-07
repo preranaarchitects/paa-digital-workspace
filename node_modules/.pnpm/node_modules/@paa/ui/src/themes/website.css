@@ -1,0 +1,15 @@
+:root {
+  --paa-primary: #2B2B2B;
+  --paa-primary-hover: #1F1F1F;
+
+  --paa-accent: #FFC107;
+  --paa-accent-hover: #E0A800;
+
+  --paa-bg: #F8F6F2;
+  --paa-surface: #FFFFFF;
+
+  --paa-text: #2B2B2B;
+  --paa-muted: #6B6B6B;
+
+  --paa-border: #DDD6C8;
+}

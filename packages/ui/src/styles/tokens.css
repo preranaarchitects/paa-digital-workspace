@@ -1,0 +1,22 @@
+:root {
+  --paa-radius-sm: 0.5rem;
+  --paa-radius-md: 2rem;
+  --paa-radius-lg: 1rem;
+  --paa-radius-pill: 999rem;
+
+  --paa-container: min(90rem, calc(100% - 2rem));
+
+  --paa-text-sm: clamp(0.875rem, 0.82rem + 0.2vw, 1rem);
+  --paa-text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --paa-text-lg: clamp(1.125rem, 1rem + 0.45vw, 1.5rem);
+  --paa-text-xl: clamp(1.5rem, 1.1rem + 1.5vw, 2.5rem);
+  --paa-text-hero: clamp(2.25rem, 1.5rem + 4vw, 5rem);
+
+  --paa-logo-height: clamp(3rem, 4vw, 4rem);
+  --paa-logo-gap: clamp(0.75rem, 1vw, 1rem);
+  --paa-title-size: clamp(1.125rem, 1rem + 0.5vw, 1.5rem);
+  --paa-subtitle-size: clamp(0.75rem, 0.7rem + 0.2vw, 0.9rem);
+  --paa-tagline-size: clamp(0.625rem, 0.6rem + 0.1vw, 0.75rem);
+
+  --paa-navbar-height: clamp(4.5rem, 6vw, 5.5rem);
+}

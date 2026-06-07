@@ -1,0 +1,23 @@
+{
+  "name": "paa-digital-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "lint": "turbo lint",
+    "typecheck": "turbo typecheck"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "^11.2.2",
+      "onFail": "download"
+    }
+  },
+  "devDependencies": {
+    "turbo": "^2.9.16",
+    "typescript": "^6.0.3"
+  }
+}

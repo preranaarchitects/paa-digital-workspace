@@ -1,0 +1,35 @@
+@import "tailwindcss";
+@import "./tokens.css";
+
+* {
+  box-sizing: border-box;
+  scrollbar-width: thin;
+  scrollbar-color: #9c958c #f3f0eb;
+}
+
+*::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+*::-webkit-scrollbar-track {
+  background: #f3f0eb;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #9c958c;
+  border-radius: var(--paa-radius-pill);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #7e766d;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paa-bg);
+  color: var(--paa-text);
+}
