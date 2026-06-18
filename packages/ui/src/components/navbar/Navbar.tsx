@@ -20,29 +20,29 @@ export function Navbar({ logo, navigation }: NavbarProps) {
     function handleScroll() {
       const currentScrollY = window.scrollY;
 
-      // 1. Always keep navbar visible at the very top of the page
+      // 🛠️ RULE 3: Auto-close hamburger menu instantly if the user scrolls the page
+      if (isOpen) {
+        setIsOpen(false);
+      }
+
       if (currentScrollY < 10) {
         setIsVisible(true);
         setLastScrollY(currentScrollY);
         return;
       }
-
-      // 2. Hide on scroll down, show on scroll up
       if (currentScrollY > lastScrollY) {
-        setIsVisible(false); // Scrolling down
+        setIsVisible(false); 
       } else {
-        setIsVisible(true);  // Scrolling up
+        setIsVisible(true);  
       }
-
       setLastScrollY(currentScrollY);
     }
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollY]);
+  }, [lastScrollY, isOpen]);
 
   return (
-    /* Dynamic class toggles the hidden slide animation state */
     <header className={`paa-navbar ${!isVisible ? "paa-navbar--hidden" : ""}`}>
       <div className="paa-navbar__inner">
         <div className="paa-navbar__logo">{logo}</div>
@@ -57,51 +57,85 @@ export function Navbar({ logo, navigation }: NavbarProps) {
 
         <div className="paa-navbar__actions">
           <div className="paa-navbar__quote-desktop">
-            <Button variant="primary" size="sm">
+            <Button 
+              variant="primary" 
+              size="sm"
+              onClick={() => window.location.href = navigation.cta.quote.path}
+            >
               {navigation.cta.quote.label}
             </Button>
           </div>
 
           <div className="paa-navbar__action-separator" />
 
-          <a href={navigation.cta.login.path} className="paa-navbar__login">
-            <Lock className="paa-navbar__login-icon" />
-            <span>{navigation.cta.login.label}</span>
-          </a>
+          <div className="paa-navbar__login-desktop">
+            <Button 
+              variant="client" 
+              size="sm" 
+              icon={<Lock />}
+              onClick={() => window.location.href = navigation.cta.login.path}
+            >
+              {navigation.cta.login.label}
+            </Button>
+          </div>
 
+          {/* 🛠️ RULE 3: Clicking this button naturally toggles isOpen state back and forth */}
           <button
             type="button"
             className="paa-navbar__mobile-toggle"
             aria-label={isOpen ? "Close menu" : "Open menu"}
             onClick={() => setIsOpen((value) => !value)}
           >
-            {isOpen ? <X size={22} /> : <Menu size={22} />}
+            {isOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </div>
 
+      {/* 📱 ADJUSTED DRAWER INTERFACE REGION */}
       <div className={`paa-navbar__mobile-panel ${isOpen ? "is-open" : ""}`}>
-        <div className="paa-navbar__mobile-card">
-          {navigation.menuItems.map((item) => (
-            <a
-              key={item.path}
-              href={item.path}
-              className="paa-navbar__mobile-link"
-              onClick={() => setIsOpen(false)}
-            >
-              {item.label}
-              <span>→</span>
-            </a>
-          ))}
+        
+        {/* 🛠️ RULE 3: Invisible overlay catches clicks outside the menu block tray */}
+        <div 
+          className="paa-navbar__mobile-overlay" 
+          onClick={() => setIsOpen(false)} 
+          aria-hidden="true"
+        />
 
-          <a
-            href={navigation.cta.quote.path}
-            className="paa-navbar__mobile-quote"
-            onClick={() => setIsOpen(false)}
-          >
-            {navigation.cta.quote.label}
-            <span>→</span>
-          </a>
+        <div className="paa-navbar__mobile-card">
+          {/* 🛠️ RULE 2: Scroll-isolated menu box keeps page from traveling */}
+          <div className="paa-navbar__mobile-scroller">
+            {navigation.menuItems.map((item) => (
+              <a
+                key={item.path}
+                href={item.path}
+                className="paa-navbar__mobile-link"
+                onClick={() => setIsOpen(false)}
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
+
+          <div className="paa-navbar__mobile-cta-rack">
+            <Button 
+              variant="primary" 
+              size="md"
+              className="paa-navbar__mobile-btn"
+              onClick={() => { setIsOpen(false); window.location.href = navigation.cta.quote.path; }}
+            >
+              {navigation.cta.quote.label}
+            </Button>
+            
+            <Button 
+              variant="client" 
+              size="md"
+              icon={<Lock />}
+              className="paa-navbar__mobile-btn"
+              onClick={() => { setIsOpen(false); window.location.href = navigation.cta.login.path; }}
+            >
+              {navigation.cta.login.label}
+            </Button>
+          </div>
         </div>
       </div>
     </header>

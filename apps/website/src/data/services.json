@@ -1,0 +1,35 @@
+{
+  "eyebrow": "Our Expertise",
+  "title": "A Unified Delivery Collective",
+  "description": "Prerana Architects & Associates integrates every stage of physical transformation collapsing traditional structural gaps between creation, strategy, and execution.",
+  "services": [
+    {
+      "id": "architecture",
+      "label": "Architecture",
+      "tagline": "Spatial Sculpting & Core Engineering",
+      "teaser": "Master planning, spatial structural optimization, and future-ready conceptual modeling."
+    },
+    {
+      "id": "interiors",
+      "label": "Interior Design",
+      "tagline": "Bespoke Curation & Material Alchemy",
+      "teaser": "Custom millwork, ambient lighting physics, and highly refined structural finishes."
+    },
+    {
+      "id": "construction",
+      "label": "Construction",
+      "tagline": "Precision Building & Execution",
+      "teaser": "Advanced site engineering, material structural integrity, and robust turn-by-turn management."
+    },
+    {
+      "id": "turnkey",
+      "label": "Turnkey Delivery",
+      "tagline": "Conception To Completion Accountability",
+      "teaser": "Complete end-to-end management, managing variables from baseline drawing to physical handover."
+    }
+  ],
+  "cta": {
+    "label": "Explore More Services",
+    "path": "/services"
+  }
+}

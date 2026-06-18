@@ -2,14 +2,16 @@
   --paa-primary: #2B2B2B;
   --paa-primary-hover: #1F1F1F;
 
-  --paa-accent: #FFC107;
-  --paa-accent-hover: #E0A800;
+  --paa-accent: #FFCA28;
+  --paa-accent-hover: #FFC107;
 
-  --paa-bg: #F8F6F2;
-  --paa-surface: #FFFFFF;
+  --paa-bg: linear-gradient(135deg, #161920 0%, #0e1015 100%);
+  --paa-surface: #121620;
 
-  --paa-text: #2B2B2B;
-  --paa-muted: #6B6B6B;
+  --paa-text: #FFFFFF;
+  --paa-muted: #94A3B8;
 
-  --paa-border: #DDD6C8;
+  --paa-border: #FFC107;
+
+  --paa-section-card: #FFFFFF;
 }

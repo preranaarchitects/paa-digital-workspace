@@ -1,87 +1,171 @@
+/* ==========================================================================
+   🏛️ BASE ARCHITECTURAL BUTTON STRUCTURAL WRAPPER
+   ========================================================================== */
 .paa-btn {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.75rem;
-  border: 0;
+  gap: 0.55rem; 
+  border: 0.0625rem solid transparent;
   cursor: pointer;
   font-weight: 700;
-  letter-spacing: -0.02em;
-  border-radius: var(--paa-radius-md);
+  text-transform: uppercase; 
+  letter-spacing: 0.08em;    
+  border-radius: var(--paa-radius-pill, 999rem); 
+  outline: none;
+  overflow: hidden; 
+  z-index: 1;
+  box-sizing: border-box;
+  background: transparent; 
+  
   transition:
-    transform 220ms ease,
-    background-color 220ms ease,
-    border-color 220ms ease,
-    box-shadow 220ms ease;
+    color 400ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 400ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 200ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 400ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.paa-btn:active:not(:disabled) {
+  transform: scale(0.97) translateY(0) !important;
 }
 
 .paa-btn:disabled {
   cursor: not-allowed;
-  opacity: 0.5;
+  opacity: 0.35;
 }
 
+.paa-btn__text,
+.paa-btn__icon-slot {
+  position: relative;
+  z-index: 3;
+}
+
+/* Sliding backdrop overlay track engine */
+.paa-btn__bg-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  transform: scaleX(1);
+  transform-origin: left;
+  transition: transform 450ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ==========================================================================
+   📐 STRUCTURAL SIZE SCALE SYSTEMS (ACCESSIBLE REM UNITS)
+   ========================================================================== */
 .paa-btn--sm {
-  min-height: 2.5rem;
+  min-height: 2.35rem;
   padding-inline: 1.25rem;
-  font-size: 0.875rem;
+  font-size: 0.725rem; 
 }
 
 .paa-btn--md {
-  min-height: 3.75rem;
-  padding-inline: 2.25rem;
-  font-size: 1.125rem;
+  min-height: 3rem; 
+  padding-inline: 2rem;
+  font-size: 0.8rem;
 }
 
 .paa-btn--lg {
-  min-height: 4.25rem;
-  padding-inline: 2.75rem;
-  font-size: 1.25rem;
+  min-height: 3.5rem;
+  padding-inline: 2.5rem;
+  font-size: 0.875rem;
 }
 
+/* Fluid SVG Icon Vector Sizing Engine */
+.paa-btn__icon-slot svg {
+  width: 1.15em;
+  height: 1.15em;
+  display: block;
+  transition: transform 350ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ==========================================================================
+   🎨 VARIANT ARCHITECTURE STYLES
+   ========================================================================== */
+
+/* PRIMARY: "Get a Quote" Layout */
 .paa-btn--primary {
-  background: var(--paa-accent);
-  color: var(--paa-primary);
-  box-shadow: 0 0.75rem 1.75rem rgb(255 193 7 / 24%);
-}
-
-.paa-btn--primary:hover {
-  background: var(--paa-accent-hover);
-  transform: translateY(-0.125rem);
-  box-shadow: 0 1rem 2rem rgb(255 193 7 / 32%);
-}
-
-.paa-btn--client {
-  border: 0.0625rem solid var(--paa-border);
-  background: var(--paa-surface);
-  color: var(--paa-primary);
-}
-
-.paa-btn--client:hover {
   border-color: var(--paa-accent);
-  background: var(--paa-bg);
-  transform: translateY(-0.125rem);
+  color: var(--paa-bg, #060911); 
+  box-shadow: 0 0.5rem 1.5rem color-mix(in srgb, var(--paa-accent) 12%, transparent);
 }
 
+.paa-btn--primary .paa-btn__bg-layer {
+  background: var(--paa-accent);
+}
+
+.paa-btn--primary:hover:not(:disabled) {
+  color: var(--paa-accent);
+  border-color: var(--paa-accent);
+  transform: translateY(-0.1rem);
+  box-shadow: 0 0.75rem 2rem color-mix(in srgb, var(--paa-accent) 30%, transparent);
+}
+
+.paa-btn--primary:hover:not(:disabled) .paa-btn__bg-layer {
+  transform: scaleX(0);
+  transform-origin: right; 
+}
+
+/* CLIENT PROFILE: "Client Login" Layout */
+.paa-btn--client {
+  border-color: var(--paa-border);
+  color: var(--paa-text);
+}
+
+.paa-btn--client .paa-btn__bg-layer {
+  background: transparent; 
+}
+
+.paa-btn--client:hover:not(:disabled) {
+  border-color: var(--paa-accent);
+  color: var(--paa-accent);
+  transform: translateY(-0.1rem);
+  box-shadow: 0 0.5rem 1.5rem color-mix(in srgb, var(--paa-accent) 15%, transparent);
+}
+
+.paa-btn--client:hover:not(:disabled) .paa-btn__icon-slot svg {
+  transform: rotate(-10deg) scale(1.05); /* Soft, interactive macro rotation */
+}
+
+/* EXPLORE TIMELINE: "Explore All Projects / Services" Layout */
 .paa-btn--explore {
-  min-height: auto;
-  padding-inline: 0;
-  background: transparent;
-  color: var(--paa-primary);
+  border-color: var(--paa-border);
+  color: var(--paa-text);
 }
 
-.paa-btn--explore:hover .paa-btn__arrow {
-  transform: translateX(0.25rem);
+.paa-btn--explore .paa-btn__bg-layer {
+  background: var(--paa-surface); 
+  transform: scaleX(0);
+  transform-origin: right;
 }
 
+.paa-btn--explore:hover:not(:disabled) {
+  border-color: var(--paa-accent);
+  color: var(--paa-accent);
+  transform: translateY(-0.1rem);
+}
+
+.paa-btn--explore:hover:not(:disabled) .paa-btn__bg-layer {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Premium Diagonal ↗ Motion Vector Translation Engine */
+.paa-btn--explore:hover:not(:disabled) .paa-btn__icon-slot svg {
+  transform: translate(0.15rem, -0.15rem); /* Smooth outward upward slide glide */
+  color: var(--paa-accent);
+}
+
+/* GHOST UTILITY */
 .paa-btn--ghost {
-  background: transparent;
-  color: var(--paa-primary);
+  border-color: transparent;
+  color: var(--paa-muted);
 }
-
-.paa-btn--ghost:hover {
-  background: var(--paa-bg);
-}
-
-.paa-btn__arrow {
-  transition: transform 220ms ease;
+.paa-btn--ghost .paa-btn__bg-layer { background: transparent; }
+.paa-btn--ghost:hover:not(:disabled) {
+  color: var(--paa-text);
+  background: var(--paa-surface);
 }

@@ -1,7 +1,5 @@
 import "./button.css";
-
 import type { ButtonHTMLAttributes, ReactNode } from "react";
-
 import { cn } from "../../utils/cn";
 
 type ButtonVariant = "primary" | "client" | "explore" | "ghost";
@@ -11,6 +9,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
   variant?: ButtonVariant;
   size?: ButtonSize;
+  icon?: ReactNode; // Supports prefix icon configuration natively
 }
 
 export function Button({
@@ -18,6 +17,7 @@ export function Button({
   variant = "primary",
   size = "md",
   className,
+  icon,
   ...props
 }: ButtonProps) {
   return (
@@ -26,20 +26,19 @@ export function Button({
         "paa-btn",
         `paa-btn--${variant}`,
         `paa-btn--${size}`,
+        icon ? "paa-btn--has-icon" : "",
         className,
       )}
       {...props}
     >
-      <span>{children}</span>
-
-      {variant === "explore" && (
-        <span
-          aria-hidden="true"
-          className="paa-btn__arrow"
-        >
-          →
-        </span>
-      )}
+      {/* Dynamic Background Sliding Overlay Layer */}
+      <span className="paa-btn__bg-layer" aria-hidden="true" />
+      
+      {/* Prefix Icon: Positioned before text content node for uniform alignment */}
+      {icon && <span className="paa-btn__icon-slot">{icon}</span>}
+      
+      {/* Core Text Label Block */}
+      <span className="paa-btn__text">{children}</span>
     </button>
   );
 }

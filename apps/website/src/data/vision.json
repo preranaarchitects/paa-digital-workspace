@@ -1,0 +1,31 @@
+{
+  "eyebrow": "The Blueprint of Luxury",
+  "title": "Crafting Spaces, Executing Masterpieces",
+  "stages": [
+    {
+      "id": "dream",
+      "label": "Vision",
+      "description": "Mapping your lifestyle aspirations, spatial requirements, and project milestones."
+    },
+    {
+      "id": "concept",
+      "label": "Concept",
+      "description": "Architectural zoning, spatial modeling, and seamless Vastu-integrated schematic layouts."
+    },
+    {
+      "id": "design",
+      "label": "Design",
+      "description": "Precision structural engineering blueprints, comprehensive plumbing/electrical lines, and walkthroughs."
+    },
+    {
+      "id": "build",
+      "label": "Build",
+      "description": "On-site civil execution using premium materials, strict quality control, and turn-key project management."
+    },
+    {
+      "id": "handover",
+      "label": "Handover",
+      "description": "Rigorous snag-testing, thorough deep cleaning, and a hassle-free, move-in-ready transition."
+    }
+  ]
+}

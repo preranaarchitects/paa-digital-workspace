@@ -1,0 +1,43 @@
+{
+  "eyebrow": "Selected Works",
+  "title": "Crafting Spaces That Inspire",
+  "description": "Every project is a reflection of thoughtful design, precise execution, and attention to detail. Explore a selection of our architectural, interior, and construction projects.",
+  "cta": {
+    "label": "Explore All Projects",
+    "path": "/projects"
+  },
+  "featuredProjects": [
+    {
+      "id": 1,
+      "title": "Modern Luxury Villa",
+      "category": "Residential Architecture",
+      "location": "Bangalore",
+      "image": "/projects/project-01.jpg",
+      "path": "/projects/modern-luxury-villa"
+    },
+    {
+      "id": 2,
+      "title": "Contemporary Interior",
+      "category": "Interior Design",
+      "location": "Mysore",
+      "image": "/projects/project-02.jpg",
+      "path": "/projects/contemporary-interior"
+    },
+    {
+      "id": 3,
+      "title": "Commercial Workspace",
+      "category": "Commercial Construction",
+      "location": "Bangalore",
+      "image": "/projects/project-03.jpg",
+      "path": "/projects/commercial-workspace"
+    },
+    {
+      "id": 4,
+      "title": "Commercial Mall",
+      "category": "Commercial Construction",
+      "location": "Hyderabad",
+      "image": "/projects/project-03.jpg",
+      "path": "/projects/commercial-workspace"
+    }
+  ]
+}
