@@ -1,8 +1,7 @@
 {
-  "eyebrow": "Selected Works",
-  "title": "Crafting Spaces That Inspire",
-  "description": "Every project is a reflection of thoughtful design, precise execution, and attention to detail. Explore a selection of our architectural, interior, and construction projects.",
-  "cta": {
+  "eyebrow": "Featured Portfolio",
+  "title": "Bringing Visionary Spaces to Life",
+  "description": "A curated showcase of our landmark residential, commercial, and interior spaces across South India. Built with architectural excellence, premium finishes, and uncompromising engineering quality.",  "cta": {
     "label": "Explore All Projects",
     "path": "/projects"
   },

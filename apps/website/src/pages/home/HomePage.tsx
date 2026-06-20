@@ -2,6 +2,7 @@ import { Hero, Logo, Navbar, type HeroConfig } from "@paa/ui";
 import { VisionGlimpse } from "./glimpse/vision";
 import { ProjectsGlimpse } from "./glimpse/projects";
 import { ServicesGlimpse } from "./glimpse/services";
+import { ProcessGlimpse } from "./glimpse/process";
 
 import branding from "../../../../../packages/ui/src/data/branding.json";
 import heroData from "../../data/hero.json";
@@ -19,18 +20,21 @@ export function HomePage() {
       
       <Hero hero={hero} />
       
-      <div className="paa-home-section-card">
-        <VisionGlimpse />
-      </div>
+      <div className="paa-margin-buffer" aria-hidden="true" />
 
-      <div className="paa-home-section-card">
-        <ProjectsGlimpse />
-      </div>
+      <VisionGlimpse />
 
-      <div className="paa-home-section-card">
-        <ServicesGlimpse />
-      </div>
+      <div className="paa-margin-buffer" aria-hidden="true" />
 
+      <ProjectsGlimpse />
+
+      <div className="paa-margin-buffer" aria-hidden="true" />
+
+      <ServicesGlimpse />
+
+      <div className="paa-margin-buffer" aria-hidden="true" />
+
+      <ProcessGlimpse />
 
       <div className="paa-margin-buffer" aria-hidden="true" />
     </main>

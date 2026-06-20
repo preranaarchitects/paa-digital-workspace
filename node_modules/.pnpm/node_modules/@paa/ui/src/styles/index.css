@@ -1,27 +1,18 @@
 @import "tailwindcss";
 @import "./tokens.css";
 
-* {
-  box-sizing: border-box;
-  scrollbar-width: thin;
-  scrollbar-color: #9c958c #f3f0eb;
-}
 
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
 *::-webkit-scrollbar {
-  width: 0.5rem;
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
 }
 
-*::-webkit-scrollbar-track {
-  background: #f3f0eb;
-}
-
-*::-webkit-scrollbar-thumb {
-  background: #9c958c;
-  border-radius: var(--paa-radius-pill);
-}
-
-*::-webkit-scrollbar-thumb:hover {
-  background: #7e766d;
+html, body, * {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 html {
@@ -29,9 +20,9 @@ html {
 }
 
 body {
-  margin: 0;
-  margin: 0;
-  background: var(--paa-section-card);
+  margin: 0; 
+  overflow-x: hidden; 
+  background: var(--paa-bg);
   color: var(--paa-text);
 }
 
@@ -48,9 +39,15 @@ body {
 }
 
 .paa-margin-buffer {
-  width: 100%;
-  height: 0.25rem;
-  background: transparent; 
+  width: 100%; 
+  height: 0.03125rem; 
+ background: linear-gradient(
+    90deg, 
+    transparent 5%, 
+    var(--paa-border), 
+    transparent 95%
+  );
+  margin: 0 auto; 
   pointer-events: none; 
   box-sizing: border-box;
 }

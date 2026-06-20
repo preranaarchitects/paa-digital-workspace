@@ -1,0 +1,37 @@
+{
+  "eyebrow": "Our Workflow",
+  "title": "From Blueprint to Handover",
+  "description": "A highly calculated, five-phase execution roadmap engineered to guarantee absolute structural precision, strict legal compliance, and predictable timelines.",
+  "phases": [
+    {
+      "step": "01",
+      "title": "Consultation & Site Audit",
+      "summary": "Feasibility & Budget Optimization",
+      "detail": "We conduct a thorough site evaluation, verify soil profiles, analyze local solar/wind orientation patterns, and map out a transparent Bill of Quantities (BOQ) tailored to your budget constraints."
+    },
+    {
+      "step": "02",
+      "title": "Architecture & Compliance",
+      "summary": "Blueprints & BBMP/BDA Approvals",
+      "detail": "Our design team crafts site-responsive architectural concepts and photorealistic 4K visualizations, while simultaneously aligning with BBMP, BDA, or BMRDA bylaws to ensure hassle-free regulatory approvals."
+    },
+    {
+      "step": "03",
+      "title": "Material Alchemy & Sourcing",
+      "summary": "Transparent Material Procurement",
+      "detail": "We finalize precise technical specifications for everything from reinforced steel and concrete grades to premium luxury veneers and flooring, ensuring complete pricing clarity with zero hidden operational markups."
+    },
+    {
+      "step": "04",
+      "title": "Civil Construction & Fit-Out",
+      "summary": "Rigorous Engineering Execution",
+      "detail": "Our site engineers manage deep excavation, reinforced concrete frameworks, multi-tier waterproofing installations, and structural diagnostics under strict quality checks to prevent scheduling delays."
+    },
+    {
+      "step": "05",
+      "title": "Handover & Post-Care",
+      "summary": "The Final Turnkey Transition",
+      "detail": "Following thorough safety audits, electrical load checks, and pristine deep cleaning, we hand over the keys to your new space, backed by reliable post-occupancy structural maintenance assurance."
+    }
+  ]
+}

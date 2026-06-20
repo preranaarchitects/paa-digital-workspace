@@ -1,7 +1,7 @@
 import "./hero.css";
 
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
+import { ChevronLeft, ChevronRight, ArrowUpRight } from "lucide-react";
+import { useEffect, useState } from "react";
 
 import type { HeroConfig } from "../../types/hero";
 import { Button } from "../button";
@@ -16,11 +16,6 @@ function isVideo(src: string) {
 
 export function Hero({ hero }: HeroProps) {
   const [activeIndex, setActiveIndex] = useState(0);
-  const activeSlide = hero.slides[activeIndex];
-
-  const activeMediaIsVideo = useMemo(() => {
-    return activeSlide?.mediaSrc ? isVideo(activeSlide.mediaSrc) : false;
-  }, [activeSlide]);
 
   function goToNext() {
     setActiveIndex((current) => {
@@ -45,70 +40,104 @@ export function Hero({ hero }: HeroProps) {
     return () => window.clearInterval(timer);
   }, [activeIndex, hero.settings.autoPlay, hero.settings.autoPlayInterval]);
 
-  if (!activeSlide) return null;
+  if (!hero.slides || hero.slides.length === 0) return null;
 
   return (
     <section className="paa-hero">
-      <div className="paa-hero__media">
-        {activeMediaIsVideo ? (
-          <video
-            key={activeSlide.mediaSrc}
-            src={activeSlide.mediaSrc}
-            className="paa-hero__asset"
-            autoPlay
-            muted
-            loop
-            playsInline
-          />
-        ) : (
-          <img
-            key={activeSlide.mediaSrc}
-            src={activeSlide.mediaSrc}
-            alt={activeSlide.mediaAlt}
-            className="paa-hero__asset"
-          />
-        )}
+      {/* 🌌 HARDWARE-ACCELERATED CROSS-FADE STACK CONTAINER */}
+      <div className="paa-hero__media-stack">
+        {hero.slides.map((slide, index) => {
+          const isActive = index === activeIndex;
+          const mediaIsVideo = slide.mediaSrc ? isVideo(slide.mediaSrc) : false;
 
+          return (
+            <div
+              key={slide.id}
+              className={`paa-hero__media-layer ${isActive ? "is-active" : ""}`}
+            >
+              {mediaIsVideo ? (
+                <video
+                  src={slide.mediaSrc}
+                  className="paa-hero__asset"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                />
+              ) : (
+                <img
+                  src={slide.mediaSrc}
+                  alt={slide.mediaAlt}
+                  className="paa-hero__asset"
+                />
+              )}
+            </div>
+          );
+        })}
         <div className="paa-hero__overlay" />
       </div>
 
-      <div className="paa-hero__content-card">
-        <p className="paa-hero__subtitle">{activeSlide.subtitle}</p>
-        <h1 className="paa-hero__title">{activeSlide.title}</h1>
-        <p className="paa-hero__description">{activeSlide.description}</p>
+      {/* CONTENT CARD MATRIX (Maps only the current slide safely) */}
+      {hero.slides.map((slide, index) => {
+        const isActive = index === activeIndex;
+        if (!isActive) return null;
 
-        <a href={activeSlide.cta.path} className="paa-hero__cta">
-          <Button variant="primary" size="sm">
-            {activeSlide.cta.label}
-          </Button>
-        </a>
+        // 🧠 INTELLIGENT CTA VARIANT MATCHING
+        // Automatically upgrades "Explore" or "Process" actions to use your ↗ signature button variant
+        const isExploreVariant = 
+          slide.cta.label.toLowerCase().includes("explore") || 
+          slide.cta.label.toLowerCase().includes("process") ||
+          slide.cta.label.toLowerCase().includes("our");
+
+        return (
+          <div key={slide.id} className="paa-hero__content-card">
+            <p className="paa-hero__subtitle">{slide.subtitle}</p>
+            <h1 className="paa-hero__title">{slide.title}</h1>
+            <p className="paa-hero__description">{slide.description}</p>
+
+            <div className="paa-hero__cta-wrapper">
+              <Button
+                variant={isExploreVariant ? "explore" : "explore"}
+                size="md"
+                icon={isExploreVariant ? <ArrowUpRight /> : <ArrowUpRight />}
+                onClick={() => window.location.href = slide.cta.path}
+              >
+                {slide.cta.label}
+              </Button>
+            </div>
+          </div>
+        );
+      })}
+
+      {/* 🕹️ CONSOLIDATED INTERACTIVE CONTROL PANEL DECK */}
+      <div className="paa-hero__controls-wrapper">
+        {hero.settings.showIndicators && hero.slides.length > 1 && (
+          <div className="paa-hero__indicators" role="tablist">
+            {hero.slides.map((slide, index) => (
+              <button
+                key={slide.id}
+                type="button"
+                className={index === activeIndex ? "is-active" : ""}
+                onClick={() => setActiveIndex(index)}
+                aria-label={`Go to slide ${index + 1}`}
+                role="tab"
+                aria-selected={index === activeIndex}
+              />
+            ))}
+          </div>
+        )}
+
+        {hero.settings.showNavigationArrows && hero.slides.length > 1 && (
+          <div className="paa-hero__controls">
+            <button type="button" onClick={goToPrevious} aria-label="Previous slide">
+              <ChevronLeft />
+            </button>
+            <button type="button" onClick={goToNext} aria-label="Next slide">
+              <ChevronRight />
+            </button>
+          </div>
+        )}
       </div>
-
-      {hero.settings.showNavigationArrows && hero.slides.length > 1 && (
-        <div className="paa-hero__controls">
-          <button type="button" onClick={goToPrevious} aria-label="Previous slide">
-            <ChevronLeft />
-          </button>
-
-          <button type="button" onClick={goToNext} aria-label="Next slide">
-            <ChevronRight />
-          </button>
-        </div>
-      )}
-
-      {hero.settings.showIndicators && hero.slides.length > 1 && (
-        <div className="paa-hero__indicators">
-          {hero.slides.map((slide, index) => (
-            <button
-              key={slide.id}
-              type="button"
-              className={index === activeIndex ? "is-active" : ""}
-              onClick={() => setActiveIndex(index)}
-              aria-label={`Go to slide ${index + 1}`}
-            />
-          ))}
-        </div>
-      )}
     </section>
   );
 }

@@ -1,35 +1,137 @@
 {
   "eyebrow": "Our Expertise",
-  "title": "A Unified Delivery Collective",
-  "description": "Prerana Architects & Associates integrates every stage of physical transformation collapsing traditional structural gaps between creation, strategy, and execution.",
+  "title": "A Complete Turnkey Delivery Ecosystem",
+  "description": "Prerana Architects & Associates eliminates traditional gaps between design concepts, local compliance, and structural execution. We deliver end-to-end transparency safely, on time, and within exact budgets.",
+  "cta": {
+    "label": "Explore All Services",
+    "path": "/services"
+  },
   "services": [
     {
-      "id": "architecture",
-      "label": "Architecture",
-      "tagline": "Spatial Sculpting & Core Engineering",
-      "teaser": "Master planning, spatial structural optimization, and future-ready conceptual modeling."
+      "id": "turnkey-solutions",
+      "label": "Turnkey Project Delivery",
+      "tagline": "Concept to Handover Accountability",
+      "teaser": "Complete hassle-free management covering architectural blueprints, material procurement, site engineering, and final key handover under a single line of accountability.",
+      "showInGlimpse": true,
+      "pageDetails": {
+        "heroSummary": "Our flagship end-to-end construction model designed for clients who demand absolute precision, transparent material tracing, and zero structural budget overruns.",
+        "coreOfferings": [
+          "Single-point coordination (Design + Procurement + Construction)",
+          "Fixed pricing models with zero hidden operational escalation clauses",
+          "Comprehensive milestone tracing and standard delivery reports",
+          "Complete coordination of materials, vendors, and workforce management"
+        ],
+        "regionalCompliance": "Includes complete assistance with local building regulations, site verification checks, and safety clearance processing.",
+        "iconName": "Briefcase"
+      }
     },
     {
-      "id": "interiors",
-      "label": "Interior Design",
-      "tagline": "Bespoke Curation & Material Alchemy",
-      "teaser": "Custom millwork, ambient lighting physics, and highly refined structural finishes."
+      "id": "architecture-planning",
+      "label": "Architecture & Master Planning",
+      "tagline": "Modern & Site-Responsive Design",
+      "teaser": "Premium climate-conscious, site-optimized conceptual models seamlessly engineered with strict structural calculation checks.",
+      "showInGlimpse": true,
+      "pageDetails": {
+        "heroSummary": "Modern, elegant, and sustainable architectural design engineered for India's evolving urban landscapes, optimizing natural light, cross-ventilation, and spatial efficiency.",
+        "coreOfferings": [
+          "Comprehensive structural layout mapping & engineering layouts",
+          "High-end luxury villa design & high-density multi-residential planning",
+          "Modern, sustainable, and site-responsive architectural concepts",
+          "Advanced site evaluation, solar orientation mapping, and climate response"
+        ],
+        "regionalCompliance": "Strict alignment with BBMP, BDA, and BMRDA building bylaws and local zoning limits to guarantee obstacle-free project execution.",
+        "iconName": "Compass"
+      }
     },
     {
-      "id": "construction",
-      "label": "Construction",
-      "tagline": "Precision Building & Execution",
-      "teaser": "Advanced site engineering, material structural integrity, and robust turn-by-turn management."
+      "id": "civil-engineering",
+      "label": "Construction & Project Execution",
+      "tagline": "Precision Building & Site Engineering",
+      "teaser": "Rigorous on-site technical supervision, concrete strength diagnostics, structural integrity safeguards, and strict quality control.",
+      "showInGlimpse": true,
+      "pageDetails": {
+        "heroSummary": "Robust civil execution built to last generations, utilizing elite site management pipelines and strict material testing standards for residential and commercial structures.",
+        "coreOfferings": [
+          "End-to-end construction management for premium villas, apartments, and commercial projects",
+          "Rigorous on-schedule tracking and strict adherence to defined project budgets",
+          "Multi-tier quality inspections mapping waterproofing and anti-termite seals",
+          "Site protection metrics keeping neighboring structures fully safe during deep excavation"
+        ],
+        "regionalCompliance": "Full compliance with National Building Code (NBC) parameters and standard Indian safety operational frameworks.",
+        "iconName": "HardHat"
+      }
     },
     {
-      "id": "turnkey",
-      "label": "Turnkey Delivery",
-      "tagline": "Conception To Completion Accountability",
-      "teaser": "Complete end-to-end management, managing variables from baseline drawing to physical handover."
+      "id": "interior-curation",
+      "label": "Bespoke Interior Design",
+      "tagline": "Turnkey Fit-Outs & Material Alchemy",
+      "teaser": "High-end custom millwork, ambient lighting layout physics, smart space ergonomics, and premium material finishes.",
+      "showInGlimpse": true,
+      "pageDetails": {
+        "heroSummary": "Tailored luxury interiors that balance striking aesthetics with functional durability, integrating intelligent storage execution and premium material sourcing.",
+        "coreOfferings": [
+          "Custom modular kitchens, premium walk-in wardrobes, and modular millwork",
+          "Advanced acoustic mapping, false ceiling designs, and luxury lighting layers",
+          "Bespoke interiors, personalized furniture coordination, and premium textiles",
+          "Complete turnkey fit-out execution matching design alignment perfectly"
+        ],
+        "regionalCompliance": "Using verified eco-friendly, low-VOC materials optimized for premium comfort, longevity, and low upkeep.",
+        "iconName": "Layers"
+      }
+    },
+    {
+      "id": "remodeling-renovation",
+      "label": "Renovation & Remodeling",
+      "tagline": "Transforming Existing Structures",
+      "teaser": "Expert retrofitting, structural reinforcements, space alterations, and premium modern look-and-feel updates.",
+      "showInGlimpse": false,
+      "pageDetails": {
+        "heroSummary": "Breathe new life into existing residences and commercial frameworks through calculated structural updates and premium architectural adjustments.",
+        "coreOfferings": [
+          "Transform existing layouts with modern elevations and premium finishes",
+          "Structural load evaluation before removing load-bearing partitions",
+          "Plumbing systems re-routing and upgraded concealed electrical networks",
+          "Advanced structural dampness rehabilitation and damp-proofing treatments"
+        ],
+        "regionalCompliance": "Careful execution within legal local renovation envelopes to bypass community or municipality friction points safely.",
+        "iconName": "RefreshCw"
+      }
+    },
+    {
+      "id": "urban-development",
+      "label": "Urban Planning & Site Development",
+      "tagline": "Strategic Land & Infrastructure Layouts",
+      "teaser": "Master planning for large tracts of land, road networks, zoning compliance, and utility infrastructure layouts.",
+      "showInGlimpse": false,
+      "pageDetails": {
+        "heroSummary": "Strategic layout design and land asset optimization ensuring long-term value, strict structural compliance, and high accessibility metrics.",
+        "coreOfferings": [
+          "Strategic planning for high-end residential layouts and commercial sites",
+          "Comprehensive infrastructure layout mapping (water networks, drainage, power lines)",
+          "Zoning compliance auditing and legal road network boundary tracking",
+          "Environmentally responsible and sustainable site-grading operations"
+        ],
+        "regionalCompliance": "Full alignment with local development authorities, town planning codes, and environmental clearance requirements.",
+        "iconName": "Map"
+      }
+    },
+    {
+      "id": "visualization-advisory",
+      "label": "3D Design & Consultation Advisory",
+      "tagline": "Immersive Walkthroughs & Expert Guidance",
+      "teaser": "Photorealistic 4K digital layouts, comprehensive material cost estimation, and sustainable design advisory.",
+      "showInGlimpse": false,
+      "pageDetails": {
+        "heroSummary": "Eliminate guesswork and make highly confident choices before project execution begins with immersive visualization and technical feasibility reports.",
+        "coreOfferings": [
+          "Realistic 3D plans, exterior elevations, and hyper-detailed renderings",
+          "Expert guidance on construction planning, materials selection, and cost metrics",
+          "Accurate Bill of Quantities (BOQ) reporting preventing local vendor cost traps",
+          "Sustainable architecture blueprints, eco-friendly modeling, and energy-efficient building advisory"
+        ],
+        "regionalCompliance": "Implements local green building guidelines and standard engineering material safety index tracking metrics.",
+        "iconName": "Eye"
+      }
     }
-  ],
-  "cta": {
-    "label": "Explore More Services",
-    "path": "/services"
-  }
+  ]
 }

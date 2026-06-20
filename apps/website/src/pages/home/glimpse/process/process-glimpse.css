@@ -1,0 +1,359 @@
+
+.paa-process-journey {
+  width: 100%;
+  background: var(--paa-bg);
+  color: var(--paa-text);
+  padding: clamp(4rem, 7vw, 6rem) 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  user-select: none;
+}
+
+.paa-process-journey__container {
+  width: var(--paa-container);
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8rem; 
+}
+
+/* ==========================================================================
+   🏛========= BRAND TYPOGRAPHY HEADER (DESKTOP) =========
+   ========================================================================== */
+.paa-process-journey__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  text-align: center;
+  width: 100%;
+  max-width: 44rem;
+  margin-inline: auto;
+}
+
+.paa-process-journey__eyebrow {
+  font-size: var(--paa-text-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--paa-accent);
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+}
+
+.paa-process-journey__title {
+  font-size: clamp(2rem, 3.2vw, 2.5rem);
+  font-weight: 700;
+  color: var(--paa-text);
+  line-height: 1.25;
+  margin: 0 0 1rem 0;
+  letter-spacing: -0.01em;
+}
+
+.paa-process-journey__description {
+  font-size: var(--paa-text-base);
+  color: var(--paa-muted);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ==========================================================================
+   🗺️======== HORIZONTAL CANVAS PLATFORM RUNWAY (DESKTOP) ========
+   ========================================================================== */
+.paa-process-journey__arena {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 28rem;
+}
+
+.paa-process-journey__vector-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.paa-process-journey__svg-bg-curve {
+  stroke: color-mix(in srgb, var(--paa-border) 15%, transparent);
+  stroke-width: 2;
+  stroke-dasharray: 6 6;
+}
+
+.paa-process-journey__svg-active-pulse {
+  stroke: var(--paa-accent);
+  stroke-width: 3;
+  stroke-linecap: round;
+  transition: d 400ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.paa-process-journey__track-grid {
+  position: relative;
+  z-index: 5;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+  height: 100%;
+}
+
+.paa-journey-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  transition: all 400ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.paa-journey-card.is-top-wave { margin-top: 2rem; }
+.paa-journey-card.is-bottom-wave { margin-top: 14rem; }
+
+/* ==========================================================================
+   🧱========= HIGH-CONTRAST DARK CARDS (DESKTOP DEFAULT) =========
+   ========================================================================== */
+.paa-journey-card__inner-box {
+  width: 100%;
+  max-width: 14rem;
+  background: var(--paa-surface-dark, #0d1117); 
+  border: 0.0625rem solid var(--paa-border);
+  padding: 1.35rem;
+  border-radius: var(--paa-radius-lg);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.3);
+  transition: all 450ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.paa-journey-card__header-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.paa-journey-card__badge {
+  font-family: monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--paa-muted);
+}
+
+.paa-journey-card__node-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--paa-muted);
+  transition: color 350ms ease, transform 450ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.paa-journey-card__title {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: color-mix(in srgb, var(--paa-text) 85%, transparent);
+  line-height: 1.35;
+  transition: color 350ms ease;
+}
+
+/* Hidden by default on desktop grids since they render inside speech bubble overlays */
+.paa-journey-card__mobile-content-package {
+  display: none;
+}
+
+/* ==========================================================================
+   💬========= BUBBLE MODAL POINTERS (DESKTOP ONLY) =========
+   ========================================================================== */
+.paa-journey-card__speech-bubble-popup {
+  position: absolute;
+  bottom: calc(100% + 1.5rem);
+  left: 50%;
+  transform: translateX(-50%) translateY(0.5rem) scale(0.95);
+  width: 17.5rem;
+  background: var(--paa-surface, #161b22);
+  border: 0.0625rem solid var(--paa-border);
+  border-top: 0.1875rem solid var(--paa-accent); 
+  padding: 1.15rem 1.35rem;
+  border-radius: var(--paa-radius-lg);
+  box-shadow: 0 1.5rem 3.5rem rgba(0, 0, 0, 0.6);
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 400ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.paa-journey-card__popup-header { display: flex; flex-direction: column; gap: 0.1rem; }
+.paa-journey-card__popup-step { font-family: monospace; font-size: 0.65rem; font-weight: 700; color: var(--paa-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+.paa-journey-card__popup-summary { font-size: 0.75rem; font-weight: 800; color: var(--paa-text); text-transform: uppercase; letter-spacing: 0.04em; }
+.paa-journey-card__popup-detail { margin: 0; font-size: 0.85rem; color: var(--paa-muted); line-height: 1.5; }
+
+.paa-journey-card__popup-arrow-pointer {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 0.5rem solid transparent;
+  border-right: 0.5rem solid transparent;
+  border-top: 0.5rem solid var(--paa-border);
+}
+
+.paa-journey-card__popup-arrow-pointer::after {
+  content: ''; position: absolute; top: -0.5625rem; left: -0.5rem; width: 0; height: 0;
+  border-left: 0.5rem solid transparent; border-right: 0.5rem solid transparent; border-top: 0.5rem solid var(--paa-surface, #161b22);
+}
+
+/* ==========================================================================
+   ⚡========= HOVER & SELECTION MODIFIERS (DESKTOP) =========
+   ========================================================================== */
+.paa-journey-card:hover .paa-journey-card__inner-box,
+.paa-journey-card.is-active .paa-journey-card__inner-box {
+  background: var(--paa-surface-dark, #0d1117); 
+  border-color: var(--paa-accent);
+  transform: translateY(-0.25rem);
+  box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.5), 0 0 0 0.0625rem var(--paa-accent);
+}
+
+.paa-journey-card:hover .paa-journey-card__title,
+.paa-journey-card.is-active .paa-journey-card__title { color: var(--paa-accent); }
+.paa-journey-card:hover .paa-journey-card__badge,
+.paa-journey-card.is-active .paa-journey-card__badge { color: var(--paa-text, #ffffff); }
+.paa-journey-card:hover .paa-journey-card__node-icon,
+.paa-journey-card.is-active .paa-journey-card__node-icon { color: var(--paa-accent); transform: scale(1.1); }
+
+.paa-journey-card:hover .paa-journey-card__speech-bubble-popup,
+.paa-journey-card.is-active .paa-journey-card__speech-bubble-popup {
+  opacity: 1; pointer-events: auto; transform: translateX(-50%) translateY(0) scale(1);
+}
+
+/* ==========================================================================
+   📱 🛠️========= THEATRICAL HORIZONTAL SLIDER ENGINE (MOBILE FIXED) =========
+   ========================================================================== */
+@media (max-width: 64rem) {
+  .paa-process-journey__container {
+    width: 100%;
+    padding: 0 1.5rem;
+    gap: 3rem;
+  }
+
+  .paa-process-journey__header {
+    align-items: flex-start;
+    text-align: left;
+    margin-inline: 0;
+    padding: 0;
+  }
+
+  /* 🛠️ CARD VIEWPORT: Perfectly proportions exactly ONE card dimension frame at a time */
+  .paa-process-journey__arena {
+    max-width: 22.5rem;
+    margin-inline: auto;
+    min-height: 20rem; /* Secure space bounds containing entire text packages smoothly */
+    width: 100%;
+  }
+
+  .paa-process-journey__vector-svg {
+    display: none; /* Strip desktop lines */
+  }
+
+  /* Structural staging track system */
+  .paa-process-journey__track-grid {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* 🛠️ THEATRE ALIGNMENTS: Stack all elements directly on top of each other */
+  .paa-journey-card {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: auto;
+    margin: 0 !important; /* Discard desktop wave row offsets */
+    
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(100%) scale(0.96);
+    transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1), opacity 450ms ease;
+  }
+
+  /* 🛠️ SHIFT METRICS: Moves old items out left, brings active choices center stage */
+  .paa-journey-card.is-prev-deck-card {
+    transform: translateX(-100%) scale(0.96);
+    opacity: 0;
+  }
+
+  .paa-journey-card.is-active-deck-card {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 10;
+  }
+
+  .paa-journey-card.is-next-deck-card {
+    transform: translateX(100%) scale(0.96);
+    opacity: 0;
+  }
+
+  /* 🛠️ ALL-IN-ONE CARD RECONSTRUCTION: Massive beautiful single card shell */
+  .paa-journey-card__inner-box {
+    max-width: 100%;
+    background: var(--paa-surface-dark, #0d1117);
+    border: 0.0625rem solid var(--paa-accent); /* Golden frame border anchor */
+    padding: 1.75rem;
+    gap: 1rem;
+    box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.5);
+  }
+
+  .paa-journey-card__badge {
+    color: var(--paa-accent);
+    font-weight: 800;
+    letter-spacing: 0.1em;
+  }
+
+  .paa-journey-card__node-icon {
+    color: var(--paa-accent);
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .paa-journey-card__title {
+    font-size: 1.25rem;
+    color: var(--paa-text);
+  }
+
+  /* 🛠️ ACTIVATE INTEGRATED MOBILE TEXT LAYOUTS IN-FRAME */
+  .paa-journey-card__mobile-content-package {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border-top: 0.0625rem solid var(--paa-border);
+    padding-top: 1rem;
+    margin-top: 0.25rem;
+  }
+
+  .paa-journey-card__mobile-summary {
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--paa-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .paa-journey-card__mobile-detail {
+    margin: 0;
+    font-size: 0.88rem;
+    line-height: 1.55;
+    color: var(--paa-muted);
+  }
+
+  /* Deactivates desktop absolute overlays entirely */
+  .paa-journey-card__speech-bubble-popup {
+    display: none !important;
+  }
+}

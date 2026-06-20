@@ -1,17 +1,41 @@
 .paa-hero {
   position: relative;
   width: 100%;
-  /* 3. Hero starts from very top, covering full visible screen height */
   height: 100vh;
   height: 100svh;
   overflow: hidden;
   display: flex;
   align-items: center;
+  background-color: #000000; /* Solid canvas backdrop foundation */
 }
 
-.paa-hero__media {
+/* ==========================================================================
+   🎬 PREMIUM SMOOTH TRANSITION STACK LAYER SYSTEM
+   ========================================================================== */
+.paa-hero__media-stack {
   position: absolute;
   inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.paa-hero__media-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 1;
+  /* Premium 800ms architectural hardware accelerated cross-fade transform */
+  transition: opacity 800ms cubic-bezier(0.25, 1, 0.5, 1);
+  pointer-events: none;
+}
+
+.paa-hero__media-layer.is-active {
+  opacity: 1;
+  z-index: 2;
+  pointer-events: auto;
 }
 
 .paa-hero__asset {
@@ -24,161 +48,204 @@
 .paa-hero__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    115deg,
-    rgb(0 0 0 / 75%) 0%,
-    rgb(0 0 0 / 58%) 35%,
-    rgb(0 0 0 / 38%) 65%,
-    rgb(0 0 0 / 20%) 100
+  background: radial-gradient(
+    circle at 15% 75%, 
+    rgba(6, 9, 17, 0.45) 0%, 
+    transparent 60%
   );
+  z-index: 3;
+  pointer-events: none;
 }
 
-/* 2. Reduced Card Size & Adjusted Interior Typography Proportions */
+/* ==========================================================================
+   🏛️ CONTENT DISPLAY CARD MODULARS
+   ========================================================================== */
 .paa-hero__content-card {
   position: relative;
-  z-index: 3;
-  /* Reduced max-width down from 42rem to a tight, sophisticated 32rem */
-  width: min(32rem, 90vw);
-  margin-left: clamp(1.5rem, 6vw, 6rem);
-  padding: clamp(1.25rem, 2.5vw, 1.75rem);
+  z-index: 4;
+  width: min(34rem, 90vw);
+  margin-left: clamp(2rem, 8vw, 8rem);
+  padding: clamp(1.5rem, 3vw, 2.25rem);
   display: flex;
   flex-direction: column;
-  gap: 0.85rem; /* Tighter padding density layout */
-  border: 0.0625rem solid rgb(255 255 255 / 12%);
+  gap: 1rem;
+  
+  border: 0.0625rem solid rgba(255, 255, 255, 0.1);
   border-radius: 1.25rem;
-  background: rgb(255 255 255 / 6%);
-  backdrop-filter: blur(1.5rem);
-  box-shadow: 0 1rem 3rem rgb(0 0 0 / 30%);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(2rem);
+  -webkit-backdrop-filter: blur(2rem);
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+  
+  /* Micro slide entry animation when component states swap */
+  animation: paaHeroCardFadeIn 600ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes paaHeroCardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(0.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .paa-hero__subtitle {
   margin: 0;
   color: var(--paa-accent, #FFC107);
-  font-size: clamp(0.75rem, 0.9vw, 0.85rem); /* Proportional scaling reduction */
+  font-size: clamp(0.75rem, 0.9vw, 0.85rem);
   font-weight: 700;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.25em;
   text-transform: uppercase;
 }
 
 .paa-hero__title {
   margin: 0;
   color: white;
-  /* Scaled down max-size from 5rem to a crisp 3.4rem for visual balance */
-  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-size: clamp(2.25rem, 4.5vw, 3.5rem);
   font-weight: 700;
-  line-height: 1.1;
+  line-height: 1.15;
   text-wrap: balance;
+  letter-spacing: -0.01em;
+  text-shadow: 0 0.125rem 0.75rem rgba(0, 0, 0, 0.25);
 }
 
 .paa-hero__description {
   margin: 0;
-  color: rgb(255 255 255 / 85%);
-  font-size: clamp(0.9rem, 1.1vw, 1rem); /* Downscaled body text */
-  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.95);
+  font-size: clamp(0.9rem, 1.1vw, 1.05rem);
+  line-height: 1.65;
+  text-shadow: 0 0.0625rem 0.5rem rgba(0, 0, 0, 0.2);
 }
 
-.paa-hero__cta {
-  margin-top: 0.5rem;
+.paa-hero__cta-wrapper {
+  margin-top: 0.75rem;
+  display: block;
   width: fit-content;
 }
 
-/* 1. Control Buttons Customization */
-.paa-hero__controls {
+/* ==========================================================================
+   🕹️ CONSOLIDATED CONTROL DASHBOARD PLATFORM
+   ========================================================================== */
+.paa-hero__controls-wrapper {
   position: absolute;
-  right: clamp(1.5rem, 4vw, 4rem);
-  bottom: clamp(4rem, 6vw, 6rem);
-  z-index: 4;
+  right: clamp(2rem, 8vw, 8rem);
+  bottom: clamp(3rem, 5vw, 5rem);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1.25rem;
+}
+
+.paa-hero__controls {
   display: flex;
   gap: 0.75rem;
 }
 
 .paa-hero__controls button {
-  /* Fluid scaling system parameters for the outer button box */
-  width: clamp(2.2rem, 4.5vw, 3.2rem);
-  height: clamp(2.2rem, 4.5vw, 3.2rem);
-  
+  width: clamp(2.5rem, 4vw, 3.2rem);
+  height: clamp(2.5rem, 4vw, 3.2rem);
   display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: 0;
-  margin: 0;
   
-  /* Amber border application and clear styles */
-  border: 0.1rem solid var(--paa-accent, #FFC107);
+  border: 0.0625rem solid rgba(255, 255, 255, 0.2);
   border-radius: 50%;
-  background: rgb(255 255 255 / 8%);
+  background: rgba(255, 255, 255, 0.06);
   color: white;
   backdrop-filter: blur(1rem);
+  -webkit-backdrop-filter: blur(1rem);
   cursor: pointer;
-  transition: all 220ms ease;
+  transition: all 300ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Fluid inner SVG icon scaling based on device viewport */
 .paa-hero__controls button svg {
-  width: clamp(1rem, 2vw, 1.4rem);
-  height: clamp(1rem, 2vw, 1.4rem);
-  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .paa-hero__controls button:hover {
-  background: var(--paa-accent, #FFC107);
-  color: #000000; /* Crisp dark contrast for access indicators */
-  transform: translateY(-0.125rem);
+  border-color: var(--paa-accent);
+  background: var(--paa-accent);
+  color: #060911;
+  transform: scale(1.05);
 }
 
 .paa-hero__indicators {
-  position: absolute;
-  left: 50%;
-  bottom: 2rem;
-  transform: translateX(-50%);
-  z-index: 4;
   display: flex;
-  gap: 0.75rem;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 1rem;
 }
 
 .paa-hero__indicators button {
-  width: 0.75rem;
-  height: 0.75rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  padding: 0;
   border: 0;
-  border-radius: 999rem;
-  background: rgb(255 255 255 / 40%);
+  border-radius: 99rem;
+  background: rgba(255, 255, 255, 0.25);
   cursor: pointer;
-  transition: width 220ms ease, background-color 220ms ease;
+  transition: width 350ms cubic-bezier(0.16, 1, 0.3, 1), background-color 350ms ease;
 }
 
 .paa-hero__indicators button.is-active {
-  width: 2.5rem;
+  width: 1.75rem;
   background: var(--paa-accent, #FFC107);
 }
 
-@media (max-width: 64rem) {
+/* ==========================================================================
+   📱 ADAPTIVE RESPONSIVE RESPONSIVENESS OVERRIDES
+   ========================================================================== */
+
+/* TABLET VIEWPORT ADJUSTMENTS */
+@media (max-width: 68rem) {
   .paa-hero__content-card {
-    width: min(28rem, 88vw);
-    margin-left: 2rem;
+    width: min(30rem, 85vw);
+    margin-left: 3rem;
+  }
+  .paa-hero__controls-wrapper {
+    right: 3rem;
   }
 }
 
+/* SMARTPHONE MOBILE BREAKPOINTS */
 @media (max-width: 48rem) {
   .paa-hero {
     align-items: flex-end;
-    padding-bottom: 6rem;
+    padding-bottom: 7.5rem; /* Leaves elegant space tracking clear loops */
   }
 
   .paa-hero__content-card {
-    width: calc(100% - 2.5rem);
-    margin-inline: 1.25rem;
-    padding: 1.25rem;
+    width: calc(100% - 2rem);
+    margin-inline: 1rem;
+    padding: 1.5rem 1.25rem;
+    gap: 0.75rem;
   }
 
-  .paa-hero__controls {
-    right: 1.25rem;
+  /* 🛠️ THUMB ZONE CONTROL CLUSTER FIX: Concentrates controls on bottom right corner */
+  .paa-hero__controls-wrapper {
+    position: absolute;
+    right: 1rem;
     bottom: 1.5rem;
+    left: auto;
+    flex-direction: row-reverse; /* Flips indicators to line up neatly next to keys */
+    align-items: center;
+    gap: 1rem;
+    width: auto;
   }
 
   .paa-hero__indicators {
-    left: 1.25rem;
-    right: auto;
-    bottom: 2rem;
-    transform: none;
+    min-height: auto;
+  }
+
+  .paa-hero__controls button {
+    width: 2.75rem;
+    height: 2.75rem;
   }
 }
