@@ -1,0 +1,44 @@
+{
+  "company": {
+    "eyebrow": "The Firm",
+    "title": "Architectural Authority Built on Integrity",
+    "description": "Prerana Architects & Associates bridges sophisticated contemporary design aesthetics with rigorous engineering execution. We operate with absolute transparency, eliminating the traditional friction points between complex local bylaws, material sourcing, and site delivery.",
+    "metrics": [
+      {
+        "value": "End-to-End",
+        "label": "Turnkey Autonomy",
+        "subtext": "From architectural conceptualization and engineering down to interior fit-outs under a single roof."
+      },
+      {
+        "value": "Fixed BOQ",
+        "label": "Absolute Cost Control",
+        "subtext": "A comprehensive Bill of Quantities ensuring fixed pricing structures with zero hidden operational markups."
+      },
+      {
+        "value": "Tech-Driven",
+        "label": "Real-Time Tracking",
+        "subtext": "Complete transparent visibility over daily material logs, site milestones, and engineering schedules."
+      }
+    ]
+  },
+  "team": [
+    {
+      "name": "Prerana Raveendra",
+      "designation": "Founder & Principal Architect",
+      "bio": "Guiding the firm’s spatial design language, Prerana pairs site-responsive master planning with meticulous material alchemy to deliver premium, hyper-customized residential and commercial structures.",
+      "imagePath": "/prerana-r.jpg",
+      "imageAlt": "Prerana Raveendra, Founder and Principal Architect portrait snapshot"
+    },
+    {
+      "name": "Prerana Chethan",
+      "designation": "Founder & Principal Architect",
+      "bio": "Guiding the firm’s spatial design language, Prerana pairs site-responsive master planning with meticulous material alchemy to deliver premium, hyper-customized residential and commercial structures.",
+      "imagePath": "/prerana-r.jpg",
+      "imageAlt": "Prerana Raveendra, Founder and Principal Architect portrait snapshot"
+    }
+  ],
+  "globalCta": {
+    "label": "Explore Our Full Story",
+    "path": "/about"
+  }
+}

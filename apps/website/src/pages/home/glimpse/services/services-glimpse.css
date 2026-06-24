@@ -22,7 +22,7 @@
 .paa-services-glimpse__header {
   display: flex;
   flex-direction: column;
-  align-items: center;  
+  align-items: center;
   text-align: center;
   width: 100%;
   max-width: 44rem;
@@ -55,9 +55,9 @@
   line-height: 1.65;
   margin: 0;
   width: 100%;
-  max-height: 7.5rem; 
-  overflow-y: auto;   
-  padding-right: 0.5rem; 
+  max-height: 7.5rem;
+  overflow-y: auto;
+  padding-right: 0.5rem;
   scrollbar-width: thin;
   scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
 }
@@ -130,7 +130,9 @@
   color: var(--paa-muted);
   flex-shrink: 0;
   margin-top: -0.1rem;
-  transition: color 350ms ease, transform 450ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition:
+    color 350ms ease,
+    transform 450ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .paa-services-runway-node__text-stack {
@@ -145,7 +147,9 @@
   font-weight: 600;
   color: color-mix(in srgb, var(--paa-text) 75%, transparent);
   line-height: 1.2;
-  transition: color 300ms ease, transform 400ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition:
+    color 300ms ease,
+    transform 400ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .paa-services-runway-node__toggle-icon {
@@ -306,24 +310,26 @@
   }
 
   .paa-services-glimpse__header {
-    align-items: flex-start; 
-    text-align: left;
-    margin-inline: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
   }
 
   .paa-services-glimpse__description {
     max-height: 6rem;
     padding-right: 0.25rem;
   }
-  
+
   .paa-services-runway-node {
     padding: 1.25rem 0.5rem;
   }
-  
+
   .paa-services-runway-node__grid-frame {
     gap: 1.25rem;
   }
-  
+
   .paa-services-runway-node__core-body {
     gap: 1rem;
   }

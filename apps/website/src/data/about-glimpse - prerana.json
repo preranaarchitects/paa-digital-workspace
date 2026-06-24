@@ -1,0 +1,31 @@
+[
+  {
+    "name": "Prerana Raveendra",
+    "designation": "Founder & Principal Architect",
+    "title": "Architectural Authority Built on Integrity",
+    "description": "Prerana Architects & Associates bridges sophisticated contemporary design aesthetics with rigorous engineering execution. We operate with absolute transparency, eliminating the traditional friction points between complex local bylaws, material sourcing, and site delivery.",
+    "imagePath": "/prerana-r.jpg",
+    "imageAlt": "Founder and Principal Architect portrait",
+    "cta": {
+      "label": "Our Full Story",
+      "path": "/about"
+    },
+    "metrics": [
+      {
+        "value": "End-to-End",
+        "label": "Turnkey Autonomy",
+        "subtext": "From architectural conceptualization and engineering down to interior fit-outs under a single roof."
+      },
+      {
+        "value": "Fixed BOQ",
+        "label": "Absolute Cost Control",
+        "subtext": "A comprehensive Bill of Quantities ensuring fixed pricing structures with zero hidden operational markups."
+      },
+      {
+        "value": "Tech-Driven",
+        "label": "Real-Time Tracking",
+        "subtext": "Complete transparent visibility over daily material logs, site milestones, and engineering schedules."
+      }
+    ]
+  }
+]

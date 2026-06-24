@@ -1,4 +1,3 @@
-
 .paa-process-journey {
   width: 100%;
   background: var(--paa-bg);
@@ -14,7 +13,7 @@
   margin-inline: auto;
   display: flex;
   flex-direction: column;
-  gap: 8rem; 
+  gap: 8rem;
 }
 
 /* ==========================================================================
@@ -23,7 +22,7 @@
 .paa-process-journey__header {
   display: flex;
   flex-direction: column;
-  align-items: center;  
+  align-items: center;
   text-align: center;
   width: 100%;
   max-width: 44rem;
@@ -106,8 +105,12 @@
   transition: all 400ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.paa-journey-card.is-top-wave { margin-top: 2rem; }
-.paa-journey-card.is-bottom-wave { margin-top: 14rem; }
+.paa-journey-card.is-top-wave {
+  margin-top: 2rem;
+}
+.paa-journey-card.is-bottom-wave {
+  margin-top: 14rem;
+}
 
 /* ==========================================================================
    🧱========= HIGH-CONTRAST DARK CARDS (DESKTOP DEFAULT) =========
@@ -115,7 +118,7 @@
 .paa-journey-card__inner-box {
   width: 100%;
   max-width: 14rem;
-  background: var(--paa-surface-dark, #0d1117); 
+  background: var(--paa-surface-dark, #0d1117);
   border: 0.0625rem solid var(--paa-border);
   padding: 1.35rem;
   border-radius: var(--paa-radius-lg);
@@ -145,7 +148,9 @@
   width: 1.25rem;
   height: 1.25rem;
   color: var(--paa-muted);
-  transition: color 350ms ease, transform 450ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition:
+    color 350ms ease,
+    transform 450ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .paa-journey-card__title {
@@ -173,7 +178,7 @@
   width: 17.5rem;
   background: var(--paa-surface, #161b22);
   border: 0.0625rem solid var(--paa-border);
-  border-top: 0.1875rem solid var(--paa-accent); 
+  border-top: 0.1875rem solid var(--paa-accent);
   padding: 1.15rem 1.35rem;
   border-radius: var(--paa-radius-lg);
   box-shadow: 0 1.5rem 3.5rem rgba(0, 0, 0, 0.6);
@@ -186,10 +191,32 @@
   transition: all 400ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.paa-journey-card__popup-header { display: flex; flex-direction: column; gap: 0.1rem; }
-.paa-journey-card__popup-step { font-family: monospace; font-size: 0.65rem; font-weight: 700; color: var(--paa-muted); text-transform: uppercase; letter-spacing: 0.05em; }
-.paa-journey-card__popup-summary { font-size: 0.75rem; font-weight: 800; color: var(--paa-text); text-transform: uppercase; letter-spacing: 0.04em; }
-.paa-journey-card__popup-detail { margin: 0; font-size: 0.85rem; color: var(--paa-muted); line-height: 1.5; }
+.paa-journey-card__popup-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+.paa-journey-card__popup-step {
+  font-family: monospace;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--paa-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.paa-journey-card__popup-summary {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--paa-text);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.paa-journey-card__popup-detail {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--paa-muted);
+  line-height: 1.5;
+}
 
 .paa-journey-card__popup-arrow-pointer {
   position: absolute;
@@ -204,8 +231,15 @@
 }
 
 .paa-journey-card__popup-arrow-pointer::after {
-  content: ''; position: absolute; top: -0.5625rem; left: -0.5rem; width: 0; height: 0;
-  border-left: 0.5rem solid transparent; border-right: 0.5rem solid transparent; border-top: 0.5rem solid var(--paa-surface, #161b22);
+  content: "";
+  position: absolute;
+  top: -0.5625rem;
+  left: -0.5rem;
+  width: 0;
+  height: 0;
+  border-left: 0.5rem solid transparent;
+  border-right: 0.5rem solid transparent;
+  border-top: 0.5rem solid var(--paa-surface, #161b22);
 }
 
 /* ==========================================================================
@@ -213,22 +247,33 @@
    ========================================================================== */
 .paa-journey-card:hover .paa-journey-card__inner-box,
 .paa-journey-card.is-active .paa-journey-card__inner-box {
-  background: var(--paa-surface-dark, #0d1117); 
+  background: var(--paa-surface-dark, #0d1117);
   border-color: var(--paa-accent);
   transform: translateY(-0.25rem);
-  box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.5), 0 0 0 0.0625rem var(--paa-accent);
+  box-shadow:
+    0 1.25rem 2.5rem rgba(0, 0, 0, 0.5),
+    0 0 0 0.0625rem var(--paa-accent);
 }
 
 .paa-journey-card:hover .paa-journey-card__title,
-.paa-journey-card.is-active .paa-journey-card__title { color: var(--paa-accent); }
+.paa-journey-card.is-active .paa-journey-card__title {
+  color: var(--paa-accent);
+}
 .paa-journey-card:hover .paa-journey-card__badge,
-.paa-journey-card.is-active .paa-journey-card__badge { color: var(--paa-text, #ffffff); }
+.paa-journey-card.is-active .paa-journey-card__badge {
+  color: var(--paa-text, #ffffff);
+}
 .paa-journey-card:hover .paa-journey-card__node-icon,
-.paa-journey-card.is-active .paa-journey-card__node-icon { color: var(--paa-accent); transform: scale(1.1); }
+.paa-journey-card.is-active .paa-journey-card__node-icon {
+  color: var(--paa-accent);
+  transform: scale(1.1);
+}
 
 .paa-journey-card:hover .paa-journey-card__speech-bubble-popup,
 .paa-journey-card.is-active .paa-journey-card__speech-bubble-popup {
-  opacity: 1; pointer-events: auto; transform: translateX(-50%) translateY(0) scale(1);
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0) scale(1);
 }
 
 /* ==========================================================================
@@ -242,10 +287,11 @@
   }
 
   .paa-process-journey__header {
-    align-items: flex-start;
-    text-align: left;
-    margin-inline: 0;
-    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
   }
 
   /* 🛠️ CARD VIEWPORT: Perfectly proportions exactly ONE card dimension frame at a time */
@@ -275,11 +321,13 @@
     width: 100%;
     height: auto;
     margin: 0 !important; /* Discard desktop wave row offsets */
-    
+
     opacity: 0;
     pointer-events: none;
     transform: translateX(100%) scale(0.96);
-    transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1), opacity 450ms ease;
+    transition:
+      transform 500ms cubic-bezier(0.16, 1, 0.3, 1),
+      opacity 450ms ease;
   }
 
   /* 🛠️ SHIFT METRICS: Moves old items out left, brings active choices center stage */
