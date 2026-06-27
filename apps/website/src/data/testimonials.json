@@ -1,0 +1,28 @@
+{
+  "eyebrow": "Verified Trust",
+  "title": "What Our Partners Say About Our Standards",
+  "description": "True architectural success isn't just drawn—it's delivered. Read how our absolute budget transparency and structural authority translate into high-end real estate realities across verified networks.",
+  "reviews": [
+    {
+      "platform": "Google Review",
+      "ratingText": "5.0 Star Rating",
+      "quote": "Prerana Architects completely eliminated structural anxiety. Their fixed BOQ structure meant we paid exactly what was quoted on day one.",
+      "author": "Anand K. Rao",
+      "designation": "Owner, 4BHK Contemporary Villa, Whitefield"
+    },
+    {
+      "platform": "Houzz Certified",
+      "ratingText": "Top Tier Design",
+      "quote": "Navigating complex local zoning clearances and building bylaws was handled with absolute legal precision by their corporate team.",
+      "author": "Meera Vasudevan",
+      "designation": "Director, NextGen Workspace, Indiranagar"
+    },
+    {
+      "platform": "Google Review",
+      "ratingText": "5.0 Star Rating",
+      "quote": "Their turnkey autonomy is unmatched. They handled everything from structural engineering to micro interior fit-outs under one roof.",
+      "author": "Rajesh Nair",
+      "designation": "Owner, Luxury Minimalist Duplex, HSR Layout"
+    }
+  ]
+}

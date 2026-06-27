@@ -1,0 +1,24 @@
+{
+  "firmName": "Prerana Architects & Associates",
+  "tagline": "Delivering architectural realities across Bangalore with absolute budget transparency, structural integrity, and fixed turnkey execution autonomy.",
+  "coaRegistration": "COA Verified Practice",
+  "navigationTitle": "Explore Studio",
+  "navigationLinks": [
+    { "label": "Home", "url": "/" },
+    { "label": "About Us", "url": "/about" },
+    { "label": "Portfolio", "url": "/portfolio" },
+    { "label": "Contact Us", "url": "/contact" }
+  ],
+  "servicesTitle": "Our Services",
+  "servicesLinks": [
+    { "label": "Residential Architecture", "url": "/services/residential" },
+    { "label": "Commercial Core & Shell", "url": "/services/commercial" },
+    { "label": "Turnkey Interior Fit-outs", "url": "/services/turnkey" }
+  ],
+  "operationalTitle": "Studio Hours",
+  "operationalHours": [
+    { "days": "Monday – Saturday", "time": "9:30 AM – 6:30 PM" },
+    { "days": "Sunday", "time": "By Appointment Only" }
+  ],
+  "copyrightText": "Prerana Architects & Associates. All Rights Reserved."
+}

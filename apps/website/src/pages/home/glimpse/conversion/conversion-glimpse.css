@@ -1,0 +1,207 @@
+.paa-conversion-glimpse {
+  width: 100%;
+  background: var(--paa-bg);
+  color: var(--paa-text);
+  padding: clamp(4rem, 8vw, 7rem) 0;
+  box-sizing: border-box;
+}
+
+.paa-conversion-glimpse__container {
+  width: var(--paa-container);
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+/* ==========================================================================
+   🏛========= TOP SECTION: BRAND HEADER & TAB HOOKS =========
+   ========================================================================== */
+.paa-conversion-glimpse__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 46rem;
+  margin-inline: auto;
+  width: 100%;
+}
+
+.paa-conversion-glimpse__eyebrow {
+  font-size: var(--paa-text-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--paa-accent);
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+  line-height: 1;
+}
+
+.paa-conversion-glimpse__title {
+  font-size: clamp(2.25rem, 3.6vw, 2.75rem);
+  font-weight: 700;
+  color: var(--paa-text);
+  line-height: 1.25;
+  margin: 0 0 1rem 0;
+  letter-spacing: -0.02em;
+}
+
+.paa-conversion-glimpse__desc {
+  font-size: var(--paa-text-base);
+  color: var(--paa-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Tab Switcher: Completely hidden by default on desktop/laptop grids */
+.paa-conversion-tabs {
+  display: none;
+}
+
+/* ==========================================================================
+   🖼========= THE DESKTOP INTEGRATED SIDE-BY-SIDE PANELS =========
+   ========================================================================== */
+.paa-conversion-glimpse__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: stretch;
+  width: 100%;
+}
+
+/* INFO CORE HOUSING PROFILE CARD */
+.paa-conversion-glimpse__card {
+  background: var(--paa-surface-dark, #0d1117);
+  border: 0.0625rem solid var(--paa-border);
+  border-radius: var(--paa-radius-lg);
+  padding: 3rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  justify-content: center;
+  box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.15);
+}
+
+.paa-info-row { display: flex; align-items: flex-start; gap: 1.5rem; text-align: left; }
+
+.paa-info-row__icon-circle {
+  width: 3.25rem; height: 3.25rem; border-radius: 50%;
+  background: color-mix(in srgb, var(--paa-bg) 60%, transparent);
+  border: 0.0625rem solid var(--paa-border); color: var(--paa-accent);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+
+.paa-info-row__text-block { display: flex; flex-direction: column; }
+.paa-info-row__label { font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.15em; color: var(--paa-muted); margin-bottom: 0.4rem; }
+.paa-info-row__heading { font-size: 1.2rem; font-weight: 700; color: var(--paa-text); margin-bottom: 0.35rem; }
+.paa-info-row__text, .paa-info-row__text-highlight { font-size: 1.05rem; color: color-mix(in srgb, var(--paa-text) 90%, transparent); line-height: 1.5; font-weight: 500; }
+
+/* SOCIAL CONTAINER BADGES BUTTONS */
+.paa-social-footer-dock { display: flex; flex-direction: column; align-items: flex-start; gap: 0.85rem; border-top: 0.0625rem solid var(--paa-border); padding-top: 2rem; }
+.paa-social-footer-dock__title { font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.15em; color: var(--paa-muted); }
+.paa-social-footer-dock__row { display: flex; gap: 1rem; }
+
+.paa-social-circle-link {
+  width: 3.25rem; height: 3.25rem; border-radius: 50%; background: var(--paa-bg); border: 0.125rem solid var(--paa-border);
+  color: var(--paa-muted); display: flex; align-items: center; justify-content: center; transition: all 350ms cubic-bezier(0.16, 1, 0.3, 1); text-decoration: none;
+}
+.paa-social-circle-link svg { display: block; flex-shrink: 0; }
+
+.paa-social-circle-link--linkedin:hover { background: #0077b5; color: #ffffff; border-color: #0077b5; box-shadow: 0 6px 16px rgba(0, 119, 181, 0.3); }
+.paa-social-circle-link--instagram:hover { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); color: #ffffff; border-color: transparent; box-shadow: 0 6px 16px rgba(214, 36, 159, 0.3); }
+.paa-social-circle-link--facebook:hover { background: #1877f2; color: #ffffff; border-color: #1877f2; box-shadow: 0 6px 16px rgba(24, 119, 242, 0.3); }
+.paa-social-circle-link:hover { transform: translateY(-3px); }
+
+/* RAW DYNAMIC GOOGLE MAP FRAME SYSTEM */
+.paa-conversion-glimpse__map-wrapper {
+  width: 100%;
+  min-height: 28rem;
+  border-radius: var(--paa-radius-lg);
+  overflow: hidden;
+  border: 0.0625rem solid var(--paa-border);
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
+}
+.paa-conversion-glimpse__map-iframe { width: 100%; height: 100%; border: none; display: block; }
+
+/* ==========================================================================
+   📱 ========= CRUSH ENDLESS VERTICAL SCROLL FATIGUE: MOBILE SHIELD =========
+   ========================================================================== */
+@media (max-width: 64rem) {
+  .paa-conversion-glimpse {
+    padding: 3rem 0;
+  }
+
+  .paa-conversion-glimpse__container {
+    width: 100%;
+    padding: 0 1.25rem;
+    gap: 1.75rem;
+  }
+
+  /* Reveal and style the clean horizontal button switcher bar */
+  .paa-conversion-tabs {
+    display: flex;
+    background: #0d1117;
+    border: 0.0625rem solid var(--paa-border);
+    padding: 0.25rem;
+    border-radius: 32px;
+    margin-top: 1.25rem;
+    width: 100%;
+    max-width: 22rem;
+  }
+
+.paa-conversion-tab-btn {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--paa-muted);
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.75rem;
+  border-radius: 24px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 250ms ease;
+}
+
+  .paa-conversion-tab-btn.is-active {
+   background: color-mix(in srgb, var(--paa-accent) 15%, transparent);
+  color: var(--paa-accent);
+  border: 0.0625rem solid color-mix(in srgb, var(--paa-accent) 30%, transparent);
+  }
+
+  /* Collapse the multi-column grid into an absolute single-view switch space */
+  .paa-conversion-glimpse__grid {
+    grid-template-columns: 1fr;
+    position: relative;
+    width: 100%;
+  }
+
+  /* FORCES IN-PLACE HUD SWAPPING ENFORCEMENT: Completely prevents layout stretching */
+  .tab-hidden {
+    display: none !important;
+  }
+
+  .tab-visible {
+    display: flex !important;
+    animation: paaGlimpseFade 350ms ease-out forwards;
+  }
+
+  .paa-conversion-glimpse__card {
+    padding: 2rem 1.5rem;
+    gap: 1.75rem;
+    width: 100%;
+  }
+
+  .paa-conversion-glimpse__map-wrapper {
+    height: 22rem;
+    min-height: 22rem;
+    width: 100%;
+  }
+}
+
+@keyframes paaGlimpseFade {
+  from { opacity: 0; transform: scale(0.99) translateY(4px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}

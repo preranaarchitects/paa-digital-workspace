@@ -4,6 +4,9 @@ import { ProjectsGlimpse } from "./glimpse/projects";
 import { ServicesGlimpse } from "./glimpse/services";
 import { ProcessGlimpse } from "./glimpse/process";
 import { AboutGlimpse } from "./glimpse/about";
+import { TestimonialsGlimpse } from "./glimpse/testimonials";
+import { ConversionGlimpse } from "./glimpse/conversion";
+import { FooterGlimpse } from './glimpse/footer'
 
 import branding from "../../../../../packages/ui/src/data/branding.json";
 import heroData from "../../data/hero.json";
@@ -42,6 +45,16 @@ export function HomePage() {
       <AboutGlimpse />
 
       <div className="paa-margin-buffer" aria-hidden="true" />
+
+      <TestimonialsGlimpse />
+
+      <div className="paa-margin-buffer" aria-hidden="true" />
+
+      <ConversionGlimpse />
+
+      <div className="paa-margin-buffer" aria-hidden="true" />
+
+      <FooterGlimpse />
     </main>
   );
 }
