@@ -1,15 +1,16 @@
 import "./button.css";
 import type { ButtonHTMLAttributes, ReactNode } from "react";
+import { ArrowUpRight, ArrowRight } from "lucide-react";
 import { cn } from "../../utils/cn";
 
-type ButtonVariant = "primary" | "client" | "explore" | "ghost";
+type ButtonVariant = "primary" | "client" | "explore" | "explore-all" | "ghost";
 type ButtonSize = "sm" | "md" | "lg";
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
   variant?: ButtonVariant;
   size?: ButtonSize;
-  icon?: ReactNode; // Supports prefix icon configuration natively
+  icon?: ReactNode;
 }
 
 export function Button({
@@ -20,25 +21,42 @@ export function Button({
   icon,
   ...props
 }: ButtonProps) {
+  const isExplore = variant === "explore";
+  const isExploreAll = variant === "explore-all";
+
   return (
     <button
       className={cn(
         "paa-btn",
         `paa-btn--${variant}`,
         `paa-btn--${size}`,
-        icon ? "paa-btn--has-icon" : "",
+        icon && !isExplore && !isExploreAll ? "paa-btn--has-icon" : "",
         className,
       )}
       {...props}
     >
-      {/* Dynamic Background Sliding Overlay Layer */}
-      <span className="paa-btn__bg-layer" aria-hidden="true" />
+      {!isExploreAll && <span className="paa-btn__bg-layer" aria-hidden="true" />}
       
-      {/* Prefix Icon: Positioned before text content node for uniform alignment */}
-      {icon && <span className="paa-btn__icon-slot">{icon}</span>}
+      {icon && !isExplore && !isExploreAll && (
+        <span className="paa-btn__icon-slot">{icon}</span>
+      )}
       
-      {/* Core Text Label Block */}
-      <span className="paa-btn__text">{children}</span>
+      {isExploreAll ? (
+        <div className="paa-btn__explore-all-layout">
+          <div className="paa-btn__explore-all-circle">
+            <ArrowRight strokeWidth={2.5} />
+          </div>
+          <span className="paa-btn__explore-all-text">{children}</span>
+        </div>
+      ) : (
+        <span className="paa-btn__text">{children}</span>
+      )}
+
+      {isExplore && (
+        <span className="paa-btn__explore-circle-frame">
+          <ArrowUpRight strokeWidth={2.5} />
+        </span>
+      )}
     </button>
   );
 }

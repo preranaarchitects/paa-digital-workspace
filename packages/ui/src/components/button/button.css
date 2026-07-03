@@ -1,33 +1,31 @@
-/* ==========================================================================
-   🏛️ BASE ARCHITECTURAL BUTTON STRUCTURAL WRAPPER
-   ========================================================================== */
 .paa-btn {
   position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.55rem; 
+  gap: 0.55rem;
   border: 0.0625rem solid transparent;
   cursor: pointer;
   font-weight: 700;
-  text-transform: uppercase; 
-  letter-spacing: 0.08em;    
-  border-radius: var(--paa-radius-pill, 999rem); 
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border-radius: var(--paa-radius-pill, 999rem);
   outline: none;
-  overflow: hidden; 
+  overflow: hidden;
   z-index: 1;
   box-sizing: border-box;
-  background: transparent; 
-  
+  background: transparent;
+
   transition:
     color 400ms cubic-bezier(0.16, 1, 0.3, 1),
     border-color 400ms cubic-bezier(0.16, 1, 0.3, 1),
-    transform 200ms cubic-bezier(0.16, 1, 0.3, 1),
-    box-shadow 400ms cubic-bezier(0.16, 1, 0.3, 1);
+    transform 300ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 400ms cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 400ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .paa-btn:active:not(:disabled) {
-  transform: scale(0.97) translateY(0) !important;
+  transform: scale(0.96) translateY(0) !important;
 }
 
 .paa-btn:disabled {
@@ -41,7 +39,6 @@
   z-index: 3;
 }
 
-/* Sliding backdrop overlay track engine */
 .paa-btn__bg-layer {
   position: absolute;
   inset: 0;
@@ -53,17 +50,14 @@
   transition: transform 450ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* ==========================================================================
-   📐 STRUCTURAL SIZE SCALE SYSTEMS (ACCESSIBLE REM UNITS)
-   ========================================================================== */
 .paa-btn--sm {
   min-height: 2.35rem;
   padding-inline: 1.25rem;
-  font-size: 0.725rem; 
+  font-size: 0.725rem;
 }
 
 .paa-btn--md {
-  min-height: 3rem; 
+  min-height: 3rem;
   padding-inline: 2rem;
   font-size: 0.8rem;
 }
@@ -74,7 +68,6 @@
   font-size: 0.875rem;
 }
 
-/* Fluid SVG Icon Vector Sizing Engine */
 .paa-btn__icon-slot svg {
   width: 1.15em;
   height: 1.15em;
@@ -82,14 +75,10 @@
   transition: transform 350ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* ==========================================================================
-   🎨 VARIANT ARCHITECTURE STYLES
-   ========================================================================== */
-
-/* PRIMARY: "Get a Quote" Layout */
 .paa-btn--primary {
   border-color: var(--paa-accent);
-  color: var(--paa-bg, #060911); 
+  color: var(--paa-text-inverse);
+  background-color: var(--paa-surface-dark, #0d1117); /* Holds solid structural weight behind the slide */
   box-shadow: 0 0.5rem 1.5rem color-mix(in srgb, var(--paa-accent) 12%, transparent);
 }
 
@@ -100,52 +89,112 @@
 .paa-btn--primary:hover:not(:disabled) {
   color: var(--paa-accent);
   border-color: var(--paa-accent);
-  transform: translateY(-0.1rem);
-  box-shadow: 0 0.75rem 2rem color-mix(in srgb, var(--paa-accent) 30%, transparent);
+  transform: translateY(-0.15rem);
+  box-shadow: 0 0.75rem 2rem color-mix(in srgb, var(--paa-accent) 25%, transparent);
 }
 
 .paa-btn--primary:hover:not(:disabled) .paa-btn__bg-layer {
   transform: scaleX(0);
-  transform-origin: right; 
+  transform-origin: right;
 }
 
-/* CLIENT PROFILE: "Client Login" Layout */
+.paa-btn--primary:hover:not(:disabled) .paa-btn__icon-slot svg {
+  transform: translateX(2px);
+}
+
 .paa-btn--client {
   border-color: var(--paa-border);
   color: var(--paa-text);
+  background-color: transparent;
 }
 
 .paa-btn--client .paa-btn__bg-layer {
-  background: transparent; 
+  background: var(--paa-surface-dark, #0d1117);
+  border: 0.0625rem solid var(--paa-border);
+  border-radius: var(--paa-radius-pill, 999rem);
+  inset: -0.0625rem;
+  transform: scaleX(0);
+  transform-origin: left;
 }
 
 .paa-btn--client:hover:not(:disabled) {
   border-color: var(--paa-accent);
-  color: var(--paa-accent);
-  transform: translateY(-0.1rem);
-  box-shadow: 0 0.5rem 1.5rem color-mix(in srgb, var(--paa-accent) 15%, transparent);
+  color: var(--paa-text);
+  transform: translateY(-0.15rem);
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2);
+}
+
+.paa-btn--client:hover:not(:disabled) .paa-btn__bg-layer {
+  transform: scaleX(1);
+  border-color: var(--paa-accent);
 }
 
 .paa-btn--client:hover:not(:disabled) .paa-btn__icon-slot svg {
-  transform: rotate(-10deg) scale(1.05); /* Soft, interactive macro rotation */
+  transform: rotate(-10deg) scale(1.08);
+  color: var(--paa-accent);
 }
 
-/* EXPLORE TIMELINE: "Explore All Projects / Services" Layout */
 .paa-btn--explore {
-  border-color: var(--paa-border);
-  color: var(--paa-text);
+  border: 0.125rem solid var(--paa-accent);
+  color: var(--paa-accent);
+  background: transparent;
+  letter-spacing: 0.12em;
+}
+
+.paa-btn--explore.paa-btn--md {
+  padding: 0.5rem 0.5rem 0.5rem 1.75rem;
+  min-height: 3.25rem;
+}
+.paa-btn--explore.paa-btn--sm {
+  padding: 0.35rem 0.35rem 0.35rem 1.25rem;
+  min-height: 2.65rem;
+}
+.paa-btn--explore.paa-btn--lg {
+  padding: 0.65rem 0.65rem 0.65rem 2.25rem;
+  min-height: 3.75rem;
 }
 
 .paa-btn--explore .paa-btn__bg-layer {
-  background: var(--paa-surface); 
+  background: var(--paa-accent);
   transform: scaleX(0);
   transform-origin: right;
+  z-index: 1;
+}
+
+.paa-btn__explore-circle-frame {
+  position: relative;
+  width: 2.45rem;
+  height: 2.45rem;
+  border-radius: 50%;
+  background: var(--paa-accent);
+  color: var(--paa-text-inverse);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  margin-left: 0.5rem;
+  transition: all 400ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.paa-btn--sm .paa-btn__explore-circle-frame {
+  width: 1.85rem;
+  height: 1.85rem;
+}
+.paa-btn--lg .paa-btn__explore-circle-frame {
+  width: 2.85rem;
+  height: 2.85rem;
+}
+.paa-btn__explore-circle-frame svg {
+  width: 42%;
+  height: 42%;
+  display: block;
+  transition: transform 450ms ease;
 }
 
 .paa-btn--explore:hover:not(:disabled) {
-  border-color: var(--paa-accent);
-  color: var(--paa-accent);
-  transform: translateY(-0.1rem);
+  color: var(--paa-text-inverse) !important;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--paa-accent) 25%, transparent);
 }
 
 .paa-btn--explore:hover:not(:disabled) .paa-btn__bg-layer {
@@ -153,19 +202,135 @@
   transform-origin: left;
 }
 
-/* Premium Diagonal ↗ Motion Vector Translation Engine */
-.paa-btn--explore:hover:not(:disabled) .paa-btn__icon-slot svg {
-  transform: translate(0.15rem, -0.15rem); /* Smooth outward upward slide glide */
+.paa-btn--explore:hover:not(:disabled) .paa-btn__explore-circle-frame {
+  background: var(--paa-text-inverse);
   color: var(--paa-accent);
 }
 
-/* GHOST UTILITY */
+.paa-btn--explore:hover:not(:disabled) .paa-btn__explore-circle-frame svg {
+  transform: rotate(45deg);
+}
+
+.paa-btn--explore-all {
+  border: none;
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  min-height: auto;
+  overflow: visible;
+  display: inline-flex;
+}
+
+.paa-btn__explore-all-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.paa-btn__explore-all-circle {
+  position: relative;
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  border: 0.0625rem solid var(--paa-border);
+  background: transparent;
+  color: var(--paa-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition:
+    border-color 450ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 450ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 450ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.paa-btn__explore-all-circle svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.paa-btn__explore-all-text {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--paa-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  max-width: 10rem;
+  line-height: 1.4;
+  white-space: normal;
+  transition:
+    color 350ms ease,
+    transform 450ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.paa-btn--explore-all:hover:not(:disabled) .paa-btn__explore-all-circle {
+  border-color: var(--paa-accent);
+  background-color: var(--paa-surface-dark);
+  transform: translateY(-5px);
+  box-shadow:
+    0 0 0 0.25rem color-mix(in srgb, var(--paa-accent) 20%, transparent),
+    0 12px 28px rgba(0, 0, 0, 0.4);
+}
+
+.paa-btn--explore-all:hover:not(:disabled) .paa-btn__explore-all-circle svg {
+  animation: paaExploreArrowLoop 500ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  color: var(--paa-accent);
+}
+
+.paa-btn--explore-all:hover:not(:disabled) .paa-btn__explore-all-text {
+  color: var(--paa-accent);
+  transform: translateY(-2px);
+}
+
 .paa-btn--ghost {
   border-color: transparent;
   color: var(--paa-muted);
 }
-.paa-btn--ghost .paa-btn__bg-layer { background: transparent; }
+.paa-btn--ghost .paa-btn__bg-layer {
+  background: transparent;
+}
 .paa-btn--ghost:hover:not(:disabled) {
   color: var(--paa-text);
   background: var(--paa-surface);
+}
+
+@keyframes paaExploreArrowLoop {
+  0% { transform: translateX(0); opacity: 1; }
+  40% { transform: translateX(24px); opacity: 0; }
+  41% { transform: translateX(-24px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+@media (max-width: 64rem) {
+  .paa-btn--sm { min-height: 2.5rem; padding-inline: 1.35rem; }
+  .paa-btn--md { min-height: 3.15rem; padding-inline: 2.15rem; }
+  .paa-btn--lg { min-height: 3.55rem; padding-inline: 2.65rem; }
+  .paa-btn__explore-all-circle { width: 4.25rem; height: 4.25rem; }
+  .paa-btn__explore-all-text { font-size: 0.8rem; letter-spacing: 0.12em; }
+}
+
+@media (max-width: 48rem) {
+  .paa-btn--sm { min-height: 2.65rem; padding-inline: 1.5rem; }
+  .paa-btn--md { min-height: 3.25rem; padding-inline: 2.25rem; }
+  .paa-btn--lg { min-height: 3.65rem; padding-inline: 2.75rem; }
+  .paa-btn__explore-all-circle { width: 4rem; height: 4rem; transition-duration: 300ms; }
+  .paa-btn__explore-all-text { font-size: 0.78rem; max-width: 8.5rem; }
+
+  .paa-btn--explore-all:hover:not(:disabled) .paa-btn__explore-all-circle {
+    transform: translateY(-3px);
+    box-shadow:
+      0 0 0 0.15rem color-mix(in srgb, var(--paa-accent) 20%, transparent),
+      0 8px 20px rgba(0, 0, 0, 0.4);
+  }
 }

@@ -2,7 +2,7 @@
   width: 100%;
   background: var(--paa-bg);
   color: var(--paa-text);
-  padding: clamp(4rem, 8vw, 7rem) 0;
+  padding: clamp(4.5rem, 8.5vw, 7.5rem) 0;
   box-sizing: border-box;
 }
 
@@ -15,7 +15,7 @@
 }
 
 /* ==========================================================================
-   🏛========= TOP SECTION: BRAND HEADER & TAB HOOKS =========
+   🏛️ TOP HEADER & VIEWPORT TAB CONTROLS
    ========================================================================== */
 .paa-conversion-glimpse__header {
   display: flex;
@@ -53,23 +53,21 @@
   margin: 0;
 }
 
-/* Tab Switcher: Completely hidden by default on desktop/laptop grids */
 .paa-conversion-tabs {
-  display: none;
+  display: none; /* Hidden on desktop screens */
 }
 
 /* ==========================================================================
-   🖼========= THE DESKTOP INTEGRATED SIDE-BY-SIDE PANELS =========
+   🖼️ THE DESKTOP TWO-COLUMN INTEGRATED GRID
    ========================================================================== */
 .paa-conversion-glimpse__grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.05fr 0.95fr;
   gap: 2.5rem;
   align-items: stretch;
   width: 100%;
 }
 
-/* INFO CORE HOUSING PROFILE CARD */
 .paa-conversion-glimpse__card {
   background: var(--paa-surface-dark, #0d1117);
   border: 0.0625rem solid var(--paa-border);
@@ -78,130 +76,265 @@
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
-  justify-content: center;
+  justify-content: space-between;
+  gap: 3rem;
   box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.15);
 }
 
-.paa-info-row { display: flex; align-items: flex-start; gap: 1.5rem; text-align: left; }
+.paa-info-section-top { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 2.25rem; 
+}
+
+.paa-info-row { 
+  display: flex; 
+  align-items: flex-start; 
+  gap: 1.5rem; 
+  text-align: left; 
+}
 
 .paa-info-row__icon-circle {
-  width: 3.25rem; height: 3.25rem; border-radius: 50%;
+  width: 3.25rem; 
+  height: 3.25rem; 
+  border-radius: 50%;
   background: color-mix(in srgb, var(--paa-bg) 60%, transparent);
-  border: 0.0625rem solid var(--paa-border); color: var(--paa-accent);
-  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  border: 0.0625rem solid var(--paa-border); 
+  color: var(--paa-accent);
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  flex-shrink: 0;
 }
 
-.paa-info-row__text-block { display: flex; flex-direction: column; }
-.paa-info-row__label { font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.15em; color: var(--paa-muted); margin-bottom: 0.4rem; }
-.paa-info-row__heading { font-size: 1.2rem; font-weight: 700; color: var(--paa-text); margin-bottom: 0.35rem; }
-.paa-info-row__text, .paa-info-row__text-highlight { font-size: 1.05rem; color: color-mix(in srgb, var(--paa-text) 90%, transparent); line-height: 1.5; font-weight: 500; }
-
-/* SOCIAL CONTAINER BADGES BUTTONS */
-.paa-social-footer-dock { display: flex; flex-direction: column; align-items: flex-start; gap: 0.85rem; border-top: 0.0625rem solid var(--paa-border); padding-top: 2rem; }
-.paa-social-footer-dock__title { font-size: 0.8rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.15em; color: var(--paa-muted); }
-.paa-social-footer-dock__row { display: flex; gap: 1rem; }
-
-.paa-social-circle-link {
-  width: 3.25rem; height: 3.25rem; border-radius: 50%; background: var(--paa-bg); border: 0.125rem solid var(--paa-border);
-  color: var(--paa-muted); display: flex; align-items: center; justify-content: center; transition: all 350ms cubic-bezier(0.16, 1, 0.3, 1); text-decoration: none;
+.paa-info-row__text-block { 
+  display: flex; 
+  flex-direction: column; 
 }
-.paa-social-circle-link svg { display: block; flex-shrink: 0; }
 
-.paa-social-circle-link--linkedin:hover { background: #0077b5; color: #ffffff; border-color: #0077b5; box-shadow: 0 6px 16px rgba(0, 119, 181, 0.3); }
-.paa-social-circle-link--instagram:hover { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); color: #ffffff; border-color: transparent; box-shadow: 0 6px 16px rgba(214, 36, 159, 0.3); }
-.paa-social-circle-link--facebook:hover { background: #1877f2; color: #ffffff; border-color: #1877f2; box-shadow: 0 6px 16px rgba(24, 119, 242, 0.3); }
-.paa-social-circle-link:hover { transform: translateY(-3px); }
-
-/* RAW DYNAMIC GOOGLE MAP FRAME SYSTEM */
-.paa-conversion-glimpse__map-wrapper {
-  width: 100%;
-  min-height: 28rem;
-  border-radius: var(--paa-radius-lg);
-  overflow: hidden;
-  border: 0.0625rem solid var(--paa-border);
-  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
+.paa-info-row__label { 
+  font-size: 0.8rem; 
+  font-weight: 800; 
+  text-transform: uppercase; 
+  letter-spacing: 0.15em; 
+  color: var(--paa-muted); 
+  margin-bottom: 0.4rem; 
 }
-.paa-conversion-glimpse__map-iframe { width: 100%; height: 100%; border: none; display: block; }
+
+.paa-info-row__heading { 
+  font-size: 1.2rem; 
+  font-weight: 700; 
+  color: var(--paa-text); 
+  margin-bottom: 0.35rem; 
+}
+
+.paa-info-row__text, 
+.paa-info-row__text-highlight { 
+  font-size: 1.05rem; 
+  color: color-mix(in srgb, var(--paa-text) 90%, transparent); 
+  line-height: 1.5; 
+  font-weight: 500; 
+}
 
 /* ==========================================================================
-   📱 ========= CRUSH ENDLESS VERTICAL SCROLL FATIGUE: MOBILE SHIELD =========
+   ⚡ BOTTOM ACTION SPLIT ENGINE & BUTTON CONFIGURATIONS
+   ========================================================================== */
+.paa-conversion-action-zone {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 1.5rem;
+  align-items: flex-end;
+  border-top: 0.0625rem solid var(--paa-border);
+  padding-top: 2rem;
+  width: 100%;
+}
+
+.paa-studio-networks-group { 
+  display: flex; 
+  flex-direction: column; 
+  align-items: flex-start; 
+  gap: 1.25rem; 
+  width: 100%; 
+}
+
+.paa-networks-title { 
+  font-size: 0.8rem; 
+  font-weight: 800; 
+  text-transform: uppercase; 
+  letter-spacing: 0.15em; 
+  color: var(--paa-muted); 
+}
+
+.paa-networks-vertical-list { 
+  display: grid; 
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 1rem; 
+  width: 100%; 
+}
+
+.paa-network-row-link { 
+  display: flex; 
+  align-items: center; 
+  gap: 0.85rem; 
+  text-decoration: none; 
+  width: fit-content; 
+}
+
+.paa-network-icon-circle { 
+  width: 2.5rem; 
+  height: 2.5rem; 
+  border-radius: 50%; 
+  border: 0.0625rem solid var(--paa-border); 
+  color: var(--paa-text); 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  background: var(--paa-bg); 
+  transition: all 250ms ease; 
+}
+
+.paa-network-text-name { 
+  font-size: 0.95rem; 
+  font-weight: 600; 
+  color: var(--paa-muted); 
+  transition: color 250ms ease; 
+}
+
+.paa-network-row-link:hover .paa-network-icon-circle { 
+  border-color: var(--paa-accent); 
+  color: var(--paa-accent); 
+  background: color-mix(in srgb, var(--paa-accent) 6%, transparent); 
+  transform: translateY(-2px); 
+}
+
+.paa-network-row-link:hover .paa-network-text-name { 
+  color: var(--paa-text); 
+}
+
+.paa-connect-action-placement { 
+  display: flex; 
+  justify-content: flex-end; 
+  width: 100%; 
+}
+
+/* Integrated Package UI Class overrides */
+.paa-studio-connect-button-override {
+  width: auto;
+  display: inline-flex;
+}
+
+/* MAP BOX LAYOUT PARAMETERS */
+.paa-conversion-glimpse__map-wrapper { 
+  width: 100%; 
+  min-height: 30rem; 
+  border-radius: var(--paa-radius-lg); 
+  overflow: hidden; 
+  border: 0.0625rem solid var(--paa-border); 
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2); 
+}
+
+.paa-conversion-glimpse__map-iframe { 
+  width: 100%; 
+  height: 100%; 
+  border: none; 
+  display: block; 
+}
+
+/* ==========================================================================
+   📱 BREAKPOINT SHIELD: FORCES SCROLL-FREE IN-PLACE TOGGLE (TABLET / MOBILE)
    ========================================================================== */
 @media (max-width: 64rem) {
-  .paa-conversion-glimpse {
-    padding: 3rem 0;
-  }
+  .paa-conversion-glimpse { padding: 4rem 0; }
+  .paa-conversion-glimpse__container { width: 100%; padding: 0 1.5rem; gap: 2rem; }
 
-  .paa-conversion-glimpse__container {
-    width: 100%;
-    padding: 0 1.25rem;
-    gap: 1.75rem;
-  }
-
-  /* Reveal and style the clean horizontal button switcher bar */
+  /* Re-engage and build the premium slider bar for mobile and tablets */
   .paa-conversion-tabs {
     display: flex;
     background: #0d1117;
     border: 0.0625rem solid var(--paa-border);
     padding: 0.25rem;
     border-radius: 32px;
-    margin-top: 1.25rem;
+    margin-top: 1.5rem;
     width: 100%;
-    max-width: 22rem;
+    max-width: 24rem;
   }
 
-.paa-conversion-tab-btn {
-  flex: 1;
-  background: transparent;
-  border: none;
-  color: var(--paa-muted);
-  font-size: 0.85rem;
-  font-weight: 700;
-  padding: 0.75rem;
-  border-radius: 24px;
-  cursor: pointer;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  transition: all 250ms ease;
-}
+  .paa-conversion-tab-btn {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: var(--paa-muted);
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 0.75rem;
+    border-radius: 24px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 250ms ease;
+  }
 
   .paa-conversion-tab-btn.is-active {
-   background: color-mix(in srgb, var(--paa-accent) 15%, transparent);
-  color: var(--paa-accent);
-  border: 0.0625rem solid color-mix(in srgb, var(--paa-accent) 30%, transparent);
+    background: color-mix(in srgb, var(--paa-accent) 15%, transparent);
+    color: var(--paa-accent);
+    border: 0.0625rem solid color-mix(in srgb, var(--paa-accent) 30%, transparent);
   }
 
-  /* Collapse the multi-column grid into an absolute single-view switch space */
   .paa-conversion-glimpse__grid {
     grid-template-columns: 1fr;
     position: relative;
     width: 100%;
   }
 
-  /* FORCES IN-PLACE HUD SWAPPING ENFORCEMENT: Completely prevents layout stretching */
+  /* FORCES ACTIVE IN-PLACE VIEW REPLACEMENT (STOPS VERTICAL BLOCK STACKING) */
   .tab-hidden {
     display: none !important;
   }
 
   .tab-visible {
     display: flex !important;
-    animation: paaGlimpseFade 350ms ease-out forwards;
+    animation: paaGlimpseSwap 300ms ease-out forwards;
   }
 
   .paa-conversion-glimpse__card {
-    padding: 2rem 1.5rem;
-    gap: 1.75rem;
+    padding: 2.25rem 1.5rem;
+    gap: 2.5rem;
     width: 100%;
   }
 
   .paa-conversion-glimpse__map-wrapper {
-    height: 22rem;
-    min-height: 22rem;
+    height: 25rem;
+    min-height: 25rem;
     width: 100%;
   }
 }
 
-@keyframes paaGlimpseFade {
-  from { opacity: 0; transform: scale(0.99) translateY(4px); }
-  to { opacity: 1; transform: scale(1) translateY(0); }
+@media (max-width: 40rem) {
+  /* Internal stack adjustments inside the card component to keep layouts safe from squeezing on tiny devices */
+  .paa-conversion-action-zone {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+  
+  .paa-networks-vertical-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .paa-connect-action-placement { 
+    justify-content: flex-start; 
+  }
+  
+  .paa-studio-connect-button-override { 
+    width: 100%; 
+  }
+}
+
+@keyframes paaGlimpseSwap {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
 }

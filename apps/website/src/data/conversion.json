@@ -12,17 +12,20 @@
   },
   "phone": {
     "label": "Phone",
-    "value": "+91 7760634459"
+    "value": "+91 9100969061"
   },
   "email": {
     "label": "Email",
     "value": "contact@preranaarchitects.com"
   },
   "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d59092.63455695561!2d77.633844!3d13.128106!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x643ac947f17e92bf%3A0x3a02be39afa931a4!2sPrerana%20Architects%20%26%20Associates!5e1!3m2!1sen!2sin!4v1782497277476!5m2!1sen!2sin",
+  "connectButtonLabel": "Connect Us",
+  "connectButtonPath": "/contact",
   "socials": [
-    { "platform": "linkedin", "url": "https://linkedin.com/company/prerana-architects" },
-    { "platform": "instagram", "url": "https://instagram.com/prerana_architects" },
-    { "platform": "facebook", "url": "https://facebook.com/prerana_architects" },
-    { "platform": "google", "url": "https://google.com/maps?cid=your_business_id" }
+    { "platform": "LinkedIn", "url": "https://linkedin.com/company/prerana-architects" },
+    { "platform": "Instagram", "url": "https://instagram.com/prerana_architects" },
+    { "platform": "Facebook", "url": "https://facebook.com/prerana_architects" },
+    { "platform": "WhatsApp", "url": "https://wa.me/917760634459" },
+    { "platform": "Google", "url": "https://google.com/maps?cid=your_business_id" }
   ]
 }

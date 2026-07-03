@@ -7,6 +7,7 @@ import {
   CheckSquare, 
   type LucideIcon 
 } from "lucide-react";
+import { Button } from "../../../../../../../packages/ui/src/components/button";
 import processData from "../../../../data/process.json";
 import "./process-glimpse.css";
 
@@ -21,6 +22,7 @@ interface ProcessStructure {
   eyebrow: string;
   title: string;
   description: string;
+  cta: { label: string; path: string };
   phases: ProcessPhase[];
 }
 
@@ -36,39 +38,57 @@ const iconComponents: Record<string, LucideIcon> = {
 
 const journeyPaths: Record<number, string> = {
   0: "M 120 100", 
-  1: "M 120 100 C 240 100, 240 220, 310 220", 
-  2: "M 120 100 C 240 100, 240 220, 360 220 C 480 220, 480 100, 550 100", 
-  3: "M 120 100 C 240 100, 240 220, 360 220 C 480 220, 480 100, 600 100 C 720 100, 720 220, 790 220", 
-  4: "M 120 100 C 240 100, 240 220, 360 220 C 480 220, 480 100, 600 100 C 720 100, 720 220, 840 220 C 960 220, 960 100, 1030 100", 
+  1: "M 120 100 C 240 100, 240 220, 360 220", 
+  2: "M 120 100 C 240 100, 240 220, 360 220 C 480 220, 480 100, 600 100", 
+  3: "M 120 100 C 240 100, 240 220, 360 220 C 480 220, 480 100, 600 100 C 720 100, 720 220, 840 220", 
+  4: "M 120 100 C 240 100, 240 220, 360 220 C 480 220, 480 100, 600 100 C 720 100, 720 220, 840 220 C 960 220, 960 100, 1080 100", 
 };
 
 export function ProcessGlimpse() {
-  const { eyebrow, title, description, phases } = data;
+  const { eyebrow, title, description, cta, phases } = data;
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const [isHovered, setIsHovered] = useState<boolean>(false);
+  const [isSectionVisible, setIsSectionVisible] = useState<boolean>(false);
+  
+  const sectionRef = useRef<HTMLElement | null>(null);
   const timerRef = useRef<number | null>(null);
 
-  // 📱 Touch Coordinates Tracking Refs for Manual Mobile Swapping
   const touchStartX = useRef<number>(0);
   const touchEndX = useRef<number>(0);
 
-  // 🔄 INFINITE AUTO-PLAY TIMELINE LOOP ENGINE
   useEffect(() => {
-    if (isHovered) {
-      if (timerRef.current) clearInterval(timerRef.current);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsSectionVisible(entry.isIntersecting);
+      },
+      { threshold: 0.2 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (isHovered || !isSectionVisible) {
+      if (timerRef.current) {
+        clearInterval(timerRef.current);
+        timerRef.current = null;
+      }
       return;
     }
 
     timerRef.current = window.setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % phases.length); // Infinite loop cycle
+      setActiveIndex((prev) => (prev + 1) % phases.length);
     }, 4500);
 
     return () => {
       if (timerRef.current) clearInterval(timerRef.current);
     };
-  }, [isHovered, phases.length]);
+  }, [isHovered, isSectionVisible, phases.length]);
 
-  // 📱 GESTURE CONTROLS FOR MANUAL DRAG SWIPES
   function handleTouchStart(e: React.TouchEvent) {
     touchStartX.current = e.targetTouches[0].clientX;
     touchEndX.current = e.targetTouches[0].clientX;
@@ -84,17 +104,19 @@ export function ProcessGlimpse() {
 
     if (Math.abs(diff) > swipeThreshold) {
       if (diff > 0) {
-        // Swipe Left -> Next Card (Infinite Loop Bound)
         setActiveIndex((prev) => (prev + 1) % phases.length);
       } else {
-        // Swipe Right -> Previous Card (Infinite Loop Bound)
         setActiveIndex((prev) => (prev - 1 + phases.length) % phases.length);
       }
     }
   }
 
+  const handleCtaRoute = () => {
+    window.location.href = cta.path;
+  };
+
   return (
-    <section className="paa-process-journey">
+    <section ref={sectionRef} className="paa-process-journey">
       <div className="paa-process-journey__container">
         
         <header className="paa-process-journey__header">
@@ -112,23 +134,23 @@ export function ProcessGlimpse() {
           onTouchEnd={handleTouchEnd}
         >
           
-          {/* DESKTOP WAVE LAYER GRAPHIC */}
           <div className="paa-process-journey__vector-svg" aria-hidden="true">
             <svg viewBox="0 0 1200 300" preserveAspectRatio="none">
               <defs>
                 <marker
-                  id="paa-journey-arrow"
+                  id="paa-journey-flow-arrow"
                   viewBox="0 0 10 10"
-                  refX="2" 
+                  refX="6" 
                   refY="5"
-                  markerWidth="6"
-                  markerHeight="6"
-                  orient="auto-start-reverse"
+                  markerWidth="7"
+                  markerHeight="7"
+                  orient="auto"
                 >
-                  <path d="M 0 1 L 10 5 L 0 9 z" fill="var(--paa-accent)" />
+                  <path d="M 2 1 L 7 5 L 2 9" fill="none" stroke="var(--paa-accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 </marker>
               </defs>
 
+              {/* Master reference background track */}
               <path 
                 d="M 120 100 C 240 100, 240 220, 360 220 C 480 220, 480 100, 600 100 C 720 100, 720 220, 840 220 C 960 220, 960 100, 1080 100" 
                 fill="none" 
@@ -140,7 +162,7 @@ export function ProcessGlimpse() {
                   d={journeyPaths[activeIndex]} 
                   fill="none" 
                   className="paa-process-journey__svg-active-pulse"
-                  markerEnd="url(#paa-journey-arrow)"
+                  markerEnd="url(#paa-journey-flow-arrow)"
                 />
               )}
             </svg>
@@ -152,7 +174,6 @@ export function ProcessGlimpse() {
               const positionClass = index % 2 === 0 ? "is-top-wave" : "is-bottom-wave";
               const IconAsset = iconComponents[phase.step] || Briefcase;
 
-              // 📱 Layout index flags mapping horizontal viewport sliders cleanly
               let mobilePositionState = "is-next-deck-card";
               if (isActive) mobilePositionState = "is-active-deck-card";
               else if (index < activeIndex) mobilePositionState = "is-prev-deck-card";
@@ -170,7 +191,6 @@ export function ProcessGlimpse() {
                   }}
                 >
                   
-                  {/* DESKTOP ONLY DETAILS SPEECH BUBBLE */}
                   <div className="paa-journey-card__speech-bubble-popup">
                     <div className="paa-journey-card__popup-header">
                       <span className="paa-journey-card__popup-step">Phase {phase.step}</span>
@@ -180,7 +200,6 @@ export function ProcessGlimpse() {
                     <div className="paa-journey-card__popup-arrow-pointer" />
                   </div>
 
-                  {/* 🛠️ UNIFIED ALL-IN-ONE SYSTEM CARD SHELL */}
                   <div className="paa-journey-card__inner-box">
                     <div className="paa-journey-card__header-row">
                       <span className="paa-journey-card__badge">PHASE {phase.step}</span>
@@ -189,7 +208,6 @@ export function ProcessGlimpse() {
                     
                     <h3 className="paa-journey-card__title">{phase.title}</h3>
                     
-                    {/* 🛠️ MOBILE ACCESSIBLE INLINE WRAPPER ELEMENTS */}
                     <div className="paa-journey-card__mobile-content-package">
                       <span className="paa-journey-card__mobile-summary">{phase.summary}</span>
                       <p className="paa-journey-card__mobile-detail">{phase.detail}</p>
@@ -202,6 +220,16 @@ export function ProcessGlimpse() {
           </div>
 
         </div>
+
+        <footer className="paa-process-journey__footer">
+          <Button 
+            variant="explore" 
+            onClick={handleCtaRoute}
+            className="paa-process-gate-trigger"
+          >
+            {cta.label}
+          </Button>
+        </footer>
 
       </div>
     </section>

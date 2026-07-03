@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
-import { ArrowRight, Plus, Minus, Briefcase, Compass, HardHat, Layers, type LucideIcon } from "lucide-react";
+import { Plus, Minus, Briefcase, Compass, HardHat, Layers, type LucideIcon } from "lucide-react";
+import { Button } from "../../../../../../../packages/ui/src/components/button"; // Verified alignment framework route path location
 import servicesData from "../../../../data/services.json";
 import "./services-glimpse.css";
 
@@ -39,7 +40,6 @@ export function ServicesGlimpse() {
   const [isHovered, setIsHovered] = useState(false);
   const timerRef = useRef<number | null>(null);
 
-  // 🔄 AUTOMATIC ACCORDION SLIDESHOW LOOP ENGINE
   useEffect(() => {
     if (glimpseServices.length === 0) return;
     if (isHovered) {
@@ -60,7 +60,6 @@ export function ServicesGlimpse() {
     };
   }, [isHovered, glimpseServices]);
 
-  // 🛠️ SAFE HOVER TRACKER: Only sets item active on hover if device is NOT a touch screen
   function handleNodeMouseEnter(id: string) {
     const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
     if (!isTouchDevice) {
@@ -71,6 +70,10 @@ export function ServicesGlimpse() {
   function handleNodeClick(id: string) {
     setActiveId((currentId) => (currentId === id ? null : id));
   }
+
+  const handleGateNavigation = () => {
+    window.location.href = cta.path;
+  };
 
   return (
     <section className="paa-services-glimpse">
@@ -141,12 +144,13 @@ export function ServicesGlimpse() {
         </div>
 
         <footer className="paa-services-glimpse__footer">
-          <a href={cta.path} className="paa-services-action-gate">
-            <span className="paa-services-action-gate__text">{cta.label}</span>
-            <div className="paa-services-action-gate__circle">
-              <ArrowRight className="paa-services-action-gate__arrow" />
-            </div>
-          </a>
+          <Button 
+            variant="explore" 
+            onClick={handleGateNavigation}
+            className="paa-services-gate-trigger"
+          >
+            {cta.label}
+          </Button>
         </footer>
 
       </div>

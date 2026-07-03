@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
-import { ArrowRight, User, ChevronLeft, ChevronRight } from "lucide-react";
+import { User, ChevronLeft, ChevronRight } from "lucide-react";
+import { Button } from "../../../../../../../packages/ui/src/components/button"; // Shared workspace package hook
 import aboutData from "../../../../data/about-glimpse.json";
 import "./about-glimpse.css";
 
@@ -43,6 +44,10 @@ export function AboutGlimpse() {
 
   const handlePrev = () => {
     setActiveLeader((prev) => (prev - 1 + team.length) % team.length);
+  };
+
+  const handleCtaNavigation = () => {
+    window.location.href = globalCta.path;
   };
 
   useEffect(() => {
@@ -89,7 +94,6 @@ export function AboutGlimpse() {
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
-          {/* VISUAL IMAGE SHELL */}
           <div className="paa-about-team-block__media">
             <div className="paa-about-team-block__image-container">
               {!isProfileImageBroken && activeProfile.imagePath ? (
@@ -132,12 +136,13 @@ export function AboutGlimpse() {
             <p className="paa-about-team-block__bio">{activeProfile.bio}</p>
 
             <footer className="paa-about-team-block__footer">
-              <a href={globalCta.path} className="paa-about-hub-cta">
-                <span className="paa-about-hub-cta__text">{globalCta.label}</span>
-                <div className="paa-about-hub-cta__circle">
-                  <ArrowRight className="paa-about-hub-cta__arrow" />
-                </div>
-              </a>
+              <Button 
+                variant="explore"
+                onClick={handleCtaNavigation}
+                className="paa-about-explore-override"
+              >
+                {globalCta.label}
+              </Button>
 
               {hasMultipleLeaders && (
                 <div className="paa-about-team-block__nav-buttons">

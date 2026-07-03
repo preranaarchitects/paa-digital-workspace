@@ -20,7 +20,6 @@ export function Navbar({ logo, navigation }: NavbarProps) {
     function handleScroll() {
       const currentScrollY = window.scrollY;
 
-      // 🛠️ RULE 3: Auto-close hamburger menu instantly if the user scrolls the page
       if (isOpen) {
         setIsOpen(false);
       }
@@ -79,7 +78,6 @@ export function Navbar({ logo, navigation }: NavbarProps) {
             </Button>
           </div>
 
-          {/* 🛠️ RULE 3: Clicking this button naturally toggles isOpen state back and forth */}
           <button
             type="button"
             className="paa-navbar__mobile-toggle"
@@ -91,10 +89,8 @@ export function Navbar({ logo, navigation }: NavbarProps) {
         </div>
       </div>
 
-      {/* 📱 ADJUSTED DRAWER INTERFACE REGION */}
       <div className={`paa-navbar__mobile-panel ${isOpen ? "is-open" : ""}`}>
         
-        {/* 🛠️ RULE 3: Invisible overlay catches clicks outside the menu block tray */}
         <div 
           className="paa-navbar__mobile-overlay" 
           onClick={() => setIsOpen(false)} 
@@ -102,7 +98,6 @@ export function Navbar({ logo, navigation }: NavbarProps) {
         />
 
         <div className="paa-navbar__mobile-card">
-          {/* 🛠️ RULE 2: Scroll-isolated menu box keeps page from traveling */}
           <div className="paa-navbar__mobile-scroller">
             {navigation.menuItems.map((item) => (
               <a

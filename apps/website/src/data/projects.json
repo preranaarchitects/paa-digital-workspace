@@ -1,7 +1,8 @@
 {
   "eyebrow": "Featured Portfolio",
   "title": "Bringing Visionary Spaces to Life",
-  "description": "A curated showcase of our landmark residential, commercial, and interior spaces across South India. Built with architectural excellence, premium finishes, and uncompromising engineering quality.",  "cta": {
+  "description": "A curated showcase of our landmark residential, commercial, and interior spaces across South India. Built with architectural excellence, premium finishes, and uncompromising engineering quality.",
+  "cta": {
     "label": "Explore All Projects",
     "path": "/projects"
   },

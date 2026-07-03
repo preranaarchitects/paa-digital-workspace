@@ -12,3 +12,4 @@ export * from "./types/navigation";
 export * from "./components/navbar";
 export * from "./types/hero";
 export * from "./components/hero";
+export * from "./components/footer"

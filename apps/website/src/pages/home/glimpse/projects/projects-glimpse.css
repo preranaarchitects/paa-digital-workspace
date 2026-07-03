@@ -16,9 +16,6 @@
   gap: clamp(2.5rem, 4vw, 3.5rem);
 }
 
-/* ==========================================================================
-   🏛️ THE PURE VISION HEADER LAYOUT (CENTERED)
-   ========================================================================== */
 .paa-projects-glimpse__header {
   display: flex;
   flex-direction: column;
@@ -55,8 +52,6 @@
   line-height: 1.65;
   margin: 0;
   width: 100%;
-  
-  /* 🛠️ DEFENSIVE CONTENT BOUNDARY: Handles 5,000+ characters cleanly */
   max-height: 7.5rem; 
   overflow-y: auto;   
   padding-right: 0.5rem; 
@@ -64,7 +59,6 @@
   scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
 }
 
-/* Custom browser scrollbar overrides for the description block */
 .paa-projects-glimpse__description::-webkit-scrollbar {
   width: 0.25rem;
 }
@@ -78,12 +72,8 @@
   border-radius: var(--paa-radius-pill, 99rem);
 }
 
-/* ==========================================================================
-   🖼️ DESKTOP PREVIEW GRID (4 COLUMN UNIFIED BALANCED SPLIT)
-   ========================================================================== */
 .paa-projects-glimpse__grid {
   display: grid;
-  /* 4 equal tracks: 3 project cards + 1 inline interactive gatekeeper link */
   grid-template-columns: repeat(4, 1fr); 
   gap: clamp(1.25rem, 2vw, 1.75rem);
   width: 100%;
@@ -99,7 +89,7 @@
   border-radius: var(--paa-radius-lg); 
   overflow: hidden;
   text-decoration: none;
-  aspect-ratio: 4 / 4.8; /* Refined polished medium scale footprint */
+  aspect-ratio: 4 / 4.8;
   transition: all 450ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -124,8 +114,8 @@
   inset: 0;
   background: linear-gradient(
     to top,
-    color-mix(in srgb, var(--paa-bg) 96%, transparent) 0%,
-    color-mix(in srgb, var(--paa-bg) 35%, transparent) 50%,
+    color-mix(in srgb, var(--paa-bg-solid) 96%, transparent) 0%,
+    color-mix(in srgb, var(--paa-bg-solid) 35%, transparent) 50%,
     transparent 100%
   );
   z-index: 2;
@@ -194,74 +184,12 @@
   transform: scale(1.04);
 }
 
-/* ==========================================================================
-   🌌 HIGH-END IN-LINE PORTFOLIO INTERACTION GATEWAY (EXPLORE ACTION)
-   ========================================================================== */
-.paa-projects-inline-action {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1.5rem;
-  text-decoration: none;
+.paa-projects-endcard-trigger {
   aspect-ratio: 4 / 4.8;
-  width: 100%;
-  box-sizing: border-box;
-  text-align: center;
-  padding: 2rem 1rem;
-  transition: all 300ms ease;
-}
-
-.paa-projects-inline-action__circle {
-  width: 4.5rem;
-  height: 4.5rem;
-  border-radius: var(--paa-radius-circle, 50%);
-  border: 0.0625rem solid var(--paa-border);
-  display: flex;
-  align-items: center;
+  height: 100%;
   justify-content: center;
-  background: transparent;
-  color: var(--paa-text);
-  transition: all 400ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.paa-projects-inline-action__arrow {
-  width: 1.5rem;
-  height: 1.5rem;
-  transition: transform 350ms cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.paa-projects-inline-action__text {
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--paa-muted);
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  max-width: 10rem;
-  line-height: 1.4;
-  transition: color 300ms ease;
-}
-
-/* Inline Trigger Hover Interactions */
-.paa-projects-inline-action:hover .paa-projects-inline-action__circle {
-  background: var(--paa-text);
-  border-color: var(--paa-text);
-  color: var(--paa-bg);
-  transform: translateY(-0.25rem);
-  box-shadow: 0 0.75rem 1.5rem rgba(255, 255, 255, 0.05);
-}
-
-.paa-projects-inline-action:hover .paa-projects-inline-action__arrow {
-  transform: translateX(0.25rem);
-}
-
-.paa-projects-inline-action:hover .paa-projects-inline-action__text {
-  color: var(--paa-accent);
-}
-
-/* ==========================================================================
-   📱 ADAPTIVE MOBILE & TABLET LAYOUT ENGINE (FLAWLESS ALIGNMENT RESETS)
-   ========================================================================== */
 @media (max-width: 64rem) {
   .paa-projects-glimpse {
     padding: 4rem 0;
@@ -269,7 +197,7 @@
 
   .paa-projects-glimpse__container {
     width: 100%;
-    padding-left: 1.5rem; /* Perfect touch navigation offset */
+    padding-left: 1.5rem;
     gap: 2.5rem;
   }
 
@@ -280,14 +208,14 @@
     align-items: center;
     text-align: center;
     width: 100%;
+    padding-right: 1.5rem;
   }
 
   .paa-projects-glimpse__description {
-    max-height: 6rem; /* Compresses threshold on small screens to conserve card view space */
+    max-height: 6rem;
     padding-right: 0.25rem;
   }
 
-  /* Swaps desktop layout blocks over to an immersive horizontal swipe track native carousel */
   .paa-projects-glimpse__grid {
     display: flex;
     overflow-x: auto;
@@ -298,17 +226,17 @@
   }
 
   .paa-projects-glimpse__grid::-webkit-scrollbar {
-    display: none; /* Webkit browser interface removal safely targeted */
+    display: none;
   }
 
   .paa-project-card {
-    flex: 0 0 68%; /* Keeps exactly 2 cards perfectly balanced edge-to-edge on tablet screens */
+    flex: 0 0 68%;
     scroll-snap-align: start;
     aspect-ratio: 4 / 4.8;
   }
 
-  .paa-projects-inline-action {
-    flex: 0 0 50%; /* Terminal sliding block width at the tail of touch carousel tracks */
+  .paa-projects-endcard-trigger {
+    flex: 0 0 50%;
     scroll-snap-align: start;
     aspect-ratio: 4 / 4.8;
   }
@@ -316,9 +244,9 @@
 
 @media (max-width: 48rem) {
   .paa-project-card {
-    flex: 0 0 82%; /* Scales visual cards up to maximize mobile portrait real estate */
+    flex: 0 0 82%;
   }
-  .paa-projects-inline-action {
+  .paa-projects-endcard-trigger {
     flex: 0 0 65%; 
   }
 }

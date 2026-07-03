@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { ImageOff, ArrowRight } from "lucide-react";
+import { ImageOff } from "lucide-react";
+import { Button } from "../../../../../../../packages/ui/src/components/button"; // Verified relative path matching your architecture layout
 import "./projects-glimpse.css";
 import projectData from "../../../../data/projects.json";
 
@@ -40,23 +41,24 @@ export function ProjectsGlimpse() {
     setBrokenImages((prev) => ({ ...prev, [id]: true }));
   }
 
-  // 🛡️ DATA CAP GUARD: Controls presentation threshold flawlessly
   const visibleProjects = isMobileOrTablet 
     ? featuredProjects.slice(0, 2) 
     : featuredProjects.slice(0, 3);
+
+  const handleCtaNavigation = () => {
+    window.location.href = cta.path;
+  };
 
   return (
     <section className="paa-projects-glimpse">
       <div className="paa-projects-glimpse__container">
         
-        {/* 🏛️ VISION LAYOUT: Purely Centered Header Framework */}
         <header className="paa-projects-glimpse__header">
           <span className="paa-projects-glimpse__eyebrow">{eyebrow}</span>
           <h2 className="paa-projects-glimpse__title">{title}</h2>
           <p className="paa-projects-glimpse__description">{description}</p>
         </header>
 
-        {/* 🖼️ REFINED IN-LINE EXPOSITION TRACK */}
         <div className="paa-projects-glimpse__grid">
           {visibleProjects.map((project) => (
             <a 
@@ -94,13 +96,13 @@ export function ProjectsGlimpse() {
             </a>
           ))}
 
-          {/* 🌌 THE PRE-EMPTIVE IN-LINE GATEWAY (Drawn perfectly right at the end) */}
-          <a href={cta.path} className="paa-projects-inline-action">
-            <div className="paa-projects-inline-action__circle">
-              <ArrowRight className="paa-projects-inline-action__arrow" />
-            </div>
-            <span className="paa-projects-inline-action__text">{cta.label}</span>
-          </a>
+          <Button 
+            variant="explore-all" 
+            onClick={handleCtaNavigation}
+            className="paa-projects-endcard-trigger"
+          >
+            {cta.label}
+          </Button>
         </div>
 
       </div>

@@ -1,0 +1,10 @@
+# Welcome to Prerana Architects SEO Engine Rules Grid
+User-agent: *
+Allow: /
+
+# Exclude internal build or temporary diagnostic asset configurations
+Disallow: /assets/
+Disallow: /dist/
+
+# Link search engines directly to our global mapping ledger index
+Sitemap: https://preranaarchitects.com/sitemap.xml

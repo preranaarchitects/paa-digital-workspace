@@ -1,0 +1,55 @@
+{
+  "home": {
+    "title": "Bespoke Modern Architecture & Luxury Interiors | Prerana Architects",
+    "description": "Premium architecture, civil engineering, and turn-key luxury interior design studio based in Bengaluru. Crafting space-responsive structures, spatial design, and sustainable luxury visions built for longevity.",
+    "canonical": "https://preranaarchitects.com/",
+    "notes": "Includes: Home Page (/), Vision Section, and 3D Studio Glimpse Viewports"
+  },
+  "about": {
+    "title": "Our Studio Philosophy, Vision & Design Leadership | Prerana Architects",
+    "description": "Meet the minds behind Prerana Architects. Discover our architectural design workflows, comprehensive structural engineering process, and verified client testimonials detailing our commitment to execution excellence.",
+    "canonical": "https://preranaarchitects.com/about",
+    "notes": "Includes: About Page (/about), Our Design Process Framework, and Client Testimonials"
+  },
+  "services": {
+    "title": "Luxury Residential, Commercial & Turn-Key Design Services | Prerana Architects",
+    "description": "Explore our core architectural services, civil engineering blueprints, and luxury master planning solutions engineered with precision calculations for modern estates and premium workspaces.",
+    "canonical": "https://preranaarchitects.com/services"
+  },
+  "projects": {
+    "title": "Bespoke Architectural Portfolio & Finished Realizations | Prerana Architects",
+    "description": "Browse our curated gallery of premium residential builds, luxury interior spaces, and sustainable civil architecture projects across India. Witness design execution brought to reality.",
+    "canonical": "https://preranaarchitects.com/projects"
+  },
+  "three_d_studio": {
+    "title": "Immersive 3D Walkthroughs & Spatial Architectural Renderings | Prerana Architects",
+    "description": "Step into your future space before construction begins. Explore our ultra-realistic 3D walkthrough models, BIM simulations, and high-fidelity virtual interior renderings.",
+    "canonical": "https://preranaarchitects.com/3dstudio"
+  },
+  "contact": {
+    "title": "Consult with Our Principal Architects & Design Engineers | Prerana Architects",
+    "description": "Ready to build your architectural masterpiece? Connect with our Bengaluru headquarters for project estimates, site evaluations, quote requests, and turnkey construction consulting.",
+    "canonical": "https://preranaarchitects.com/contact",
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "ArchitecturalBusiness",
+      "name": "Prerana Architects & Associates",
+      "description": "Premium architecture, civil construction, and luxury interior design services.",
+      "url": "https://preranaarchitects.com",
+      "telephone": "+919100969061",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "No. 37, BSF STS Road, Near Country Nest, Sathanur",
+        "addressLocality": "Bengaluru",
+        "addressRegion": "Karnataka",
+        "postalCode": "560063",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "13.128106",
+        "longitude": "77.633844"
+      }
+    }
+  }
+}

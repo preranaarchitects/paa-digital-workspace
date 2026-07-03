@@ -13,12 +13,9 @@
   margin-inline: auto;
   display: flex;
   flex-direction: column;
-  gap: 8rem;
+  gap: clamp(4rem, 6vw, 5.5rem);
 }
 
-/* ==========================================================================
-   🏛========= BRAND TYPOGRAPHY HEADER (DESKTOP) =========
-   ========================================================================== */
 .paa-process-journey__header {
   display: flex;
   flex-direction: column;
@@ -54,9 +51,6 @@
   margin: 0;
 }
 
-/* ==========================================================================
-   🗺️======== HORIZONTAL CANVAS PLATFORM RUNWAY (DESKTOP) ========
-   ========================================================================== */
 .paa-process-journey__arena {
   position: relative;
   width: 100%;
@@ -83,7 +77,8 @@
   stroke: var(--paa-accent);
   stroke-width: 3;
   stroke-linecap: round;
-  transition: d 400ms cubic-bezier(0.16, 1, 0.3, 1);
+  stroke-linejoin: round;
+  transition: d 550ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .paa-process-journey__track-grid {
@@ -112,13 +107,10 @@
   margin-top: 14rem;
 }
 
-/* ==========================================================================
-   🧱========= HIGH-CONTRAST DARK CARDS (DESKTOP DEFAULT) =========
-   ========================================================================== */
 .paa-journey-card__inner-box {
   width: 100%;
   max-width: 14rem;
-  background: var(--paa-surface-dark, #0d1117);
+  background: var(--paa-surface-dark);
   border: 0.0625rem solid var(--paa-border);
   padding: 1.35rem;
   border-radius: var(--paa-radius-lg);
@@ -162,21 +154,17 @@
   transition: color 350ms ease;
 }
 
-/* Hidden by default on desktop grids since they render inside speech bubble overlays */
 .paa-journey-card__mobile-content-package {
   display: none;
 }
 
-/* ==========================================================================
-   💬========= BUBBLE MODAL POINTERS (DESKTOP ONLY) =========
-   ========================================================================== */
 .paa-journey-card__speech-bubble-popup {
   position: absolute;
   bottom: calc(100% + 1.5rem);
   left: 50%;
   transform: translateX(-50%) translateY(0.5rem) scale(0.95);
   width: 17.5rem;
-  background: var(--paa-surface, #161b22);
+  background: var(--paa-surface);
   border: 0.0625rem solid var(--paa-border);
   border-top: 0.1875rem solid var(--paa-accent);
   padding: 1.15rem 1.35rem;
@@ -239,15 +227,12 @@
   height: 0;
   border-left: 0.5rem solid transparent;
   border-right: 0.5rem solid transparent;
-  border-top: 0.5rem solid var(--paa-surface, #161b22);
+  border-top: 0.5rem solid var(--paa-surface);
 }
 
-/* ==========================================================================
-   ⚡========= HOVER & SELECTION MODIFIERS (DESKTOP) =========
-   ========================================================================== */
 .paa-journey-card:hover .paa-journey-card__inner-box,
 .paa-journey-card.is-active .paa-journey-card__inner-box {
-  background: var(--paa-surface-dark, #0d1117);
+  background: var(--paa-surface-dark);
   border-color: var(--paa-accent);
   transform: translateY(-0.25rem);
   box-shadow:
@@ -261,7 +246,7 @@
 }
 .paa-journey-card:hover .paa-journey-card__badge,
 .paa-journey-card.is-active .paa-journey-card__badge {
-  color: var(--paa-text, #ffffff);
+  color: var(--paa-text);
 }
 .paa-journey-card:hover .paa-journey-card__node-icon,
 .paa-journey-card.is-active .paa-journey-card__node-icon {
@@ -276,9 +261,18 @@
   transform: translateX(-50%) translateY(0) scale(1);
 }
 
-/* ==========================================================================
-   📱 🛠️========= THEATRICAL HORIZONTAL SLIDER ENGINE (MOBILE FIXED) =========
-   ========================================================================== */
+.paa-process-journey__footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2rem;
+}
+
+.paa-process-gate-trigger {
+  width: auto;
+}
+
 @media (max-width: 64rem) {
   .paa-process-journey__container {
     width: 100%;
@@ -294,19 +288,17 @@
     width: 100%;
   }
 
-  /* 🛠️ CARD VIEWPORT: Perfectly proportions exactly ONE card dimension frame at a time */
   .paa-process-journey__arena {
     max-width: 22.5rem;
     margin-inline: auto;
-    min-height: 20rem; /* Secure space bounds containing entire text packages smoothly */
+    min-height: 20rem; 
     width: 100%;
   }
 
   .paa-process-journey__vector-svg {
-    display: none; /* Strip desktop lines */
+    display: none; 
   }
 
-  /* Structural staging track system */
   .paa-process-journey__track-grid {
     display: block;
     position: relative;
@@ -314,13 +306,12 @@
     height: 100%;
   }
 
-  /* 🛠️ THEATRE ALIGNMENTS: Stack all elements directly on top of each other */
   .paa-journey-card {
     position: absolute;
     inset: 0;
     width: 100%;
     height: auto;
-    margin: 0 !important; /* Discard desktop wave row offsets */
+    margin: 0 !important; 
 
     opacity: 0;
     pointer-events: none;
@@ -330,7 +321,6 @@
       opacity 450ms ease;
   }
 
-  /* 🛠️ SHIFT METRICS: Moves old items out left, brings active choices center stage */
   .paa-journey-card.is-prev-deck-card {
     transform: translateX(-100%) scale(0.96);
     opacity: 0;
@@ -348,11 +338,10 @@
     opacity: 0;
   }
 
-  /* 🛠️ ALL-IN-ONE CARD RECONSTRUCTION: Massive beautiful single card shell */
   .paa-journey-card__inner-box {
     max-width: 100%;
-    background: var(--paa-surface-dark, #0d1117);
-    border: 0.0625rem solid var(--paa-accent); /* Golden frame border anchor */
+    background: var(--paa-surface-dark);
+    border: 0.0625rem solid var(--paa-accent); 
     padding: 1.75rem;
     gap: 1rem;
     box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.5);
@@ -375,7 +364,6 @@
     color: var(--paa-text);
   }
 
-  /* 🛠️ ACTIVATE INTEGRATED MOBILE TEXT LAYOUTS IN-FRAME */
   .paa-journey-card__mobile-content-package {
     display: flex;
     flex-direction: column;
@@ -400,8 +388,13 @@
     color: var(--paa-muted);
   }
 
-  /* Deactivates desktop absolute overlays entirely */
   .paa-journey-card__speech-bubble-popup {
     display: none !important;
+  }
+}
+
+@media (max-width: 30rem) {
+  .paa-process-gate-trigger {
+    width: 100%;
   }
 }

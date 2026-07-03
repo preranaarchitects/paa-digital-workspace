@@ -6,12 +6,14 @@
   --paa-accent-hover: #FFC107;
 
   --paa-bg: linear-gradient(135deg, #161920 0%, #0e1015 100%);
+  --paa-bg-solid: #0e1015;
   --paa-surface: #121620;
+  --paa-surface-dark: #0a0d14;
 
   --paa-text: #FFFFFF;
+  --paa-text-inverse: #0a0d14;
   --paa-muted: #94A3B8;
 
   --paa-border: #FFC107;
-
   --paa-section-card: #FFFFFF;
 }

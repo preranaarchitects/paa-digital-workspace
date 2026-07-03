@@ -2,6 +2,10 @@
   "eyebrow": "Our Workflow",
   "title": "From Blueprint to Handover",
   "description": "A highly calculated, five-phase execution roadmap engineered to guarantee absolute structural precision, strict legal compliance, and predictable timelines.",
+  "cta": {
+    "label": "Explore Our Full Story",
+    "path": "/about"
+  },
   "phases": [
     {
       "step": "01",
