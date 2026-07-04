@@ -29,7 +29,7 @@ export const router = createBrowserRouter([
     element: <ProjectsPage />,
   },
   {
-    path: "/3d-studio",
+    path: "/3dstudio",
     element: <Studio3DPage />,
   },
   {

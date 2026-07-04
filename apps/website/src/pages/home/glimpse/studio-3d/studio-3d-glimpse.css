@@ -1,0 +1,325 @@
+/* Core Viewport Layout Properties */
+.paa-studio-glimpse {
+  width: 100%;
+  background: var(--paa-bg-solid);
+  color: var(--paa-text);
+  padding: clamp(4.5rem, 8.5vw, 7.5rem) 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-top: 0.0625rem solid color-mix(in srgb, var(--paa-text) 5%, transparent);
+}
+
+.paa-studio-glimpse__wrapper {
+  width: var(--paa-container);
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(3.5rem, 5vw, 5rem);
+}
+
+.paa-studio-glimpse__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 46rem;
+  margin-inline: auto;
+}
+
+.paa-studio-glimpse__eyebrow {
+  font-size: var(--paa-text-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--paa-accent);
+  font-weight: 800;
+  margin-bottom: 0.85rem;
+  line-height: 1;
+}
+
+.paa-studio-glimpse__title {
+  font-size: clamp(2.25rem, 3.6vw, 2.75rem);
+  font-weight: 700;
+  color: var(--paa-text);
+  line-height: 1.25;
+  margin: 0 0 1.25rem 0;
+  letter-spacing: -0.02em;
+}
+
+.paa-studio-glimpse__desc {
+  font-size: var(--paa-text-base);
+  color: var(--paa-muted);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.paa-studio-glimpse__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+  width: 100%;
+}
+
+.paa-studio-media-card {
+  position: relative;
+  width: 100%;
+}
+
+.paa-studio-media-card--interactive-portal {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.paa-studio-media-card__container {
+  position: relative !important;
+  width: 100%;
+  padding-bottom: 62%;
+  border-radius: var(--paa-radius-lg, 0.75rem);
+  overflow: hidden;
+  border: 0.0625rem solid color-mix(in srgb, var(--paa-text) 8%, transparent);
+  background: var(--paa-surface);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.paa-studio-media-card__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.paa-studio-media-card__container--tour-viewport {
+  background: var(--paa-surface-dark);
+}
+
+.paa-studio-tour-iframe {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  border: none !important;
+  display: block !important;
+  z-index: 1;
+  border-radius: var(--paa-radius-lg, 0.75rem);
+}
+
+.paa-studio-media-card__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    var(--paa-surface-dark) 0%,
+    color-mix(in srgb, var(--paa-surface-dark) 30%, transparent) 50%,
+    transparent 100%
+  );
+  z-index: 2;
+}
+
+/* ==========================================================================
+   🏷️ LABELS & OVERLAYS (DESKTOP STATE VALUES)
+   ========================================================================== */
+.paa-studio-custom-label-badge {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 1.25rem;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  background: color-mix(in srgb, var(--paa-surface-dark) 85%, transparent);
+  backdrop-filter: blur(8px);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: 0.0625rem solid color-mix(in srgb, var(--paa-text) 8%, transparent);
+  pointer-events: none;
+}
+
+.paa-studio-custom-label-type {
+  font-size: 0.6rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--paa-accent);
+}
+
+.paa-studio-custom-label-text {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--paa-text);
+}
+
+.paa-studio-custom-hotspots-container {
+  position: absolute;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  z-index: 4;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.paa-studio-navigation-hotspot-btn {
+  background: var(--paa-accent);
+  color: var(--paa-text-inverse);
+  border: none;
+  font-size: 0.825rem;
+  font-weight: 700;
+  padding: 0.65rem 1.15rem;
+  border-radius: var(--paa-radius-pill, 999rem);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  transition: all 200ms ease;
+}
+
+.paa-studio-navigation-hotspot-btn:hover {
+  background: var(--paa-accent-hover);
+  transform: translateY(-2px);
+}
+
+.paa-studio-tour-hud-indicator {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: color-mix(in srgb, var(--paa-surface-dark) 85%, transparent);
+  backdrop-filter: blur(8px);
+  border: 0.0625rem solid color-mix(in srgb, var(--paa-text) 12%, transparent);
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--paa-radius-pill, 999rem);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--paa-text);
+  z-index: 3;
+  pointer-events: none;
+}
+
+.paa-studio-tour-hud-icon {
+  width: 0.8rem;
+  height: 0.8rem;
+  color: var(--paa-accent);
+}
+
+.paa-studio-glimpse__footer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.paa-studio-explore-btn {
+  width: auto;
+}
+
+/* Error states fallback text box container mapping */
+.paa-studio-media-card__error-fallback {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: color-mix(in srgb, var(--paa-surface-dark) 60%, var(--paa-surface));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  box-sizing: border-box;
+  border: 0.0625rem dashed color-mix(in srgb, var(--paa-muted) 25%, transparent);
+  border-radius: var(--paa-radius-lg, 0.75rem);
+}
+
+.paa-studio-media-card__error-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  color: var(--paa-muted);
+  opacity: 0.6;
+  margin-bottom: 1rem;
+}
+
+.paa-studio-media-card__error-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--paa-text);
+  margin-bottom: 0.35rem;
+}
+
+.paa-studio-media-card__error-text {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--paa-muted);
+  max-width: 22rem;
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   📱 MOBILE ADJUSTMENTS (FIXES OVERLAPS IN IMAGE_58A0E5.PNG)
+   ========================================================================== */
+@media (max-width: 64rem) {
+  .paa-studio-glimpse__wrapper {
+    width: 100%;
+    padding-inline: 1.5rem;
+  }
+  .paa-studio-glimpse__grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .paa-studio-media-card__container {
+    padding-bottom: 54%;
+  }
+}
+
+@media (max-width: 48rem) {
+  .paa-studio-glimpse {
+    padding: 4rem 0;
+  }
+  
+  /* Moving room actions row completely underneath the image wrapper */
+  .paa-studio-custom-hotspots-container {
+    position: relative !important;
+    bottom: unset !important;
+    right: unset !important;
+    left: unset !important;
+    width: 100%;
+    display: flex;
+    margin-top: 0.25rem;
+    z-index: 4;
+  }
+
+  .paa-studio-navigation-hotspot-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 0.85rem; /* Large button size for reliable thumb targets */
+    font-size: 0.9rem;
+  }
+
+  /* Make the floating indicators ultra compact */
+  .paa-studio-custom-label-badge {
+    bottom: 0.75rem;
+    left: 0.75rem;
+    padding: 0.35rem 0.65rem;
+    max-width: calc(100% - 1.5rem);
+  }
+
+  .paa-studio-custom-label-text {
+    font-size: 0.8rem;
+  }
+
+  .paa-studio-tour-hud-indicator {
+    top: 0.75rem;
+    right: 0.75rem;
+    padding: 0.3rem 0.5rem;
+    font-size: 0.55rem;
+  }
+
+  .paa-studio-explore-btn {
+    width: 100%;
+  }
+}

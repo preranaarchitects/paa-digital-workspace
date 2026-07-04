@@ -1,0 +1,45 @@
+{
+  "eyebrow": "Immersive Visualization",
+  "title": "Experience Your Space Before It Is Ever Built",
+  "description": "Step inside your future architecture through our advanced digital engine room. Map your way through complete properties with full multi-room panning, zooming, and spatial movement controls.",
+  "projects": [
+    {
+      "id": "luxury-villa-01",
+      "name": "The Obsidian Residence",
+      "featured": true,
+      "videoUrl": "https://assets.mixkit.co/videos/preview/mixkit-modern-apartment-interior-design-walkthrough-40251-large.mp4",
+      "videoCaption": "Cinematic Walkthrough Simulations",
+      "initialRoomId": "living-room",
+      "rooms": {
+        "living-room": {
+          "panoramaUrl": "https://pannellum.org/images/alma.jpg",
+          "caption": "Living Area Center",
+          "hotspots": [
+            {
+              "pitch": -10,
+              "yaw": 45,
+              "targetRoomId": "kitchen",
+              "text": "Walk to Kitchen"
+            }
+          ]
+        },
+        "kitchen": {
+          "panoramaUrl": "https://pannellum.org/images/jocunda.jpg",
+          "caption": "Gourmet Kitchen Island",
+          "hotspots": [
+            {
+              "pitch": -5,
+              "yaw": 180,
+              "targetRoomId": "living-room",
+              "text": "Return to Living Area"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "globalCta": {
+    "label": "Enter 3D Studio",
+    "path": "/3dstudio"
+  }
+}

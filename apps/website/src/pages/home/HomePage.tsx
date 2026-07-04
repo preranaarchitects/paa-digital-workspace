@@ -1,6 +1,7 @@
 import { Hero, Logo, Navbar, Footer, type HeroConfig } from "@paa/ui";
 import { VisionGlimpse } from "./glimpse/vision";
 import { ProjectsGlimpse } from "./glimpse/projects";
+import { Studio3DGlimpse } from "./glimpse/studio-3d";
 import { ServicesGlimpse } from "./glimpse/services";
 import { ProcessGlimpse } from "./glimpse/process";
 import { AboutGlimpse } from "./glimpse/about";
@@ -29,6 +30,10 @@ export function HomePage() {
         <div className="paa-margin-buffer" aria-hidden="true" />
 
         <ProjectsGlimpse />
+
+        <div className="paa-margin-buffer" aria-hidden="true" />
+
+        <Studio3DGlimpse />
 
         <div className="paa-margin-buffer" aria-hidden="true" />
 
