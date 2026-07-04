@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { User, ChevronLeft, ChevronRight } from "lucide-react";
-import { Button } from "../../../../../../../packages/ui/src/components/button"; // Shared workspace package hook
+import { Button } from "../../../../../../../packages/ui/src/components/button";
 import aboutData from "../../../../data/about-glimpse.json";
 import "./about-glimpse.css";
 

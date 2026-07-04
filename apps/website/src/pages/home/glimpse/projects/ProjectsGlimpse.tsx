@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { ImageOff } from "lucide-react";
-import { Button } from "../../../../../../../packages/ui/src/components/button"; // Verified relative path matching your architecture layout
-import "./projects-glimpse.css";
+import { Button } from "../../../../../../../packages/ui/src/components/button";
 import projectData from "../../../../data/projects.json";
 
 interface ProjectItem {

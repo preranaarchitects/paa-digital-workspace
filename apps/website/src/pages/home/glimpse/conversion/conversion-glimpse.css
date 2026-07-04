@@ -14,9 +14,6 @@
   gap: 3.5rem;
 }
 
-/* ==========================================================================
-   🏛️ TOP HEADER & VIEWPORT TAB CONTROLS
-   ========================================================================== */
 .paa-conversion-glimpse__header {
   display: flex;
   flex-direction: column;
@@ -54,12 +51,9 @@
 }
 
 .paa-conversion-tabs {
-  display: none; /* Hidden on desktop screens */
+  display: none;
 }
 
-/* ==========================================================================
-   🖼️ THE DESKTOP TWO-COLUMN INTEGRATED GRID
-   ========================================================================== */
 .paa-conversion-glimpse__grid {
   display: grid;
   grid-template-columns: 1.05fr 0.95fr;
@@ -136,9 +130,6 @@
   font-weight: 500; 
 }
 
-/* ==========================================================================
-   ⚡ BOTTOM ACTION SPLIT ENGINE & BUTTON CONFIGURATIONS
-   ========================================================================== */
 .paa-conversion-action-zone {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
@@ -217,13 +208,11 @@
   width: 100%; 
 }
 
-/* Integrated Package UI Class overrides */
 .paa-studio-connect-button-override {
   width: auto;
   display: inline-flex;
 }
 
-/* MAP BOX LAYOUT PARAMETERS */
 .paa-conversion-glimpse__map-wrapper { 
   width: 100%; 
   min-height: 30rem; 
@@ -240,14 +229,10 @@
   display: block; 
 }
 
-/* ==========================================================================
-   📱 BREAKPOINT SHIELD: FORCES SCROLL-FREE IN-PLACE TOGGLE (TABLET / MOBILE)
-   ========================================================================== */
 @media (max-width: 64rem) {
   .paa-conversion-glimpse { padding: 4rem 0; }
   .paa-conversion-glimpse__container { width: 100%; padding: 0 1.5rem; gap: 2rem; }
 
-  /* Re-engage and build the premium slider bar for mobile and tablets */
   .paa-conversion-tabs {
     display: flex;
     background: #0d1117;
@@ -290,7 +275,6 @@
     width: 100%;
   }
 
-  /* FORCES ACTIVE IN-PLACE VIEW REPLACEMENT (STOPS VERTICAL BLOCK STACKING) */
   .tab-hidden {
     display: none !important;
   }
@@ -314,7 +298,6 @@
 }
 
 @media (max-width: 40rem) {
-  /* Internal stack adjustments inside the card component to keep layouts safe from squeezing on tiny devices */
   .paa-conversion-action-zone {
     grid-template-columns: 1fr;
     gap: 2rem;

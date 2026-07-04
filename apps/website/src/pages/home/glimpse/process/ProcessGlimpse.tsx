@@ -150,7 +150,6 @@ export function ProcessGlimpse() {
                 </marker>
               </defs>
 
-              {/* Master reference background track */}
               <path 
                 d="M 120 100 C 240 100, 240 220, 360 220 C 480 220, 480 100, 600 100 C 720 100, 720 220, 840 220 C 960 220, 960 100, 1080 100" 
                 fill="none" 
