@@ -1,6 +1,6 @@
 .paa-vision-glimpse {
   width: 100%;
-  background: var(--paa-bg);
+  background: transparent;
   color: var(--paa-text);
   display: flex;
   align-items: center;

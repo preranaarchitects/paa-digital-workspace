@@ -1,0 +1,300 @@
+{
+  "_cta": {
+    "eyebrow": "READY TO BUILD?",
+    "title": "Envisioning a Similar Architectural Masterpiece?",
+    "description": "From blueprint concepts to turnkey construction execution, our team brings clarity, engineering precision, and fixed budgets to your vision.",
+    "buttonText": "Schedule Architectural Consultation"
+  },
+  "_labels": {
+    "notFoundTitle": "Project Case Study Not Found",
+    "notFoundMessage": "The requested architectural showcase does not exist or has been relocated.",
+    "returnToPortfolio": "Return to Portfolio",
+    "heroFallback": "Project Hero Image Unavailable",
+    "architecturalBrief": "ARCHITECTURAL BRIEF",
+    "engineeringTakeaways": "Engineering Takeaways",
+    "walkthroughEyebrow": "WALKTHROUGH",
+    "walkthroughTitle": "Project Motion Tour",
+    "videoUnavailable": "Video walkthrough for this project is currently unavailable.",
+    "galleryEyebrow": "PORTFOLIO GALLERY",
+    "galleryTitle": "Visual Documentation",
+    "galleryFallback": "Image Missing",
+    "specs": {
+      "location": "Location",
+      "builtArea": "Built Area",
+      "completionYear": "Completion Year",
+      "scopeOfWork": "Scope of Work"
+    }
+  },
+  "modern-luxury-villa": {
+    "slug": "modern-luxury-villa",
+    "title": "Modern Luxury Villa",
+    "category": "Constructions",
+    "designStyle": "Modern",
+    "projectStatus": "Completed",
+    "tagline": "A multi-level contemporary sanctuary combining raw concrete textures with warm teak accents.",
+    "specifications": {
+      "location": "Bangalore, Karnataka",
+      "builtArea": "5,200 sq.ft",
+      "year": "2024",
+      "scope": "Turnkey Architecture & Civil Construction",
+      "clientType": "Private Luxury Residence"
+    },
+    "heroImage": "/projects/project-01.jpg",
+    "narrative": {
+      "title": "Architectural Concept & Design Vision",
+      "story": "Designed with a sustainable biophilic philosophy, this luxury villa features floor-to-ceiling glass facades that maximize natural daylight while preserving total family privacy. The structural cantilevered master suite extends seamlessly over an outdoor courtyard pool."
+    },
+    "keyHighlights": [
+      "Cantilevered Master Suite over central courtyard pool",
+      "Integrated 100% solar-assisted microgrid & rainwater harvesting",
+      "Custom acoustic teak wall panelling and Italian marble flooring",
+      "Automated smart home climate & ambient lighting controls"
+    ],
+    "video": {
+      "hasVideo": true,
+      "videoUrl": "/projects/videos/luxury-villa-tour.mp4",
+      "poster": "/projects/project-01.jpg",
+      "caption": "Architectural Design Walkthrough & Site Tour"
+    },
+    "gallery": [
+      {
+        "url": "/projects/project-01.jpg",
+        "caption": "Exterior Elevation & Landscaped Entrance"
+      },
+      {
+        "url": "/projects/project-02.jpg",
+        "caption": "Double-Height Living Space with Ambient Lighting"
+      },
+      {
+        "url": "/projects/project-03.jpg",
+        "caption": "Custom Teak & Quartz Modular Kitchen"
+      }
+    ]
+  },
+  "contemporary-interior": {
+    "slug": "contemporary-interior",
+    "title": "Contemporary Interior",
+    "category": "Interiors",
+    "designStyle": "Minimalist",
+    "projectStatus": "Completed",
+    "tagline": "Minimalist luxury interior design combining ambient architectural lighting with bespoke custom woodwork.",
+    "specifications": {
+      "location": "Mysore, Karnataka",
+      "builtArea": "3,200 sq.ft",
+      "year": "2023",
+      "scope": "Interior Design & Custom Furniture Fabrication",
+      "clientType": "Heritage Residence"
+    },
+    "heroImage": "/projects/project-02.jpg",
+    "narrative": {
+      "title": "Design Philosophy & Spatial Flow",
+      "story": "A complete interior overhaul prioritizing spacious layouts, acoustic wall panelling, and soft earth tones. Every piece of furniture was crafted on-site by master artisans to harmonize with the structural geometry of the residence."
+    },
+    "keyHighlights": [
+      "Concealed ambient LED lighting channels throughout living areas",
+      "Custom acoustic wood slat accent walls in private lounge",
+      "Bespoke Italian quartz kitchen countertops with soft-close cabinetry"
+    ],
+    "video": {
+      "hasVideo": false,
+      "videoUrl": "",
+      "poster": "",
+      "caption": ""
+    },
+    "gallery": [
+      {
+        "url": "/projects/project-02.jpg",
+        "caption": "Main Lounge Area with Ambient Lighting"
+      },
+      {
+        "url": "/projects/project-01.jpg",
+        "caption": "Master Bedroom Woodwork Detail"
+      }
+    ]
+  },
+  "commercial-workspace": {
+    "slug": "commercial-workspace",
+    "title": "Commercial Workspace",
+    "category": "Commercial Construction",
+    "designStyle": "Modern",
+    "projectStatus": "Completed",
+    "tagline": "State-of-the-art corporate office facility designed for agile collaborative teams.",
+    "specifications": {
+      "location": "Bangalore, Karnataka",
+      "builtArea": "18,500 sq.ft",
+      "year": "2024",
+      "scope": "Commercial Civil Execution & MEP Integration",
+      "clientType": "Nexus Tech Hub"
+    },
+    "heroImage": "/projects/project-03.jpg",
+    "narrative": {
+      "title": "Structural Execution & High-Density Engineering",
+      "story": "Built from the ground up, this modern commercial facility integrates open-plan workstations, executive lounges, high-performance HVAC systems, and a striking double-glazed glass facade."
+    },
+    "keyHighlights": [
+      "Double-glazed soundproof glass facade reducing heat load by 35%",
+      "Integrated rooftop green garden and breakout spaces",
+      "High-density commercial power backup & climate infrastructure"
+    ],
+    "video": {
+      "hasVideo": false,
+      "videoUrl": "",
+      "poster": "",
+      "caption": ""
+    },
+    "gallery": [
+      {
+        "url": "/projects/project-03.jpg",
+        "caption": "Exterior Glass Facade at Sunset"
+      }
+    ]
+  },
+  "chettinadu-heritage-residence": {
+    "slug": "chettinadu-heritage-residence",
+    "title": "Chettinadu Heritage Residence",
+    "category": "Constructions",
+    "designStyle": "Chettinadu",
+    "projectStatus": "In Progress",
+    "tagline": "Traditional Chettinadu architectural grandeur built with modern structural engineering standards.",
+    "specifications": {
+      "location": "Chennai, Tamil Nadu",
+      "builtArea": "6,800 sq.ft",
+      "year": "2026 (Ongoing)",
+      "scope": "Turnkey Heritage Construction & Woodwork",
+      "clientType": "Private Family Estate"
+    },
+    "heroImage": "/projects/project-01.jpg",
+    "narrative": {
+      "title": "Blending Cultural Heritage with Contemporary Utility",
+      "story": "Currently under active construction, this project features authentic Athangudi tile flooring, hand-carved teak wood pillars, and an expansive open-sky central courtyard (Thinnai)."
+    },
+    "keyHighlights": [
+      "Traditional open-sky courtyard central cooling dynamics",
+      "Authentic hand-carved solid teak wood pillars",
+      "Custom hand-crafted Athangudi ornamental floor tiles"
+    ],
+    "video": {
+      "hasVideo": true,
+      "videoUrl": "/projects/videos/chettinadu-site-update.mp4",
+      "poster": "/projects/project-01.jpg",
+      "caption": "Live Site Progress & Structural Framing Tour"
+    },
+    "gallery": [
+      {
+        "url": "/projects/project-01.jpg",
+        "caption": "Structural Framing & Courtyard Pillar Alignment"
+      }
+    ]
+  },
+  "zenith-turnkey-duplex": {
+    "slug": "zenith-turnkey-duplex",
+    "title": "Zenith Turnkey Duplex",
+    "category": "Turnkey",
+    "designStyle": "Modern",
+    "projectStatus": "Completed",
+    "tagline": "End-to-end turnkey architectural delivery from foundation to final interior handover.",
+    "specifications": {
+      "location": "Hyderabad, Telangana",
+      "builtArea": "4,200 sq.ft",
+      "year": "2025",
+      "scope": "End-to-End Turnkey Delivery",
+      "clientType": "Private Residence"
+    },
+    "heroImage": "/projects/project-02.jpg",
+    "narrative": {
+      "title": "Seamless Single-Source Turnkey Execution",
+      "story": "Delivered as a complete turnkey solution, Prerana Architects managed the full project lifecycle: architectural blueprints, civil construction, interior woodwork, and MEP engineering without schedule slippage."
+    },
+    "keyHighlights": [
+      "Single-point project management from groundbreaking to handover",
+      "Custom floating steel staircase with glass balustrades",
+      "Zero schedule slippage with modular timber fabrication"
+    ],
+    "video": {
+      "hasVideo": false,
+      "videoUrl": "",
+      "poster": "",
+      "caption": ""
+    },
+    "gallery": [
+      {
+        "url": "/projects/project-02.jpg",
+        "caption": "Duplex Living Area Overview"
+      }
+    ]
+  },
+  "minimalist-penthouse-interior": {
+    "slug": "minimalist-penthouse-interior",
+    "title": "Minimalist Penthouse Interior",
+    "category": "Interiors",
+    "designStyle": "Minimalist",
+    "projectStatus": "Completed",
+    "tagline": "High-altitude penthouse interior utilizing clean lines, concealed storage, and monolithic stone finishes.",
+    "specifications": {
+      "location": "Bangalore, Karnataka",
+      "builtArea": "3,800 sq.ft",
+      "year": "2024",
+      "scope": "Penthouse Luxury Interiors",
+      "clientType": "Executive Suite"
+    },
+    "heroImage": "/projects/project-03.jpg",
+    "narrative": {
+      "title": "Monolithic Elegance & Panoramic Views",
+      "story": "Designed to frame sweeping urban skyline views, this penthouse interior emphasizes uncluttered spatial freedom, concealed cabinetry, and warm indirect cove lighting."
+    },
+    "keyHighlights": [
+      "Custom concealed wall closets with push-to-open hardware",
+      "Panoramic floor-to-ceiling glass wall framing city views",
+      "Monolithic Italian marble island unit in open dining zone"
+    ],
+    "video": {
+      "hasVideo": false,
+      "videoUrl": "",
+      "poster": "",
+      "caption": ""
+    },
+    "gallery": [
+      {
+        "url": "/projects/project-03.jpg",
+        "caption": "Penthouse Dining & Lounge View"
+      }
+    ]
+  },
+  "urban-boutique-commercial-mall": {
+    "slug": "urban-boutique-commercial-mall",
+    "title": "Urban Commercial Complex",
+    "category": "Commercial Construction",
+    "designStyle": "Contemporary",
+    "projectStatus": "In Progress",
+    "tagline": "Multi-level commercial retail and lifestyle destination currently undergoing structural completion.",
+    "specifications": {
+      "location": "Coimbatore, Tamil Nadu",
+      "builtArea": "24,000 sq.ft",
+      "year": "2026 (Ongoing)",
+      "scope": "Commercial Structure & Exterior Facade",
+      "clientType": "Commercial Retail Hub"
+    },
+    "heroImage": "/projects/project-01.jpg",
+    "narrative": {
+      "title": "Contemporary Retail Architecture",
+      "story": "Designed for heavy foot-traffic and maximum retail visibility, this commercial complex features double-height atrium spaces and energy-efficient climate control systems."
+    },
+    "keyHighlights": [
+      "Double-height central retail atrium space",
+      "Multi-tier basement parking with automated ventilation",
+      "High-durability granite and composite exterior cladding"
+    ],
+    "video": {
+      "hasVideo": true,
+      "videoUrl": "/projects/videos/commercial-site-tour.mp4",
+      "poster": "/projects/project-01.jpg",
+      "caption": "Site Engineering Inspection & Elevation Tour"
+    },
+    "gallery": [
+      {
+        "url": "/projects/project-01.jpg",
+        "caption": "Front Elevation Construction Phase"
+      }
+    ]
+  }
+}

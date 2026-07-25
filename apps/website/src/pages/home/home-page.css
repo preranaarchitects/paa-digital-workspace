@@ -1,0 +1,134 @@
+/* MAIN LAYOUT WRAPPER */
+.paa-home-layout {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: var(--paa-bg, #05070a);
+  color: var(--paa-text, #f3f4f6);
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* 1. HERO SECTION FULL VIEWPORT COVERAGE */
+.paa-home-hero-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  min-height: 37.5rem;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.paa-home-hero-wrapper > section,
+.paa-home-hero-wrapper .paa-hero {
+  width: 100%;
+  height: 100%;
+  padding-top: clamp(5rem, 8vw, 7rem);
+  box-sizing: border-box;
+}
+
+/* 2. NAVBAR ABSOLUTE PERFECT HORIZONTAL CENTERING FIX */
+.paa-navbar-overlay {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%); /* Guarantees exact horizontal center alignment */
+  width: 100%;
+  max-width: var(--paa-container, 75rem);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-inline: 1rem;
+  box-sizing: border-box;
+  pointer-events: none; /* Let clicks pass through empty spaces */
+}
+
+/* Ensure the Navbar inner component spans properly */
+.paa-navbar-overlay > * {
+  pointer-events: auto; /* Restores clicks on Navbar items */
+  width: 100%;
+  margin-inline: auto !important; /* Overrides any left-aligned margins */
+}
+
+/* 3. SECTIONS CONTAINER WITH COMPACT SPACING */
+.paa-home-sections {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.25rem, 2.5vw, 2rem);
+  padding-top: clamp(1.5rem, 3vw, 2.5rem);
+  width: 100%;
+}
+
+.paa-home-sections > * {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+}
+
+/* ARCHITECTURAL LINE DIVIDER */
+.paa-section-divider {
+  width: 100%;
+  max-width: var(--paa-container, 75rem);
+  height: 0.0625rem;
+  margin: 0 auto;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    color-mix(in srgb, var(--paa-accent) 35%, transparent) 20%,
+    color-mix(in srgb, var(--paa-accent) 65%, transparent) 50%,
+    color-mix(in srgb, var(--paa-accent) 35%, transparent) 80%,
+    transparent 100%
+  );
+  opacity: 0.6;
+}
+
+/* RESPONSIVE ADAPTATIONS */
+@media (max-width: 64rem) {
+  .paa-home-hero-wrapper {
+    height: 100vh;
+    height: 100dvh;
+  }
+
+  .paa-navbar-overlay {
+    padding-inline: 0.75rem;
+  }
+
+  .paa-home-sections {
+    gap: 1.5rem;
+    padding-top: 1.5rem;
+  }
+
+  .paa-section-divider {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 48rem) {
+  .paa-home-hero-wrapper {
+    height: 100vh;
+    height: 100dvh;
+  }
+
+  .paa-home-hero-wrapper > section,
+  .paa-home-hero-wrapper .paa-hero {
+    padding-top: 5.5rem;
+  }
+
+  .paa-navbar-overlay {
+    padding-inline: 0.5rem;
+  }
+
+  .paa-home-sections {
+    gap: 1.25rem;
+    padding-top: 1.25rem;
+  }
+
+  .paa-section-divider {
+    max-width: 85%;
+    opacity: 0.45;
+  }
+}

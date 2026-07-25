@@ -1,0 +1,130 @@
+.paa-split-hero-header {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.paa-split-hero-header__container {
+  display: grid;
+  grid-template-columns: 1.25fr 0.85fr;
+  gap: 3.5rem;
+  align-items: center;
+  max-width: var(--paa-container, 75rem);
+  margin-inline: auto;
+}
+
+.paa-split-hero-header__left {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.paa-split-hero-header__left .paa-section-header {
+  max-width: 100%;
+  margin: 0;
+}
+
+.paa-split-hero-header__right {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.paa-stats-card {
+  width: 100%;
+  max-width: 26rem;
+  background: color-mix(in srgb, var(--paa-surface, #0d1117) 85%, transparent);
+  backdrop-filter: blur(1rem);
+  -webkit-backdrop-filter: blur(1rem);
+  border: 0.0625rem solid var(--paa-border, rgba(234, 179, 8, 0.35));
+  border-radius: var(--paa-radius-lg, 1rem);
+  padding: 1.5rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
+}
+
+.paa-stat-box {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.paa-stat-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: var(--paa-radius-md, 0.5rem);
+  background: color-mix(in srgb, var(--paa-accent) 15%, transparent);
+  color: var(--paa-accent);
+  border: 0.0625rem solid color-mix(in srgb, var(--paa-accent) 30%, transparent);
+  flex-shrink: 0;
+}
+
+.paa-stat-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.paa-stat-title {
+  color: var(--paa-text, #ffffff);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.paa-stat-subtitle {
+  color: var(--paa-muted, #9ca3af);
+  font-size: 0.825rem;
+  line-height: 1.35;
+  margin-top: 0.2rem;
+}
+
+.paa-stat-divider {
+  height: 0.0625rem;
+  background: color-mix(in srgb, var(--paa-accent) 25%, transparent);
+  width: 100%;
+}
+
+@media (max-width: 64rem) {
+  .paa-split-hero-header__container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .paa-split-hero-header__right {
+    justify-content: flex-start;
+  }
+
+  .paa-stats-card {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 48rem) {
+  .paa-split-hero-header__container {
+    gap: 1.75rem;
+  }
+
+  .paa-stats-card {
+    padding: 1.25rem;
+    gap: 1rem;
+  }
+
+  .paa-stat-icon {
+    width: 2.35rem;
+    height: 2.35rem;
+  }
+
+  .paa-stat-title {
+    font-size: 0.925rem;
+  }
+
+  .paa-stat-subtitle {
+    font-size: 0.775rem;
+  }
+}

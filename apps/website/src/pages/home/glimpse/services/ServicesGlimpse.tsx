@@ -1,8 +1,9 @@
 import { useState, useEffect, useRef } from "react";
-import { Plus, Minus, Briefcase, Compass, HardHat, Layers, type LucideIcon } from "lucide-react";
+import { Plus, Minus, Briefcase, Compass, HardHat, Layers, type LucideIcon, Wrench } from "lucide-react";
 import { Button } from "../../../../../../../packages/ui/src/components/button"; // Verified alignment framework route path location
 import servicesData from "../../../../data/services.json";
 import "./services-glimpse.css";
+import { SectionHeader } from "../../../../../../../packages/ui/src/components/section/SectionHeader";
 
 interface ServiceTeaserItem {
   id: string;
@@ -80,9 +81,13 @@ export function ServicesGlimpse() {
       <div className="paa-services-glimpse__container">
         
         <header className="paa-services-glimpse__header">
-          <span className="paa-services-glimpse__eyebrow">{eyebrow}</span>
-          <h2 className="paa-services-glimpse__title">{title}</h2>
-          <p className="paa-services-glimpse__description">{description}</p>
+          <SectionHeader
+            eyebrow={eyebrow}
+            title={title}
+            description={description}
+            eyebrowSize="xl"
+            icon={Wrench}
+          />
         </header>
 
         <div 

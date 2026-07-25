@@ -1,0 +1,111 @@
+/* BASE BADGE CONTAINER */
+.paa-eyebrow-badge {
+  display: inline-flex;
+  align-items: center;
+  background: color-mix(in srgb, var(--paa-accent) 12%, transparent);
+  border: 0.0625rem solid color-mix(in srgb, var(--paa-accent) 30%, transparent);
+  border-radius: var(--paa-radius-pill, 999rem);
+  color: var(--paa-accent);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  user-select: none;
+  width: fit-content;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+.paa-eyebrow-badge__icon {
+  flex-shrink: 0;
+  color: var(--paa-accent);
+}
+
+.paa-eyebrow-badge__label {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   DESKTOP DEFAULT SIZES
+   ========================================================================== */
+
+/* Small */
+.paa-eyebrow-badge--sm {
+  gap: 0.35rem;
+  padding: 0.25rem 0.65rem;
+}
+.paa-eyebrow-badge--sm .paa-eyebrow-badge__label {
+  font-size: 0.75rem; /* 12px */
+}
+
+/* Medium (Default) */
+.paa-eyebrow-badge--md {
+  gap: 0.5rem;
+  padding: 0.375rem 0.875rem;
+}
+.paa-eyebrow-badge--md .paa-eyebrow-badge__label {
+  font-size: 0.875rem; /* 14px */
+}
+
+/* Large */
+.paa-eyebrow-badge--lg {
+  gap: 0.625rem;
+  padding: 0.5rem 1.125rem;
+}
+.paa-eyebrow-badge--lg .paa-eyebrow-badge__label {
+  font-size: 1rem; /* 16px */
+}
+
+/* Extra Large */
+.paa-eyebrow-badge--xl {
+  gap: 0.75rem;
+  padding: 0.625rem 1.35rem;
+}
+.paa-eyebrow-badge--xl .paa-eyebrow-badge__label {
+  font-size: 1.125rem; /* 18px */
+}
+
+/* ==========================================================================
+   MOBILE & TABLET RESPONSIVE DOWN-SCALING
+   ========================================================================== */
+
+@media (max-width: 48rem) { /* < 768px (Mobile) */
+  /* Scale down padding and text on mobile screens */
+  
+  .paa-eyebrow-badge--sm {
+    padding: 0.2rem 0.5rem;
+  }
+  .paa-eyebrow-badge--sm .paa-eyebrow-badge__label {
+    font-size: 0.6875rem; /* ~11px */
+  }
+
+  .paa-eyebrow-badge--md {
+    gap: 0.35rem;
+    padding: 0.3rem 0.7rem;
+  }
+  .paa-eyebrow-badge--md .paa-eyebrow-badge__label {
+    font-size: 0.75rem; /* ~12px (Steps down from 14px) */
+  }
+
+  .paa-eyebrow-badge--lg {
+    gap: 0.45rem;
+    padding: 0.375rem 0.85rem;
+  }
+  .paa-eyebrow-badge--lg .paa-eyebrow-badge__label {
+    font-size: 0.85rem; /* ~13.5px (Steps down from 16px) */
+  }
+
+  .paa-eyebrow-badge--xl {
+    gap: 0.5rem;
+    padding: 0.45rem 1rem;
+  }
+  .paa-eyebrow-badge--xl .paa-eyebrow-badge__label {
+    font-size: 0.95rem; /* ~15px (Steps down from 18px) */
+  }
+
+  /* Scale SVG Icons down slightly on Mobile via CSS */
+  .paa-eyebrow-badge .paa-eyebrow-badge__icon {
+    transform: scale(0.85);
+  }
+}

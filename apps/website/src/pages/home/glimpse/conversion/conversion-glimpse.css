@@ -1,6 +1,6 @@
 .paa-conversion-glimpse {
   width: 100%;
-  background: var(--paa-bg);
+  background: transparent;
   color: var(--paa-text);
   padding: clamp(4.5rem, 8.5vw, 7.5rem) 0;
   box-sizing: border-box;

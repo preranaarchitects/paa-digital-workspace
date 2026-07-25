@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { VideoOff, Compass, ArrowRight } from "lucide-react";
+import { VideoOff, Compass, ArrowRight, Cuboid } from "lucide-react";
 import { Button } from "../../../../../../../packages/ui/src/components/button";
 import studioData from "../../../../data/studio-3d.json";
 import "./studio-3d-glimpse.css";
+import { SectionHeader } from "../../../../../../../packages/ui/src/components/section/SectionHeader";
 
 interface Hotspot {
   pitch: number;
@@ -42,7 +43,9 @@ export function Studio3DGlimpse() {
   const activeProject = projects.find((p) => p.featured) || projects[0];
 
   const [videoError, setVideoError] = useState<boolean>(false);
-  const [currentRoomId, setCurrentRoomId] = useState<string>(activeProject.initialRoomId);
+  const [currentRoomId, setCurrentRoomId] = useState<string>(
+    activeProject.initialRoomId,
+  );
   const [prevProjectId, setPrevProjectId] = useState<string>(activeProject.id);
 
   if (activeProject.id !== prevProjectId) {
@@ -50,10 +53,11 @@ export function Studio3DGlimpse() {
     setCurrentRoomId(activeProject.initialRoomId);
   }
 
-  const currentRoom = activeProject.rooms[currentRoomId] || Object.values(activeProject.rooms)[0];
-  
+  const currentRoom =
+    activeProject.rooms[currentRoomId] || Object.values(activeProject.rooms)[0];
+
   const tourUrl = `https://cdn.pannellum.org/2.5/pannellum.htm?panorama=${encodeURIComponent(
-    currentRoom.panoramaUrl
+    currentRoom.panoramaUrl,
   )}&autoLoad=true&author=`;
 
   const handleCtaNavigation = () => {
@@ -63,41 +67,51 @@ export function Studio3DGlimpse() {
   return (
     <section className="paa-studio-glimpse">
       <div className="paa-studio-glimpse__wrapper">
-        
         <header className="paa-studio-glimpse__header">
-          <span className="paa-studio-glimpse__eyebrow">{eyebrow}</span>
-          <h2 className="paa-studio-glimpse__title">{title}</h2>
-          <p className="paa-studio-glimpse__desc">{description}</p>
+          <SectionHeader
+            eyebrow={eyebrow}
+            title={title}
+            description={description}
+            eyebrowSize="xl"
+            icon={Cuboid}
+          />
         </header>
 
         <div className="paa-studio-glimpse__grid">
-          
           {/* LEFT COLUMN: CINEMATIC WALKTHROUGH */}
           <div className="paa-studio-media-card">
             <div className="paa-studio-media-card__container">
               {!videoError ? (
-                <video 
+                <video
                   src={activeProject.videoUrl}
                   className="paa-studio-media-card__video"
-                  autoPlay 
-                  loop 
-                  muted 
+                  autoPlay
+                  loop
+                  muted
                   playsInline
                   onError={() => setVideoError(true)}
                 />
               ) : (
                 <div className="paa-studio-media-card__error-fallback">
                   <VideoOff className="paa-studio-media-card__error-icon" />
-                  <span className="paa-studio-media-card__error-title">Video Walkthrough Unavailable</span>
-                  <p className="paa-studio-media-card__error-text">Unable to stream cinematic fly-through simulation.</p>
+                  <span className="paa-studio-media-card__error-title">
+                    Video Walkthrough Unavailable
+                  </span>
+                  <p className="paa-studio-media-card__error-text">
+                    Unable to stream cinematic fly-through simulation.
+                  </p>
                 </div>
               )}
-              
+
               {!videoError && <div className="paa-studio-media-card__scrim" />}
               {!videoError && (
                 <div className="paa-studio-media-card__badge">
-                  <span className="paa-studio-media-card__type">Digital Reality Walkthrough</span>
-                  <p className="paa-studio-media-card__label">{activeProject.videoCaption}</p>
+                  <span className="paa-studio-media-card__type">
+                    Digital Reality Walkthrough
+                  </span>
+                  <p className="paa-studio-media-card__label">
+                    {activeProject.videoCaption}
+                  </p>
                 </div>
               )}
             </div>
@@ -106,17 +120,23 @@ export function Studio3DGlimpse() {
           {/* RIGHT COLUMN: 360° ENGINE PORTAL */}
           <div className="paa-studio-media-card paa-studio-media-card--interactive-portal">
             <div className="paa-studio-media-card__container paa-studio-media-card__container--tour-viewport">
-              <iframe 
+              <iframe
                 src={tourUrl}
                 className="paa-studio-tour-iframe"
                 width="100%"
                 height="100%"
-                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                }}
                 allowFullScreen
                 scrolling="no"
                 title={currentRoom.caption}
               />
-              
+
               <div className="paa-studio-tour-hud-indicator">
                 <Compass className="paa-studio-tour-hud-icon" />
                 <span>360° Live View</span>
@@ -124,7 +144,9 @@ export function Studio3DGlimpse() {
 
               <div className="paa-studio-custom-label-badge">
                 <span className="paa-studio-custom-label-type">Viewing</span>
-                <p className="paa-studio-custom-label-text">{currentRoom.caption}</p>
+                <p className="paa-studio-custom-label-text">
+                  {currentRoom.caption}
+                </p>
               </div>
             </div>
 
@@ -142,11 +164,10 @@ export function Studio3DGlimpse() {
               ))}
             </div>
           </div>
-
         </div>
 
         <footer className="paa-studio-glimpse__footer">
-          <Button 
+          <Button
             variant="explore"
             onClick={handleCtaNavigation}
             className="paa-studio-explore-btn"
@@ -154,7 +175,6 @@ export function Studio3DGlimpse() {
             {globalCta.label}
           </Button>
         </footer>
-
       </div>
     </section>
   );

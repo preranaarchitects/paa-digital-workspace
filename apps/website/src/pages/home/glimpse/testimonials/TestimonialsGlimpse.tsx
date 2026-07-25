@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, MessageSquareQuote } from "lucide-react";
 import testimonialData from "../../../../data/testimonials.json";
 import "./testimonials-glimpse.css";
+import { SectionHeader } from "../../../../../../../packages/ui/src/components/section/SectionHeader";
 
 interface ReviewItem {
   platform: string;
@@ -92,9 +93,7 @@ export function TestimonialsGlimpse() {
       <div className="paa-reviews-glimpse__container">
         
         <header className="paa-reviews-glimpse__header">
-          <span className="paa-reviews-glimpse__eyebrow">{eyebrow}</span>
-          <h2 className="paa-reviews-glimpse__title">{title}</h2>
-          <p className="paa-reviews-glimpse__desc">{description}</p>
+          <SectionHeader eyebrow={eyebrow} title={title} description={description} eyebrowSize="xl" icon={MessageSquareQuote} />
         </header>
 
         <div 

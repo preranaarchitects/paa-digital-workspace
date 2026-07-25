@@ -1,0 +1,116 @@
+{
+  "branding": {
+    "title": "Prerana Architects & Associates",
+    "tagline": "Design • Build • Transform",
+    "portalTitle": "Client Portal",
+    "portalDescription": "Access your project anytime, anywhere. Stay connected with every milestone from design approval to final handover.",
+    "features": [
+      {
+        "title": "Track Project Progress",
+        "description": "Monitor construction updates and milestone completion in real time."
+      },
+      {
+        "title": "Documents & Drawings",
+        "description": "Access approved drawings, quotations, agreements and project documents securely."
+      },
+      {
+        "title": "Approvals & Communication",
+        "description": "Review approvals, share feedback and communicate directly with the project team."
+      },
+      {
+        "title": "Timeline & Updates",
+        "description": "Stay informed with schedules, site updates and important project notifications."
+      }
+    ],
+    "quote": {
+      "text": "Your Dream. Our Responsibility.",
+      "author": "Prerana Architects & Associates"
+    }
+  },
+  "login": {
+    "eyebrow": "Client Login",
+    "title": "Welcome Back",
+    "description": "Sign in to securely access your project information.",
+    "email": {
+      "label": "Email Address",
+      "placeholder": "Enter your registered email"
+    },
+    "password": {
+      "label": "Password",
+      "placeholder": "Enter your password"
+    },
+    "submitButton": {
+      "label": "Login Securely"
+    },
+    "forgotPassword": {
+      "label": "Forgot Password?",
+      "path": "/forgot-password"
+    },
+    "support": {
+      "title": "Need Help?",
+      "description": "Login credentials are provided only to active Prerana Architects and Associates clients and staff.",
+      "buttonLabel": "Contact Prerana",
+      "path": "/contact"
+    }
+  },
+  "popupModal": {
+    "message": "You are not the client of Prerana Architects and Associates. Please contact us.",
+    "actionContact": "Contact Us",
+    "actionClose": "Close"
+  },
+  "authentication": {
+    "activeEnvironment": "local",
+    "redirects": {
+      "admin": {
+        "portal": "admin",
+        "urls": {
+          "local": "http://localhost:5174",
+          "production": "https://admin.preranaarchitects.com"
+        }
+      },
+      "supervisor": {
+        "portal": "team",
+        "urls": {
+          "local": "http://localhost:5175",
+          "production": "https://team.preranaarchitects.com"
+        }
+      },
+      "designer": {
+        "portal": "team",
+        "urls": {
+          "local": "http://localhost:5175",
+          "production": "https://team.preranaarchitects.com"
+        }
+      },
+      "field_engineer": {
+        "portal": "team",
+        "urls": {
+          "local": "http://localhost:5175",
+          "production": "https://team.preranaarchitects.com"
+        }
+      },
+      "client": {
+        "portal": "client",
+        "urls": {
+          "local": "http://localhost:5176",
+          "production": "https://{username_slug}.preranaarchitects.com"
+        }
+      },
+      "none": {
+        "portal": "website",
+        "urls": {
+          "local": "http://localhost:5173",
+          "production": "https://preranaarchitects.com"
+        }
+      }
+    }
+  },
+  "messages": {
+    "loginSuccess": "Login successful.",
+    "invalidCredentials": "Invalid email address or password.",
+    "invalidRoleMapped": "Your account configuration is incomplete. Please contact Prerana Architects & Associates to assign your user role.",
+    "noProjectAssigned": "No projects have been assigned to your account yet.",
+    "unexpectedError": "An unexpected error occurred. Please try again.",
+    "loading": "Signing you in..."
+  }
+}

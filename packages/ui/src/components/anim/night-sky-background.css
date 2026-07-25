@@ -1,0 +1,156 @@
+/* FIXED 100% VIEWPORT ARCHITECTURAL NIGHT SKY ENGINE */
+.paa-night-sky-bg {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+  background: var(--paa-bg, #05070a); /* Deep, dark black-toned background */
+}
+
+/* Subtle, Muted Deep Gold Ambient Glow */
+.paa-sky-nebula {
+  position: absolute;
+  inset: -10%;
+  background: 
+    radial-gradient(circle at 20% 20%, color-mix(in srgb, var(--paa-accent) 6%, transparent) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, color-mix(in srgb, var(--paa-accent) 4%, transparent) 0%, transparent 45%);
+  animation: nebulaPulse 14s ease-in-out infinite alternate;
+}
+
+/* Star Field Layer - Mild White & Delicate Gold Nodes */
+.paa-star-field {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    radial-gradient(0.0938rem 0.0938rem at 10% 15%, var(--paa-text) 100%, transparent 100%),
+    radial-gradient(0.125rem 0.125rem at 25% 45%, color-mix(in srgb, var(--paa-accent) 60%, transparent) 100%, transparent 100%),
+    radial-gradient(0.0625rem 0.0625rem at 40% 70%, var(--paa-text) 100%, transparent 100%),
+    radial-gradient(0.125rem 0.125rem at 60% 20%, color-mix(in srgb, var(--paa-accent) 50%, transparent) 100%, transparent 100%),
+    radial-gradient(0.0938rem 0.0938rem at 75% 85%, var(--paa-text) 100%, transparent 100%),
+    radial-gradient(0.125rem 0.125rem at 90% 35%, color-mix(in srgb, var(--paa-accent) 60%, transparent) 100%, transparent 100%),
+    radial-gradient(0.0625rem 0.0625rem at 50% 50%, var(--paa-text) 100%, transparent 100%),
+    radial-gradient(0.125rem 0.125rem at 15% 80%, color-mix(in srgb, var(--paa-accent) 40%, transparent) 100%, transparent 100%),
+    radial-gradient(0.0938rem 0.0938rem at 85% 10%, var(--paa-text) 100%, transparent 100%);
+  background-size: 100% 100%;
+  opacity: 0.65;
+  animation: starTwinkle 6s ease-in-out infinite alternate;
+}
+
+/* Mild Gold Surveyor Pattern Crosshairs (+) */
+.paa-surveyor-nodes {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, color-mix(in srgb, var(--paa-accent) 15%, transparent) 0.0625rem, transparent 0.0625rem),
+    linear-gradient(to bottom, color-mix(in srgb, var(--paa-accent) 15%, transparent) 0.0625rem, transparent 0.0625rem);
+  background-size: 20rem 20rem;
+  mask-image: radial-gradient(circle 0.5rem at 0 0, var(--paa-text) 100%, transparent 100%);
+  opacity: 0.35;
+  animation: nodeFlicker 8s ease-in-out infinite alternate;
+}
+
+/* ELEGANT, MILD GOLD SHOOTING COMETS */
+.paa-sky-comet {
+  position: absolute;
+  height: 0.0938rem;
+  background: linear-gradient(
+    90deg,
+    var(--paa-text) 0%,
+    color-mix(in srgb, var(--paa-accent) 70%, transparent) 25%,
+    color-mix(in srgb, var(--paa-accent) 20%, transparent) 60%,
+    transparent 100%
+  );
+  border-radius: var(--paa-radius-pill, 999rem);
+  filter: drop-shadow(0 0 0.25rem color-mix(in srgb, var(--paa-accent) 50%, transparent));
+  opacity: 0;
+  transform: rotate(-38deg);
+  animation: cometSweep 8s linear infinite;
+}
+
+/* Head of Comet */
+.paa-sky-comet::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0.25rem;
+  height: 0.25rem;
+  background: var(--paa-text);
+  border-radius: 50%;
+  box-shadow: 0 0 0.375rem var(--paa-text), 0 0 0.625rem var(--paa-accent);
+}
+
+/* COMET TIMING & POSITIONS */
+.paa-comet--1 { top: 10%; left: 85%; width: 13.75rem;  animation-duration: 6.5s; animation-delay: 0s; }
+.paa-comet--2 { top: 40%; left: 95%; width: 16.25rem;  animation-duration: 8.5s; animation-delay: 3s; }
+.paa-comet--3 { top: 65%; left: 75%; width: 11.875rem; animation-duration: 7s;   animation-delay: 1.5s; }
+.paa-comet--4 { top: 20%; left: 50%; width: 13.125rem; animation-duration: 9s;   animation-delay: 5s; }
+
+/* ANIMATION KEYFRAMES */
+@keyframes cometSweep {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) rotate(-38deg);
+  }
+  12% { opacity: 0.85; }
+  75% { opacity: 0.6; }
+  100% {
+    opacity: 0;
+    transform: translate(-87.5rem, 56.25rem) rotate(-38deg);
+  }
+}
+
+@keyframes nebulaPulse {
+  0% { transform: scale(0.95); opacity: 0.6; }
+  100% { transform: scale(1.05); opacity: 0.9; }
+}
+
+@keyframes starTwinkle {
+  0% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+  100% { opacity: 0.5; }
+}
+
+@keyframes nodeFlicker {
+  0% { opacity: 0.2; }
+  50% { opacity: 0.5; }
+  100% { opacity: 0.3; }
+}
+
+/* RESPONSIVE ADAPTATIONS */
+@media (max-width: 64rem) {
+  .paa-surveyor-nodes { background-size: 14rem 18rem; }
+  .paa-comet--1 { width: 11.25rem; }
+  .paa-comet--2 { width: 12.5rem; }
+  .paa-comet--3 { width: 9.375rem; }
+  .paa-comet--4 { width: 10.625rem; }
+
+  @keyframes cometSweep {
+    0% { opacity: 0; transform: translate(0, 0) rotate(-38deg); }
+    12% { opacity: 0.85; }
+    75% { opacity: 0.6; }
+    100% { opacity: 0; transform: translate(-56.25rem, 37.5rem) rotate(-38deg); }
+  }
+}
+
+@media (max-width: 48rem) {
+  .paa-surveyor-nodes { background-size: 10rem 10rem; }
+  .paa-sky-comet { height: 0.0625rem; }
+  .paa-sky-comet::before { width: 0.1875rem; height: 0.1875rem; }
+
+  .paa-comet--1 { top: 8%;  left: 80%; width: 7.5rem; animation-duration: 5.5s; }
+  .paa-comet--2 { top: 35%; left: 90%; width: 8.75rem; animation-duration: 7s; }
+  .paa-comet--3 { top: 60%; left: 70%; width: 6.875rem; animation-duration: 6s; }
+  .paa-comet--4 { display: none; }
+
+  @keyframes cometSweep {
+    0% { opacity: 0; transform: translate(0, 0) rotate(-38deg); }
+    15% { opacity: 0.85; }
+    70% { opacity: 0.6; }
+    100% { opacity: 0; transform: translate(-34.375rem, 25rem) rotate(-38deg); }
+  }
+}

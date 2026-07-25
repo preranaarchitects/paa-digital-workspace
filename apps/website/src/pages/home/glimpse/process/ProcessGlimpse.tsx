@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { 
   Briefcase, 
+  RefreshCw,
   Compass, 
   Layers, 
   HardHat, 
@@ -10,6 +11,7 @@ import {
 import { Button } from "../../../../../../../packages/ui/src/components/button";
 import processData from "../../../../data/process.json";
 import "./process-glimpse.css";
+import { SectionHeader } from "../../../../../../../packages/ui/src/components/section/SectionHeader";
 
 interface ProcessPhase {
   step: string;
@@ -120,9 +122,13 @@ export function ProcessGlimpse() {
       <div className="paa-process-journey__container">
         
         <header className="paa-process-journey__header">
-          <span className="paa-process-journey__eyebrow">{eyebrow}</span>
-          <h2 className="paa-process-journey__title">{title}</h2>
-          <p className="paa-process-journey__description">{description}</p>
+          <SectionHeader
+            eyebrow={eyebrow}
+            title={title}
+            description={description}
+            eyebrowSize="xl"
+            icon={RefreshCw}
+          />
         </header>
 
         <div 

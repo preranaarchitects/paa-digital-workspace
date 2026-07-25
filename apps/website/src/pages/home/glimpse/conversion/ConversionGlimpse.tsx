@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { MapPin, Smartphone, Mail, Info, Map } from "lucide-react";
+import { MapPin, Smartphone, Mail, Info, Map, MessageSquare } from "lucide-react";
 import { FaLinkedin, FaInstagram, FaFacebook, FaWhatsapp, FaGoogle } from "react-icons/fa6";
 import { Button } from "../../../../../../../packages/ui/src/components/button"; 
 import conversionData from "../../../../data/conversion.json";
 import "./conversion-glimpse.css";
+import { SectionHeader } from "../../../../../../../packages/ui/src/components/section/SectionHeader";
 
 interface AddressStructure {
   label: string;
@@ -61,9 +62,13 @@ export function ConversionGlimpse() {
       <div className="paa-conversion-glimpse__container">
         
         <header className="paa-conversion-glimpse__header">
-          <span className="paa-conversion-glimpse__eyebrow">{eyebrow}</span>
-          <h2 className="paa-conversion-glimpse__title">{title}</h2>
-          <p className="paa-conversion-glimpse__desc">{description}</p>
+          <SectionHeader
+            eyebrow={eyebrow}
+            title={title}
+            description={description}
+            eyebrowSize="xl"
+            icon={MessageSquare}
+          />
 
           <div className="paa-conversion-tabs">
             <button 

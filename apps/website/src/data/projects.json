@@ -2,42 +2,112 @@
   "eyebrow": "Featured Portfolio",
   "title": "Bringing Visionary Spaces to Life",
   "description": "A curated showcase of our landmark residential, commercial, and interior spaces across South India. Built with architectural excellence, premium finishes, and uncompromising engineering quality.",
+  "cardCtaLabel": "Explore Project",
   "cta": {
     "label": "Explore All Projects",
     "path": "/projects"
   },
+  "heroStats": [
+    {
+      "icon": "building",
+      "title": "8+ Landmark Projects",
+      "subtitle": "Residential, Commercial & Interiors"
+    },
+    {
+      "icon": "map",
+      "title": "South India Portfolio",
+      "subtitle": "Karnataka, Tamil Nadu & Telangana"
+    },
+    {
+      "icon": "award",
+      "title": "Turnkey & Engineering",
+      "subtitle": "Zero compromise on build quality"
+    }
+  ],
   "featuredProjects": [
     {
       "id": 1,
+      "slug": "modern-luxury-villa",
       "title": "Modern Luxury Villa",
-      "category": "Residential Architecture",
+      "category": "Constructions",
+      "designStyle": "Modern",
+      "projectStatus": "In Progress",
       "location": "Bangalore",
       "image": "/projects/project-01.jpg",
+      "styleBadge": "Luxury Villa",
       "path": "/projects/modern-luxury-villa"
     },
     {
       "id": 2,
+      "slug": "contemporary-interior",
       "title": "Contemporary Interior",
-      "category": "Interior Design",
+      "category": "Interiors",
+      "designStyle": "Minimalist",
+      "projectStatus": "Completed",
       "location": "Mysore",
       "image": "/projects/project-02.jpg",
+      "styleBadge": "Contemporary",
       "path": "/projects/contemporary-interior"
     },
     {
       "id": 3,
+      "slug": "commercial-workspace",
       "title": "Commercial Workspace",
       "category": "Commercial Construction",
+      "designStyle": "Modern",
+      "projectStatus": "Completed",
       "location": "Bangalore",
       "image": "/projects/project-03.jpg",
+      "styleBadge": "Corporate",
       "path": "/projects/commercial-workspace"
     },
     {
       "id": 4,
-      "title": "Commercial Mall",
-      "category": "Commercial Construction",
+      "slug": "chettinadu-heritage-residence",
+      "title": "Chettinadu Heritage Residence",
+      "category": "Constructions",
+      "designStyle": "Chettinadu",
+      "projectStatus": "Completed",
+      "location": "Chennai",
+      "image": "/projects/project-01.jpg",
+      "styleBadge": "Traditional",
+      "path": "/projects/chettinadu-heritage-residence"
+    },
+    {
+      "id": 5,
+      "slug": "zenith-turnkey-duplex",
+      "title": "Zenith Turnkey Duplex",
+      "category": "Turnkey",
+      "designStyle": "Modern",
+      "projectStatus": "Completed",
       "location": "Hyderabad",
+      "image": "/projects/project-02.jpg",
+      "styleBadge": "Turnkey Villa",
+      "path": "/projects/zenith-turnkey-duplex"
+    },
+    {
+      "id": 6,
+      "slug": "minimalist-penthouse-interior",
+      "title": "Minimalist Penthouse Interior",
+      "category": "Interiors",
+      "designStyle": "Minimalist",
+      "projectStatus": "Completed",
+      "location": "Bangalore",
       "image": "/projects/project-03.jpg",
-      "path": "/projects/commercial-workspace"
+      "styleBadge": "Penthouse",
+      "path": "/projects/minimalist-penthouse-interior"
+    },
+    {
+      "id": 7,
+      "slug": "urban-boutique-commercial-mall",
+      "title": "Urban Commercial Complex",
+      "category": "Commercial Construction",
+      "designStyle": "Contemporary",
+      "projectStatus": "In Progress",
+      "location": "Coimbatore",
+      "image": "/projects/project-01.jpg",
+      "styleBadge": "Retail Hub",
+      "path": "/projects/urban-boutique-commercial-mall"
     }
   ]
 }

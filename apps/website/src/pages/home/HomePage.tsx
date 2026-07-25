@@ -11,6 +11,9 @@ import { SEOManager } from "../../components/seo/SEOManager";
 import branding from "../../../../../packages/ui/src/data/branding.json";
 import heroData from "../../data/hero.json";
 import navbar from "../../data/navbar.json";
+import { NightSkyBackground } from "../../../../../packages/ui/src/components/anim/NightSkyBackground";
+
+import "./home-page.css";
 
 const hero = heroData as HeroConfig;
 
@@ -18,42 +21,41 @@ export function HomePage() {
   return (
     <>
       <SEOManager pageKey="home" />
+      
       <main className="paa-home-layout">
-        <Navbar logo={<Logo logo={branding.logo} />} navigation={navbar} />
+        <NightSkyBackground />
 
-        <Hero hero={hero} />
+        <div className="paa-home-hero-wrapper">
+          <div className="paa-navbar-overlay">
+            <Navbar logo={<Logo logo={branding.logo} />} navigation={navbar} />
+          </div>
+          <Hero hero={hero} />
+        </div>
 
-        <div className="paa-margin-buffer" aria-hidden="true" />
+        <div className="paa-home-sections">
+          <VisionGlimpse />
+          <div className="paa-section-divider" aria-hidden="true" />
 
-        <VisionGlimpse />
+          <ProjectsGlimpse />
+          <div className="paa-section-divider" aria-hidden="true" />
 
-        <div className="paa-margin-buffer" aria-hidden="true" />
+          <Studio3DGlimpse />
+          <div className="paa-section-divider" aria-hidden="true" />
 
-        <ProjectsGlimpse />
+          <ServicesGlimpse />
+          <div className="paa-section-divider" aria-hidden="true" />
 
-        <div className="paa-margin-buffer" aria-hidden="true" />
+          <ProcessGlimpse />
+          <div className="paa-section-divider" aria-hidden="true" />
 
-        <Studio3DGlimpse />
+          <AboutGlimpse />
+          <div className="paa-section-divider" aria-hidden="true" />
 
-        <div className="paa-margin-buffer" aria-hidden="true" />
+          <ConversionGlimpse />
+          <div className="paa-section-divider" aria-hidden="true" />
 
-        <ServicesGlimpse />
-
-        <div className="paa-margin-buffer" aria-hidden="true" />
-
-        <ProcessGlimpse />
-
-        <div className="paa-margin-buffer" aria-hidden="true" />
-
-        <AboutGlimpse />
-
-        <div className="paa-margin-buffer" aria-hidden="true" />
-
-        <ConversionGlimpse />
-
-        <div className="paa-margin-buffer" aria-hidden="true" />
-
-        <Footer />
+          <Footer />
+        </div>
       </main>
     </>
   );

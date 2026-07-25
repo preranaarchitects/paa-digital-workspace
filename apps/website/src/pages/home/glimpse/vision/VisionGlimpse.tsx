@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import {
   Sparkles,
+  Telescope,
   Lightbulb,
   Compass,
   Hammer,
@@ -10,6 +11,7 @@ import {
 } from "lucide-react";
 import "./vision-glimpse.css";
 import visionData from "../../../../data/vision.json";
+import { SectionHeader } from "../../../../../../../packages/ui/src/components/section/SectionHeader";
 
 interface Stage {
   id: string;
@@ -49,8 +51,7 @@ export function VisionGlimpse() {
     <section className="paa-vision-glimpse">
       <div className="paa-vision-glimpse__container">
         <div className="paa-vision-glimpse__header">
-          <span className="paa-vision-glimpse__eyebrow">{eyebrow}</span>
-          <h2 className="paa-vision-glimpse__title">{title}</h2>
+          <SectionHeader eyebrow={eyebrow} title={title} eyebrowSize="xl" icon={Telescope} />
         </div>
 
         <div className="paa-vision-glimpse__track--desktop">

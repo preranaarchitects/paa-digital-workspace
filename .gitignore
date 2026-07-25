@@ -101,3 +101,5 @@ storybook-static/
 *.pem
 *.key
 *.crt
+
+apps\website\.env.local

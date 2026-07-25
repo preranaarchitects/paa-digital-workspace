@@ -1,6 +1,6 @@
 .paa-projects-glimpse {
   width: 100%;
-  background: var(--paa-bg);
+  background: transparent;
   color: var(--paa-text);
   padding: clamp(4rem, 7vw, 6rem) 0;
   box-sizing: border-box;

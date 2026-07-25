@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
-import { ImageOff } from "lucide-react";
+import { ImageOff,FolderKanban } from "lucide-react";
 import { Button } from "../../../../../../../packages/ui/src/components/button";
 import projectData from "../../../../data/projects.json";
+import "./projects-glimpse.css"
+import {SectionHeader} from "../../../../../../../packages/ui/src/components/section/SectionHeader"
 
 interface ProjectItem {
   id: number;
@@ -53,9 +55,13 @@ export function ProjectsGlimpse() {
       <div className="paa-projects-glimpse__container">
         
         <header className="paa-projects-glimpse__header">
-          <span className="paa-projects-glimpse__eyebrow">{eyebrow}</span>
-          <h2 className="paa-projects-glimpse__title">{title}</h2>
-          <p className="paa-projects-glimpse__description">{description}</p>
+          <SectionHeader
+            eyebrow={eyebrow}
+            title={title}
+            description={description}
+            eyebrowSize="xl"
+            icon={FolderKanban}
+          />
         </header>
 
         <div className="paa-projects-glimpse__grid">
